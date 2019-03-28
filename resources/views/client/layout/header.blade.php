@@ -23,7 +23,8 @@
 
 <body>
 
-    <!-- Start: Preloader -->
+    <!-- Start: Preloader
+    ============================= -->
 
     <div class="preloader">        
         <div class="wrapper">
@@ -35,9 +36,11 @@
         <h1>Loading&hellip;</h1>
     </div>
 
-    <!-- End: Preloader -->
+    <!-- End: Preloader
+    ============================= -->
 
-    <!-- Start: Header Top -->
+    <!-- Start: Header Top
+    ============================= -->
     <section id="header-top">
         <div class="container">
             

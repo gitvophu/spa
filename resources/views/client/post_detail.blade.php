@@ -1,4 +1,7 @@
 @extends('client.layout.master')
+@section('script')
+<script src="{{asset('assets/js/pages/product_detail.js')}}"></script>
+@endsection
 @section('content')
 <section id="breadcrumb-area">
         <div class="container">

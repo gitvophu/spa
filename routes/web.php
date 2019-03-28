@@ -12,3 +12,5 @@
 */
 
 Route::get('/','HomeController@index');
+Route::get('/product-detail','HomeController@product_detail');
+Route::get('/blog-detail','HomeController@blog_detail');
