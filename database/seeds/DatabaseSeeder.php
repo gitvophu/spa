@@ -61,7 +61,7 @@ class DatabaseSeeder extends Seeder
                 'product_id' => Product::get()->random(1)->first()->id,                
                 'post_id' => Post::get()->random(1)->first()->id,  
                 'updated_at' => $faker->dateTimeBetween(),
-                'created_at' => $faker->dateTimeBetween(),              
+                'created_at' => $faker->dateTimeBetween(),
             ]);
         }
 
