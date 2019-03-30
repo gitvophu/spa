@@ -16,5 +16,5 @@ class HomeController extends Controller
 
     public function blog_detail(){
         return view('client.post_detail');
-    }
+    }                                                                                                                                    
 }

@@ -21,9 +21,18 @@ Route::get('/product-detail','HomeController@product_detail');
 Route::get('/blog-detail','HomeController@blog_detail');
 
 /* Admin layout */
+Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function () {
+    //Home layout
+    Route::get('/', 'AdminController@index')->name('admin-index');
+});
+Route::group(['prefix' => '/admin/comments', 'middleware' => array('can_see')], function () {
+    //Comments layout
+    Route::get('/list-comment', 'CommentController@index')->name('list-comment');
+});
+Route::group(['prefix' => '/admin/banners', 'middleware' => array('can_see')], function () {
+    //Comments layout
+    Route::get('/list-banner', 'BannerController@index')->name('list-banner');
+});
+// Route::get('/posts', 'PostController@index')->name('admin-posts');
+// Route::get('/messages', 'MessageController@index')->name('admin-messages');
 
-//Home layout
-Route::get('/admin', 'AdminController@index')->name('admin-index');
-
-//Banner layout
-Route::get('/banners', 'AdminController@banners')->name('banners');
