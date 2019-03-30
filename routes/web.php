@@ -24,3 +24,6 @@ Route::get('/blog-detail','HomeController@blog_detail');
 
 //Home layout
 Route::get('/admin', 'AdminController@index')->name('admin-index');
+
+//Banner layout
+Route::get('/banners', 'AdminController@banners')->name('banners');

@@ -18,6 +18,12 @@
         <!-- Timeline CSS -->
         <link href="assets/admin/css/timeline.css" rel="stylesheet">
 
+        <!-- DataTables CSS -->
+        <link href="assets/admin/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="assets/admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
+
         <!-- Custom CSS -->
         <link href="assets/admin/css/startmin.css" rel="stylesheet">
 
@@ -171,13 +177,13 @@
                                 <a href="#"><i class="fa fa-edit fa-fw"></i> Messages</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-wrench fa-fw"></i> Banners<span class="fa arrow"></span></a>
+                                <a href="{{route('banners')}}"><i class="fa fa-wrench fa-fw"></i> Banners<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
                                         <a href="#">Create banner</a>
                                     </li>
                                     <li>
-                                        <a href="#">List banner</a>
+                                        <a href="{{route('banners')}}">List banner</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
