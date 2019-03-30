@@ -39,7 +39,6 @@ Route::group(['prefix' => '/admin/banners', 'middleware' => array('can_see')], f
     //banner layout
     Route::get('/list-banner', 'BannerController@index')->name('list-banner');
 });
-
 Route::group(['prefix' => '/admin/products', 'middleware' => array('can_see')], function () {
     //banner layout
     Route::get('/list-product', 'ProductController@index')->name('list-product');
@@ -48,4 +47,11 @@ Route::group(['prefix' => '/admin/products', 'middleware' => array('can_see')], 
     Route::get('delete/{id}', 'ProductController@delete_product')->name('delete-product');
     Route::get('update/{id}', 'ProductController@update')->name('update');
     Route::post('update', 'ProductController@update_product')->name('update-product');
+Route::group(['prefix' => '/admin/posts', 'middleware' => array('can_see')], function () {
+    //Comments layout
+    Route::get('/', 'PostController@index')->name('list-post');
+    Route::get('/create', 'PostController@create')->name('create-post');
+    Route::get('/detele', 'PostController@delete')->name('delete-post');
+    Route::get('/edit', 'PostController@edit')->name('edit-post');
+
 });
