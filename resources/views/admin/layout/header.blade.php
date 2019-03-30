@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,22 +11,28 @@
         <title>Startmin - Bootstrap Admin Theme</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="assets/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{url('/assets/admin/css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- MetisMenu CSS -->
-        <link href="assets/admin/css/metisMenu.min.css" rel="stylesheet">
+        <link href="{{url('/assets/admin/css/metisMenu.min.css')}}" rel="stylesheet">
+
+        <!-- DataTables CSS -->
+        <link href="{{url('/assets/admin/css/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="{{url('/assets/admin/css/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
 
         <!-- Timeline CSS -->
-        <link href="assets/admin/css/timeline.css" rel="stylesheet">
+        <link href="{{url('/assets/admin/css/timeline.css')}}" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="assets/admin/css/startmin.css" rel="stylesheet">
+        <link href="{{url('/assets/admin/css/startmin.css')}}" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="assets/admin/css/morris.css" rel="stylesheet">
+        <link href="{{url('/assets/admin/css/morris.css')}}" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="assets/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="{{url('/assets/admin/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -145,7 +152,7 @@
                                 <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-comments fa-fw"></i> Comments </a>
+                                <a href="{{route('list-comment')}}"><i class="fa fa-comments fa-fw"></i> Comments </a>
                                 <!-- <ul class="nav nav-second-level">
                                     <li>
                                         <a href="#">Create </a>

@@ -606,5 +606,10 @@
     </div>
     <!-- /.container-fluid -->
 </div>
-<!-- /#page-wrapper -->
+@section('script')
+    <!-- Morris Charts JavaScript -->
+    <script src="{{url('assets/admin/js/raphael.min.js')}}"></script>
+    <script src="{{url('assets/admin/js/morris.min.js')}}"></script>
+    <script src="{{url('assets/admin/js/morris-data.js')}}"></script>
+@enndsection
 @endsection

@@ -21,7 +21,16 @@ Route::get('/product-detail','HomeController@product_detail');
 Route::get('/blog-detail','HomeController@blog_detail');
 
 /* Admin layout */
+Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function () {
+    //Home layout
+    Route::get('/', 'AdminController@index')->name('admin-index');
+});
+Route::group(['prefix' => '/admin/comments', 'middleware' => array('can_see')], function () {
+    //Comments layout
+    Route::get('/list-comment', 'CommentController@index')->name('list-comment');
+});
 
-//Home layout
-Route::get('/admin', 'AdminController@index')->name('admin-index');
-Route::get('/admin/message', 'MessageController@index')->name('message-index');
+Route::group(['prefix' => '/admin/message', 'middleware' => array('can_see')], function () {
+    //Comments layout
+    Route::get('/messages', 'MessageController@index')->name('message-index');
+});
