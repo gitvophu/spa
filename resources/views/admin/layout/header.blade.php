@@ -173,7 +173,7 @@
                                 <a href="#"><i class="fa fa-table fa-fw"></i> Posts</a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="#">Create post</a>
+                                    <a href="{{route('create-post')}}">Create post</a>
                                     </li>
                                     <li>
                                         <a href="#">List post</a>
@@ -199,10 +199,10 @@
                                 <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Products<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="#">Create product</a>
+                                        <a href="{{route('create')}}">Create product</a>
                                     </li>
                                     <li>
-                                        <a href="#">List product</a>
+                                        <a href="{{route('list-product')}}">List product</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
