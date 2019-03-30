@@ -31,11 +31,21 @@ Route::group(['prefix' => '/admin/comments', 'middleware' => array('can_see')], 
 });
 
 Route::group(['prefix' => '/admin/message', 'middleware' => array('can_see')], function () {
-    //Comments layout
+    //message layout
     Route::get('/list-message', 'MessageController@index')->name('list-message');
 });
 
 Route::group(['prefix' => '/admin/banners', 'middleware' => array('can_see')], function () {
-    //Comments layout
+    //banner layout
     Route::get('/list-banner', 'BannerController@index')->name('list-banner');
+});
+
+Route::group(['prefix' => '/admin/products', 'middleware' => array('can_see')], function () {
+    //banner layout
+    Route::get('/list-product', 'ProductController@index')->name('list-product');
+    Route::get('/create-product', 'ProductController@create')->name('create');
+    Route::post('/create-product', 'ProductController@create_product')->name('create-product');
+    Route::get('delete/{id}', 'ProductController@delete_product')->name('delete-product');
+    Route::get('update/{id}', 'ProductController@update')->name('update');
+    Route::post('update', 'ProductController@update_product')->name('update-product');
 });
