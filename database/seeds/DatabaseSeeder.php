@@ -25,6 +25,9 @@ class DatabaseSeeder extends Seeder
                 'title' => $faker->sentence(),
                 'image' =>'assets/img/full-width/fullwidth01.jpg',
                 'content' => $faker->paragraph(5),
+                'updated_at' => $faker->dateTimeBetween(),
+                'created_at' => $faker->dateTimeBetween(),
+               
             ]);
         }
         foreach (range(1,100) as $index) {
@@ -55,7 +58,9 @@ class DatabaseSeeder extends Seeder
                 'description' => $faker->paragraph(5),             
                 'type' => $faker->numberBetween(1,2),
                 'product_id' => Product::get()->random(1)->first()->id,                
-                'post_id' => Post::get()->random(1)->first()->id,                
+                'post_id' => Post::get()->random(1)->first()->id,  
+                'updated_at' => $faker->dateTimeBetween(),
+                'created_at' => $faker->dateTimeBetween(),              
             ]);
         }
         
