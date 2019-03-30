@@ -9,9 +9,7 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {
     public function index(){       
-        $comment = new Comment(); 
-        $list_comment = $comment->getListComment();
-        //dd($list_comment);
+        $list_comment = Comment::getListComment();
         return view('admin.list-comment', compact('list_comment'));
     }
 }

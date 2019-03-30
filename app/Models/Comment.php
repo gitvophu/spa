@@ -10,7 +10,7 @@ class Comment extends Model
     protected $primaryKey = 'id';
 
     //Get list comment in comments table
-    public function getListComment(){
+    public static function getListComment(){
         return Comment::all();
     }
 }
