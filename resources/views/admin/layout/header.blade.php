@@ -25,6 +25,12 @@
         <!-- Timeline CSS -->
         <link href="{{url('/assets/admin/css/timeline.css')}}" rel="stylesheet">
 
+        <!-- DataTables CSS -->
+        <link href="{{url('/assets/admin/css/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="{{url('/assets/admin/css/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
+
         <!-- Custom CSS -->
         <link href="{{url('/assets/admin/css/startmin.css')}}" rel="stylesheet">
 
@@ -184,7 +190,7 @@
                                         <a href="#">Create banner</a>
                                     </li>
                                     <li>
-                                        <a href="#">List banner</a>
+                                        <a href="{{route('list-banner')}}">List banner</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->

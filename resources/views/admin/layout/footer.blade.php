@@ -9,6 +9,7 @@
         <script src="{{url('assets/admin/js/bootstrap.min.js')}}"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
+
         <script src="{{url('assets/admin/js/metisMenu.min.js')}}"></script>
         <!-- DataTables JavaScript -->
         <script src="{{url('assets/admin/js/dataTables/jquery.dataTables.min.js')}}"></script>
@@ -23,6 +24,5 @@
                 });
             });
         </script>
-
     </body>
 </html>

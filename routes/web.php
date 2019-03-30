@@ -32,5 +32,10 @@ Route::group(['prefix' => '/admin/comments', 'middleware' => array('can_see')], 
 
 Route::group(['prefix' => '/admin/message', 'middleware' => array('can_see')], function () {
     //Comments layout
-    Route::get('/messages', 'MessageController@index')->name('message-index');
+    Route::get('/list-message', 'MessageController@index')->name('list-message');
+});
+
+Route::group(['prefix' => '/admin/banners', 'middleware' => array('can_see')], function () {
+    //Comments layout
+    Route::get('/list-banner', 'BannerController@index')->name('list-banner');
 });
