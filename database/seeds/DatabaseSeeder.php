@@ -52,8 +52,9 @@ class DatabaseSeeder extends Seeder
                 'message' => $faker->phoneNumber,                
             ]);
         }
+        
         foreach (range(1,100) as $index) {
-            DB::table('comments')->insert([
+            DB::table('comments')->insert([                                                  
                 'name' =>$faker->name(),
                 'description' => $faker->paragraph(5),             
                 'type' => $faker->numberBetween(1,2),
