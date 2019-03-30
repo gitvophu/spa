@@ -13,4 +13,8 @@ class HomeController extends Controller
     public function product_detail(){
         return view('client.product_detail');
     }
+
+    public function blog_detail(){
+        return view('client.post_detail');
+    }
 }

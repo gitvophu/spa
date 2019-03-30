@@ -11,5 +11,17 @@
 |
 */
 
+/* Client layout */
+
+//Home layout
 Route::get('/','HomeController@index');
+//Product detail layout
 Route::get('/product-detail','HomeController@product_detail');
+//Blog detail layout
+Route::get('/blog-detail','HomeController@blog_detail');
+
+/* Admin layout */
+
+//Home layout
+Route::get('/admin', 'AdminController@index')->name('admin-index');
+Route::get('/admin/message', 'MessageController@index')->name('message-index');

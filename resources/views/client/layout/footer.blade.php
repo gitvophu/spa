@@ -1,3 +1,4 @@
+
  <!-- Start: Footer Sidebar
     ============================= -->
  <footer id="footer-widgets">
