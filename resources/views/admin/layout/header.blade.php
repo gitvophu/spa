@@ -186,7 +186,7 @@
                                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Banners<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="#">Create banner</a>
+                                        <a href="{{route('create-banner')}}">Create banner</a>
                                     </li>
                                     <li>
                                         <a href="{{route('list-banner')}}">List banner</a>

@@ -41,7 +41,7 @@
                                         </td>
                                         <td width='20%' class="center" >{{$post->getExcerpt()}}</td>
                                         <td class="center">
-                                            <a href="#">Xóa</a>
+                                        <a href="{{route('delete-post',['id'=>$post->id])}}">Xóa</a>
                                             <a href="#">Sửa</a>
                                         </td>
                                     </tr>
