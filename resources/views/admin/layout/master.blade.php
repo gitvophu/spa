@@ -1,3 +1,4 @@
-@extends('admin.layout.header')
+@include('admin.layout.header')
 @yield('content')
-@extends('admin.layout.footer')
+@include('admin.layout.footer')
+@yield('script')
