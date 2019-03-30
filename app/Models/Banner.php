@@ -15,4 +15,12 @@ class Banner extends Model
         return Banner::get();
     }
 
+    public static function deleteBannerByID($id){
+        return Banner::where('id', '=', $id)->delete();
+    }
+
+    public static function findBannerByID($id){
+        return Banner::where('id', '=', $id)->get();
+    }
+
 }

@@ -18,17 +18,24 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form">
+                                    <form role="form" action="{{route('update-banner')}}" enctype="multipart/form-data" method="post">
+                                        {{csrf_field()}}
+                                        @foreach($listBanner as $itemBanner)
                                         <div class="form-group">
                                             <label>File input</label>
                                             <input type="file">
-
+                                            <br>
+                                            <div>
+                                                <img src="{{url('/') . "/assets/img/sliders/" . $itemBanner->image }}" width="100px" height="100px">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="3"></textarea>
+                                            <textarea class="form-control" rows="3">{{ $itemBanner->description }}</textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-default">Create Banner</button>
+                                        @endforeach
+                                        <button type="submit" class="btn btn-default">Update Banner</button>
+
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->

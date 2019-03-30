@@ -40,7 +40,9 @@ Route::group(['prefix' => '/admin/banners', 'middleware' => array('can_see')], f
     Route::get('/list-banner', 'BannerController@index')->name('list-banner');
     Route::get('/create-banner', 'BannerController@create_banner')->name('create-banner');
     Route::post('/create-banner', 'BannerController@store_banner')->name('store-banner');
-    Route::get('/edit-banner', 'BannerController@edit_banner')->name('edit-banner');
+    Route::get('/delete-banner/{id}', 'BannerController@delete_banner')->name('delete-banner');
+    Route::get('/edit-banner/{id}', 'BannerController@edit_banner')->name('edit-banner');
+    Route::post('/update-banner', 'BannerController@update_banner')->name('update-banner');
 });
 
 Route::group(['prefix' => '/admin/posts', 'middleware' => array('can_see')], function () {
