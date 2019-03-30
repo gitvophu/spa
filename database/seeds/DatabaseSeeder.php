@@ -64,6 +64,12 @@ class DatabaseSeeder extends Seeder
                 'created_at' => $faker->dateTimeBetween(),
             ]);
         }
-        
+
+        DB::table('users')->insert([
+                'email' => $faker->email(50),
+                'password' => bcrypt('123456'),
+                'updated_at' => $faker->dateTimeBetween(),
+                'created_at' => $faker->dateTimeBetween(),              
+            ]);
     }
 }

@@ -11,6 +11,10 @@ class Comment extends Model
 
     //Get list comment in comments table
     public static function getListComment(){
-        return Comment::all();
+        return Comment::query()
+            ->join('products', 'products.id', '=', 'comments.product_id')
+            ->join('posts', 'posts.id', '=', 'comments.post_id')
+            ->select('comments.id','comments.description','comments.name', 'type', 'products.name as product_name', 'posts.title')
+            ->get();
     }
 }
