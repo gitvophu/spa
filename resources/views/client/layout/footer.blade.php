@@ -232,7 +232,7 @@
 
  <!-- Custom Script -->
  <script src="assets/js/custom.js"></script>
-
+ @yield('script')    
  </body>
 
  </html>
