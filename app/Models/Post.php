@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     //
+
+    protected $table = 'posts';
+    protected $primaryKey = 'id';
     public function getAll(){
         
     }
@@ -18,4 +21,5 @@ class Post extends Model
         }
         return $this->content;
     }
+    
 }
