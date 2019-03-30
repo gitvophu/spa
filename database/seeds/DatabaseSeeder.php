@@ -17,20 +17,19 @@ class DatabaseSeeder extends Seeder
         //nation
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i < 10; $i++) {
-            App\Models\Post::create([
+        foreach (range(1,10) as $index) {
+            DB::table('posts')->insert([
                 'title' => $faker->sentence(),
                 'image' =>'assets/img/full-width/fullwidth01.jpg',
                 'content' => $faker->paragraph(5),
             ]);
         }
-        for ($i = 0; $i < 10; $i++) {
-            App\Models\Product::create([
+        foreach (range(1,10) as $index) {
+            DB::table('products')->insert([
                 'name' => $faker->sentence(),
                 'price' =>$faker->numberBetween( 10, 1000),
                 'image' =>'assets/img/full-width/fullwidth01.jpg',
-                'description' => $faker->paragraph(5),
-                
+                'description' => $faker->paragraph(5),                
             ]);
         }
         
