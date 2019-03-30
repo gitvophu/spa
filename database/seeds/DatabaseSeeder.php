@@ -32,6 +32,12 @@ class DatabaseSeeder extends Seeder
                 'description' => $faker->paragraph(5),                
             ]);
         }
+        foreach (range(1,10) as $index) {
+            DB::table('banners')->insert([
+                'image' =>'assets/img/full-width/fullwidth01.jpg',
+                'description' => $faker->paragraph(5),
+            ]);
+        }
         
     }
 }

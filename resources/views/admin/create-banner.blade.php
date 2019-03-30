@@ -18,14 +18,15 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form">
+                                    <form role="form" action="{{route('create-banner')}}">
+                                        {{csrf_field()}}
                                         <div class="form-group">
                                             <label>File input</label>
-                                            <input type="file">
+                                            <input type="file" id="image" name="image">
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="3"></textarea>
+                                            <textarea id="description" name="description" class="form-control" rows="3"></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-default">Create Banner</button>
                                     </form>

@@ -12,10 +12,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        DataTables Advanced Tables
-                    </div>
-            <!-- /.panel-heading -->
+                    {{--<div class="panel-heading">--}}
+                        {{--DataTables Advanced Tables--}}
+                    {{--</div>--}}
+            {{--<!-- /.panel-heading -->--}}
                     <div class="panel-body">
                         <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -29,20 +29,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center"><i class="fa fa-trash-o fa-fw"></i></td>
-                                    <td class="center"><i class="fa fa-pencil fa-fw"></i></td>
+                            @foreach($listBanner as $itemBanner )
+                                <tr class="">
+                                    <td style="text-align: center;">{{ $itemBanner->id }}</td>
+                                    <td><img src="{{url('/') . "/" . $itemBanner->image }}" width="100px" height="100px"></td>
+                                    <td>{{ $itemBanner->description }}</td>
+                                    <td style="text-align: center;"><i class="fa fa-trash-o fa-fw"></i></td>
+                                    <td style="text-align: center;"><a href="{{route('edit-banner')}}"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center"><i class="fa fa-trash-o fa-fw"></i></td>
-                                    <td class="center"><i class="fa fa-pencil fa-fw"></i></td>
-                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                 </div>
