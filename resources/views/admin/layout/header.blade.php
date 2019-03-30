@@ -26,10 +26,10 @@
         <link href="{{url('/assets/admin/css/timeline.css')}}" rel="stylesheet">
 
         <!-- DataTables CSS -->
-        <link href="assets/admin/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="{{url('/assets/admin/css/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
 
         <!-- DataTables Responsive CSS -->
-        <link href="assets/admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
+        <link href="{{url('/assets/admin/css/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
 
         <!-- Custom CSS -->
         <link href="{{url('/assets/admin/css/startmin.css')}}" rel="stylesheet">
