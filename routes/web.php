@@ -24,6 +24,8 @@ Route::get('/blog-detail','HomeController@blog_detail');
 Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function () {
     //Home layout
     Route::get('/', 'AdminController@index')->name('admin-index');
+    Route::get('/ad-login', 'AdminController@ad_login')->name('ad-login');
+    Route::post('/ad-login', 'AdminController@doLogin')->name('ad-login');
 });
 Route::group(['prefix' => '/admin/comments', 'middleware' => array('can_see')], function () {
     //Comments layout

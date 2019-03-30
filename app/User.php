@@ -79,39 +79,7 @@ class User extends Authenticatable
         return $data;
     }
 
-    public static function try_login($credentials)
-    {
-        $flag = false;
-        $user_attempt = User::where('email', $credentials['email'])->first();
-        if (Auth::attempt($credentials)) {
-
-            User::where('email', $credentials['email'])
-                ->update([
-                    'attempt' => 0,
-                ]);
-            // return redirect()->route('index');
-            $flag = true;
-        } else {
-
-            if ($user_attempt) {
-                User::where('email', $credentials['email'])
-                    ->update([
-                        'last_access' => date('Y-m-d H:i:s'),
-                        'attempt' => $user_attempt->attempt + 1,
-                    ]);
-                if ($user_attempt->attempt + 1 >= 3) {
-                    User::where('email', $credentials['email'])
-                        ->update([
-                            'active' => 0,
-                        ]);
-                }
-            }
-            $flag = false;
-            // return redirect()->route('login-get')->with('fail_msg','Sai tài khoản hoặc mật khẩu');
-
-        }
-        return $flag;
-    }
+    
 
     public static function updateUser($data)
     {
