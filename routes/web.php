@@ -42,3 +42,11 @@ Route::group(['prefix' => '/admin/banners', 'middleware' => array('can_see')], f
     Route::post('/create-banner', 'BannerController@store_banner')->name('store-banner');
     Route::get('/edit-banner', 'BannerController@edit_banner')->name('edit-banner');
 });
+
+Route::group(['prefix' => '/admin/posts', 'middleware' => array('can_see')], function () {
+    //Comments layout
+    Route::get('/', 'PostController@index')->name('list-post');
+    Route::get('/create', 'PostController@create')->name('create-post');
+    Route::get('/detele', 'PostController@delete')->name('delete-post');
+    Route::get('/edit', 'PostController@edit')->name('edit-post');
+});

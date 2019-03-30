@@ -173,7 +173,7 @@
                                 <a href="#"><i class="fa fa-table fa-fw"></i> Posts</a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="#">Create post</a>
+                                    <a href="{{route('create-post')}}">Create post</a>
                                     </li>
                                     <li>
                                         <a href="#">List post</a>

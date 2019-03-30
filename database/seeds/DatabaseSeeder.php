@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1,100) as $index) {
             DB::table('posts')->insert([
                 'title' => $faker->sentence(),
-                'image' =>'assets/img/full-width/fullwidth01.jpg',
+                'image' =>'fullwidth01.jpg',
                 'content' => $faker->paragraph(5),
                 'updated_at' => $faker->dateTimeBetween(),
                 'created_at' => $faker->dateTimeBetween(),
@@ -34,13 +34,13 @@ class DatabaseSeeder extends Seeder
             DB::table('products')->insert([
                 'name' => $faker->sentence(),
                 'price' =>$faker->numberBetween( 10, 1000),
-                'image' =>'assets/img/full-width/fullwidth01.jpg',
+                'image' =>'fullwidth01.jpg',
                 'description' => $faker->paragraph(5),                
             ]);
         }
         foreach (range(1,100) as $index) {
             DB::table('banners')->insert([
-                'image' =>'assets/img/full-width/fullwidth01.jpg',
+                'image' =>'fullwidth01.jpg',
                 'description' => $faker->paragraph(5),             
             ]);
         }
@@ -52,8 +52,9 @@ class DatabaseSeeder extends Seeder
                 'message' => $faker->phoneNumber,                
             ]);
         }
+
         foreach (range(1,100) as $index) {
-            DB::table('comments')->insert([
+            DB::table('comments')->insert([                                                  
                 'name' =>$faker->name(),
                 'description' => $faker->paragraph(5),             
                 'type' => $faker->numberBetween(1,2),
