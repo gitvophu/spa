@@ -12,4 +12,7 @@ class BannerController extends Controller
     public function create_banner(){
         return view('admin.create-banner');
     }
+    public function edit_banner(){
+        return view('admin.edit-banner');
+    }
 }
