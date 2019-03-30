@@ -29,11 +29,14 @@ Route::group(['prefix' => '/admin/comments', 'middleware' => array('can_see')], 
     //Comments layout
     Route::get('/list-comment', 'CommentController@index')->name('list-comment');
 });
+
+Route::group(['prefix' => '/admin/message', 'middleware' => array('can_see')], function () {
+    //Comments layout
+    Route::get('/list-message', 'MessageController@index')->name('list-message');
+});
+
 Route::group(['prefix' => '/admin/banners', 'middleware' => array('can_see')], function () {
     //Comments layout
     Route::get('/list-banner', 'BannerController@index')->name('list-banner');
     Route::get('/create-banner', 'BannerController@create_banner')->name('create-banner');
 });
-// Route::get('/posts', 'PostController@index')->name('admin-posts');
-// Route::get('/messages', 'MessageController@index')->name('admin-messages');
-
