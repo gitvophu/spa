@@ -32,7 +32,7 @@
                             @foreach($listBanner as $itemBanner )
                                 <tr class="">
                                     <td style="text-align: center;">{{ $itemBanner->id }}</td>
-                                    <td><img src="{{url('/') . "/" . $itemBanner->image }}" width="100px" height="100px"></td>
+                                    <td><img src="{{url('/') . "/assets/img/sliders/" . $itemBanner->image }}" width="100px" height="100px"></td>
                                     <td>{{ $itemBanner->description }}</td>
                                     <td style="text-align: center;"><i class="fa fa-trash-o fa-fw"></i></td>
                                     <td style="text-align: center;"><a href="{{route('edit-banner')}}"><i class="fa fa-pencil fa-fw"></i></a></td>

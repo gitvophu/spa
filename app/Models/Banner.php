@@ -15,11 +15,4 @@ class Banner extends Model
         return Banner::get();
     }
 
-    //insert img, description in table banners
-    public static function insertBanner($data){
-        Banner::insert([
-            'image' => $data['image'],
-            'description' => $data['description'],
-        ]);
-    }
 }

@@ -1,10 +1,12 @@
 <?php
 
-use App\Post;
+
 use Faker\Factory;
+use App\Models\Post;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,14 +19,18 @@ class DatabaseSeeder extends Seeder
         //nation
         $faker = Faker\Factory::create();
 
-        foreach (range(1,10) as $index) {
+        //
+        foreach (range(1,100) as $index) {
             DB::table('posts')->insert([
                 'title' => $faker->sentence(),
                 'image' =>'assets/img/full-width/fullwidth01.jpg',
                 'content' => $faker->paragraph(5),
+                'updated_at' => $faker->dateTimeBetween(),
+                'created_at' => $faker->dateTimeBetween(),
+               
             ]);
         }
-        foreach (range(1,10) as $index) {
+        foreach (range(1,100) as $index) {
             DB::table('products')->insert([
                 'name' => $faker->sentence(),
                 'price' =>$faker->numberBetween( 10, 1000),
@@ -32,10 +38,29 @@ class DatabaseSeeder extends Seeder
                 'description' => $faker->paragraph(5),                
             ]);
         }
-        foreach (range(1,10) as $index) {
+        foreach (range(1,100) as $index) {
             DB::table('banners')->insert([
                 'image' =>'assets/img/full-width/fullwidth01.jpg',
-                'description' => $faker->paragraph(5),
+                'description' => $faker->paragraph(5),             
+            ]);
+        }
+        foreach (range(1,100) as $index) {
+            DB::table('messages')->insert([
+                'name' =>$faker->name(),
+                'phone' => $faker->paragraph(5),             
+                'email' => $faker->paragraph,             
+                'message' => $faker->phoneNumber,                
+            ]);
+        }
+        foreach (range(1,100) as $index) {
+            DB::table('comments')->insert([
+                'name' =>$faker->name(),
+                'description' => $faker->paragraph(5),             
+                'type' => $faker->numberBetween(1,2),
+                'product_id' => Product::get()->random(1)->first()->id,                
+                'post_id' => Post::get()->random(1)->first()->id,  
+                'updated_at' => $faker->dateTimeBetween(),
+                'created_at' => $faker->dateTimeBetween(),
             ]);
         }
         

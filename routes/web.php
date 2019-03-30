@@ -39,5 +39,6 @@ Route::group(['prefix' => '/admin/banners', 'middleware' => array('can_see')], f
     //Comments layout
     Route::get('/list-banner', 'BannerController@index')->name('list-banner');
     Route::get('/create-banner', 'BannerController@create_banner')->name('create-banner');
+    Route::post('/create-banner', 'BannerController@store_banner')->name('store-banner');
     Route::get('/edit-banner', 'BannerController@edit_banner')->name('edit-banner');
 });
