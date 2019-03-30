@@ -321,8 +321,4 @@
             <!-- End Mobile Menu -->
         </div>        
     </section>
-<<<<<<< HEAD
-    <!-- End: Navigation-->
-=======
-   
->>>>>>> fe4f320c85f4a265f8efd5e3640fbff48d744452
+<!-- End: Navigation-->
