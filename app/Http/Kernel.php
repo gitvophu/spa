@@ -61,5 +61,6 @@ class Kernel extends HttpKernel
 
         'can_see' => \LaravelAcl\Http\Middleware\CanSee::class, 
         'has_perm' => \LaravelAcl\Http\Middleware\HasPerm::class,
+        'admin' => \App\Http\Middleware\IsAdmin::class,
     ];
 }

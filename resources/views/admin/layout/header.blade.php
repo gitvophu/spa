@@ -25,12 +25,6 @@
         <!-- Timeline CSS -->
         <link href="{{url('/assets/admin/css/timeline.css')}}" rel="stylesheet">
 
-        <!-- DataTables CSS -->
-        <link href="{{url('/assets/admin/css/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
-
-        <!-- DataTables Responsive CSS -->
-        <link href="{{url('/assets/admin/css/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
-
         <!-- Custom CSS -->
         <link href="{{url('/assets/admin/css/startmin.css')}}" rel="stylesheet">
 
@@ -124,18 +118,17 @@
                         </ul>
                     </li>
                     <li class="dropdown">
+                    @if(Auth::check())
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> secondtruth <b class="caret"></b>
+                            <i class="fa fa-user fa-fw"></i> {{Session::get('email')}} <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li><a href="#"><i class="fa fa-user fa-fw"></i> Change password</a>
                             </li>
-                            <!-- <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li> -->
-                            <li><a href="{{route('ad-login')}}"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+                            <li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>
+                    @endif
                     </li>
                 </ul>
                 <!-- /.navbar-top-links -->

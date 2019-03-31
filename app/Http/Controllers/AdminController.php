@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Auth\CheckLoginController;
 
 class AdminController extends Controller
 {
+
     public function index(){
         return view('admin.home');
     }
@@ -26,11 +28,6 @@ class AdminController extends Controller
 
     public function doLogin(Request $request)
     {
-        // if($request->input('email') == null || $request->input('password') == null)
-        // {
-        //     $errors = new MessageBag(['login' => 'Vui lòng nhập thông tin Email hoặc Mật Khẩu!']);
-        //     return redirect()->back()->withInput()->withErrors($errors);
-        // }
         $validator = Validator::make($request->all(), 
             [
                 'email' =>'required|email',
@@ -47,20 +44,21 @@ class AdminController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            try {
-                if (Auth::attempt(['email' => $email, 'password' => $password])) {
-                    Session::put('email', $data->email);
-                    Session::put('login', TRUE);
-                    return redirect('/');
-                } else {
-                    $errors = new MessageBag(['errors' => 'Email hoặc mật khẩu không đúng!']);
-                    return redirect()->back()->withInput()->withErrors($errors);
-                }
-                
-            }catch (\Exception $exception)
-            {
-                return redirect()->back()->withInput()->withErrors($exception);
-            }
+            $email = $request->input('email');
+            $password = $request->input('password');
+            $remember_me = $request->has('remember') ? true : false;
+            if (Auth::attempt(['email' => $email, 'password' => $password], $remember_me)) {
+                Session::put('email', $email);
+                return redirect('/admin');
+            } else {
+                $errors = new MessageBag(['errors' => 'Email hoặc mật khẩu không đúng!']);
+                return redirect()->back()->withInput()->withErrors($errors);
+            }                
         }
+    }
+
+    public function logout(){
+        Auth::logout();
+        return Redirect::to('/admin/ad-login'); // redirect the user to the login screen
     }
 }
