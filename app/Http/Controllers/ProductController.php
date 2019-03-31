@@ -28,7 +28,7 @@ class ProductController extends Controller
     	$product = new Product();
     	if(Input::hasFile('imageproduct')){
             $file = Input::file('imageproduct');
-            $file->move(public_path().'/assets/img/full-width', $file->getClientOriginalName());
+            $file->move(public_path().'/assets/img/product', $file->getClientOriginalName());
             $product->image = $file->getClientOriginalName();
         }
         $product->name = $request->nameproduct;
@@ -49,7 +49,7 @@ class ProductController extends Controller
     //sửa sản phẩm
     public function update($product_id)
     {
-    	$product = Product::find($product_id)->toArray();
+    	$product = Product::find($product_id);
     	return view('admin.product.update_product',compact('product'));
     }
 
@@ -59,15 +59,16 @@ class ProductController extends Controller
         $product = Product::find($request->idproduct);
         if(Input::hasFile('imageproduct'))
         {
+            // $oldFile = $product->image;
+            // Storage::delete($oldFile);
             $file = Input::file('imageproduct');
-            $file->move(public_path().'assets/img/full-width',$file->getClientOriginalName());
-            $oldFile = $product->image;
-            Storage::delete($oldFile);
+            $file->move(public_path().'/assets/img/product', $file->getClientOriginalName());
+            $product->image = $file->getClientOriginalName();  
         }
         $product->name = $request->nameproduct;
         $product->description= $request->desproduct;
         $product->price = $request->priceproduct;
         $product->save();
-        return redirect()->route('list-product',['id'=>$request->idproduct])->with(['message' =>'Cập nhật thành công']);
+        return redirect()->route('list-product')->with(['message' =>'Cập nhật thành công']);
     }
 }
