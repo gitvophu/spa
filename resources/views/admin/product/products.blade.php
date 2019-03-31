@@ -6,6 +6,18 @@
                         <div class="col-lg-12">
                             <h1 class="page-header">Product</h1>
                         </div>
+                        <?php 
+                            $message = Session::get('message');
+                         ?>
+                         @if(isset($message))
+                         
+                            <div class="alert alert-success">{!! $message !!}</div>
+                         @endif
+                        @if($errors->any() )
+                            @foreach($errors->all() as $err)
+                                <div class="alert alert-danger">{!! $err !!}</div>
+                            @endforeach
+                        @endif
                         <!-- /.col-lg-12 -->
                     </div>
                     <!-- /.row -->
@@ -31,10 +43,12 @@
                                                     <td>{{$product['id']}}</td>
                                                     <td>{{$product['name']}}</td>
                                                     <td>{{$product['price']}}</td>
-                                                    <td>{{$product['image']}}</td>  
+                                                    <td><img src="{{asset($product['image'])}}" alt=""></td>
+                                                    
+                                                    <!-- <td>{{$product['image']}}</td>   -->
                                                     <td class="center">{{$product['description']}}</td>
                                                     <td><button><a href="{{route('delete-product',['id'=>$product['id']])}}">Xóa</a></button></td>
-                                                    <td><button><a href="{{route('update-product',['id'=>$product['id']])}}">Sửa</a></button></td>
+                                                    <td><button><a href="{{route('update',['id'=>$product['id']])}}">Sửa</a></button></td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

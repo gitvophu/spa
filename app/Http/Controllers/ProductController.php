@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -27,7 +28,7 @@ class ProductController extends Controller
     	$product = new Product();
     	if(Input::hasFile('imageproduct')){
             $file = Input::file('imageproduct');
-            $file->move(public_path().'/upload', $file->getClientOriginalName());
+            $file->move(public_path().'/assets/img/full-width', $file->getClientOriginalName());
             $product->image = $file->getClientOriginalName();
         }
         $product->name = $request->nameproduct;
@@ -41,14 +42,32 @@ class ProductController extends Controller
     public function delete_product($product_id)
     {
     	$product = Product::find($product_id)->delete();
-    	return redirect()->route('list-product');
+    	return redirect()->route('list-product')->with(['message' => 'Xóa thành công']);
     }
 
 
     //sửa sản phẩm
-    // public function update($product_id)
-    // {
-    // 	$product = Product::find($product_id)->toArray();
-    // 	return view('')
-    // }
+    public function update($product_id)
+    {
+    	$product = Product::find($product_id)->toArray();
+    	return view('admin.product.update_product',compact('product'));
+    }
+
+    //sửa sản phẩm
+    public function update_product(Request $request)
+    {
+        $product = Product::find($request->idproduct);
+        if(Input::hasFile('imageproduct'))
+        {
+            $file = Input::file('imageproduct');
+            $file->move(public_path().'assets/img/full-width',$file->getClientOriginalName());
+            $oldFile = $product->image;
+            Storage::delete($oldFile);
+        }
+        $product->name = $request->nameproduct;
+        $product->description= $request->desproduct;
+        $product->price = $request->priceproduct;
+        $product->save();
+        return redirect()->route('list-product',['id'=>$request->idproduct])->with(['message' =>'Cập nhật thành công']);
+    }
 }
