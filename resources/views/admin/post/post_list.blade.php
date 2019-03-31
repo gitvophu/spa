@@ -36,7 +36,7 @@
                                     <td width='5%'>{{$loop->index+1}}</td>
                                     <td width='30%'>{{$post->title}}</td>
                                         <td width='30%'>
-                                            <img src="{{asset($post->image)}}" alt=""
+                                            <img src="{{asset('/assets/img/full-width/' . $post->image)}}" alt=""
                                             class="img-responsive">
                                         </td>
                                         <td width='20%' class="center" >{{$post->getExcerpt()}}</td>

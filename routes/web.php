@@ -54,6 +54,7 @@ Route::group(['prefix' => '/admin/products', 'middleware' => array('can_see')], 
     Route::get('delete/{id}', 'ProductController@delete_product')->name('delete-product');
     Route::get('update/{id}', 'ProductController@update')->name('update');
     Route::post('update', 'ProductController@update_product')->name('update-product');
+});
 Route::group(['prefix' => '/admin/posts', 'middleware' => array('can_see')], function () {
     //Comments layout
     Route::get('/', 'PostController@index')->name('list-post');
