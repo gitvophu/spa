@@ -28,4 +28,23 @@ class PostController extends Controller
        Post::find($id)->delete();
        return redirect()->route('list-post');
     }
+
+    function store(Request $request){
+
+        $file = $request->file('image');
+        $img_name = $file->getClientOriginalName();
+        $file->move('uploads/image',$img_name);
+        $post = new Post();
+        $post->image = $img_name;
+        $post->title = $request->title;
+        $post->content = $request->title;
+        $post->created_at = date('Y-m-d');
+        $post->updated_at = date('Y-m-d');
+        // $post->title = $request->title;
+        
+        dd(';tc');
+        
+
+
+    }
 }

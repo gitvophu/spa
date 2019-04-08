@@ -22,7 +22,8 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                <form role="form" method="POST" action="">
+                                <form role="form" method="POST" action="{{route('store-post')}}" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
                                         <div class="form-group ">
                                             <label>Tiêu đề</label>
                                             <input class="form-control" name="title">
