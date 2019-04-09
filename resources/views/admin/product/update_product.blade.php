@@ -26,28 +26,28 @@
                                 <div class="panel-body">
                                     <div class="table-responsive">
                                        <form action="{{route('update-product')}}"  enctype="multipart/form-data" method="POST" role="form">
-                                       
+                                       {{csrf_field()}}
                                             <legend>Sửa Sản Phẩm</legend>
-                                        
+                                            <input type="hidden" class="form-control" id="idproduct" value="{{$product['id']}}" name="idproduct" >
                                             <div class="form-group">
                                                 <label for="">Tên Sản phẩm</label>
-                                                <input type="text" class="form-control" id="nameproduct" name="nameproduct" placeholder="Nhập tên sản phẩm">
+                                                <input type="text" class="form-control" id="nameproduct" value="{{$product['name']}}" name="nameproduct" >
                                             </div>
                                         
                                              <div class="form-group">
                                                 <label for="">Giá Sản phẩm</label>
-                                                <input type="text" class="form-control" id="priceproduct" name="priceproduct" placeholder="Nhập giá sản phẩm">
+                                                <input type="text" class="form-control" id="priceproduct" value="{{$product['price']}}" name="priceproduct" >
                                             </div>
                                         
                                             
                                             <div class="form-group">
                                                 <label for="">Hình ảnh </label>
-                                                <input type="file" class="form-control" id="imageproduct" name="imageproduct">
+                                                <input type="file" value="{{$product['image']}}" class="form-control" id="imageproduct" name="imageproduct">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="">Mô tả sản phẩm</label>
-                                                <input type="text" class="form-control" id="desproduct" name="desproduct" placeholder="Nhập mô tả sản phẩm">
+                                                <input type="text" value="{{$product['description']}}" class="form-control" id="desproduct" name="desproduct" >
                                             </div>
                                             <button type="submit" class="btn btn-primary" id="btnUpdate">Cập Nhật</button>
                                         </form>
