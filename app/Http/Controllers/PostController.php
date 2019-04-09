@@ -30,24 +30,44 @@ class PostController extends Controller
         $validator = Validator::make($request->all(),[
             'title'=>'required',
             'content'=>'required',
+<<<<<<< HEAD
             // 'image'=>'required',
+=======
+            'image'=>'required',
+>>>>>>> 4b50b2e316afb1837cf7c6a82d089110b4100ee1
             'post_id'=>'required'
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
+<<<<<<< HEAD
             // 'image.required'=>'Bạn chưa chọn ảnh'
+=======
+            'image.required'=>'Bạn chưa chọn ảnh'
+>>>>>>> 4b50b2e316afb1837cf7c6a82d089110b4100ee1
         ]);
         
         if ($validator->fails()) {
         
             
+<<<<<<< HEAD
             return redirect()->route('edit-post',$request->post_id)->withErrors($validator) ;
         }
         $post = Post::find($request->post_id);
+=======
+            return redirect()->route('edit-post')->withErrors($validator)->with($data);
+        }
+        $file = $request->file('image');
+        $img_name = $file->getClientOriginalName();
+        $file->move('uploads/post',$img_name);
+        $post = Post::find($request->post_id);
+        $old_img_name = $post->image;
+        $post->image = $img_name;
+>>>>>>> 4b50b2e316afb1837cf7c6a82d089110b4100ee1
         $post->title = $request->title;
         $post->content = $request->content;
         $post->created_at = date('Y-m-d');
         $post->updated_at = date('Y-m-d');
+<<<<<<< HEAD
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $img_name = $file->getClientOriginalName();
@@ -65,6 +85,13 @@ class PostController extends Controller
         
         // $post->title = $request->title;
         // dd('tc');
+=======
+        $post->save();
+        //xoa anh cũ
+        unlink('uploads/post/'.$old_img_name);
+        // $post->title = $request->title;
+        
+>>>>>>> 4b50b2e316afb1837cf7c6a82d089110b4100ee1
         return redirect()->route('edit-post',$request->post_id)->with('success','Chỉnh sửa bài viết thành công');
     }
 
