@@ -169,7 +169,7 @@
                                     <a href="{{route('create-post')}}">Create post</a>
                                     </li>
                                     <li>
-                                        <a href="#">List post</a>
+                                    <a href="{{route('list-post')}}">List post</a>
                                     </li>
                                 </ul>
                             </li>
