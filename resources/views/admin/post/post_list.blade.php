@@ -5,7 +5,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Tables</h1>
+                <h1 class="page-header">DANH SÁCH BÀI VIẾT</h1>
+                @if (session()->has('success'))
+                <p class="alert alert-success"><strong>{{session('success')}}</strong></p>    
+                    @endif
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $err)
+                        <p class="alert alert-danger"><strong>{{$err}}</strong></p>    
+                        @endforeach
+                    @endif
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -14,7 +22,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        DataTables Advanced Tables
+                        Bài viết
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -36,13 +44,13 @@
                                     <td width='5%'>{{$loop->index+1}}</td>
                                     <td width='30%'>{{$post->title}}</td>
                                         <td width='30%'>
-                                            <img src="{{asset($post->image)}}" alt=""
+                                            <img src="{{asset('/uploads/post/'.$post->image)}}" alt=""
                                             class="img-responsive">
                                         </td>
                                         <td width='20%' class="center" >{{$post->getExcerpt()}}</td>
                                         <td class="center">
-                                        <a href="{{route('delete-post',['id'=>$post->id])}}">Xóa</a>
-                                            <a href="#">Sửa</a>
+                                        <a href="{{route('delete-post',['id'=>$post->id])}}" onclick="return confirm('Bạn có chắc muốn xoá bài viết ?')">Xóa</a>
+                                        <a href="{{route('edit-post',['post_id'=>$post->id])}}">Sửa</a>
                                         </td>
                                     </tr>
                                     @endforeach

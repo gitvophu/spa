@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">TẠO BÀI VIẾT</h1>
+                    <h1 class="page-header">CHỈNH SỬA BÀI VIẾT</h1>
                     @if (session()->has('success'))
                 <p class="alert alert-success"><strong>{{session('success')}}</strong></p>    
                     @endif
@@ -25,18 +25,17 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            {{-- Form tạo bài viết --}}
+                            Bài viết
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                <form role="form" method="POST" action="{{route('store-post')}}" enctype="multipart/form-data">
+                                <form role="form" method="POST" action="{{route('update-post')}}" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                         <div class="form-group ">
                                             <label>Tiêu đề</label>
-                                            <input class="form-control" name="title" value="<?php if (session()->has('title')) {
-                                                echo session('title');
-                                            }?>">
+                                        <input type="hidden" name="post_id" value="{{$post_id}}">
+                                        <input class="form-control" name="title" value="{{$post->title}}">
                                             
                                             {{-- <p class="help-block">Example block-level help text here.</p> --}}
                                         </div>
@@ -50,9 +49,8 @@
                                         <div class="form-group">
                                             <label>Nội dung</label>
                                             <textarea name="content" id="ckeditor1" class="form-control" rows="5">
-                                                @if (session()->has('content'))
-                                                {{session('content')}}
-                                            @endif
+                                                {{$post->content}}
+                                            
                                             </textarea>
                                             <script>
                                                 CKEDITOR.replace('ckeditor1')

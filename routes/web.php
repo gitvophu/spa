@@ -68,5 +68,6 @@ Route::group(['prefix' => '/admin/posts', 'middleware' => array('admin','can_see
     Route::get('/create', 'PostController@create')->name('create-post');
     Route::post('/store', 'PostController@store')->name('store-post');
     Route::get('/detele/{id}', 'PostController@delete')->name('delete-post');
-    Route::get('/edit', 'PostController@edit')->name('edit-post');
+    Route::get('/edit/{post_id}', 'PostController@edit')->name('edit-post');
+    Route::post('/update', 'PostController@update')->name('update-post');
 });
