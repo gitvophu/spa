@@ -18,7 +18,7 @@ Route::get('/','HomeController@index');
 //Product detail layout
 Route::get('/product-detail','HomeController@product_detail');
 //Blog detail layout
-Route::get('/blog-detail','HomeController@blog_detail');
+Route::get('/post-detail/{post_id}','PostController@post_detail');
 
 /* Admin layout */
 Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function () {
@@ -65,7 +65,7 @@ Route::group(['prefix' => '/admin/products', 'middleware' => array('admin','can_
 Route::group(['prefix' => '/admin/posts', 'middleware' => array('admin','can_see')], function () {
 
     //Comments layout
-    Route::get('/', 'PostController@index')->name('list-post');
+    Route::get('/', 'PostController@list_post')->name('list-post');
     Route::get('/create', 'PostController@create')->name('create-post');
     Route::post('/store', 'PostController@store')->name('store-post');
     Route::get('/detele/{id}', 'PostController@delete')->name('delete-post');

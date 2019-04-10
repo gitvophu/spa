@@ -45,12 +45,10 @@
                                 <li><a href="#"><i class="fas fa-comments"></i>3 Comments</a></li>
                             </ul>
                         </div>
-                            <h5 class="pb-3 pt-4">We are always looking for specific approach to each cases...</h5>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered that alteration in some form by injected humour or  the an  randomised words which don't look even evry slightly believable. If you are going to use a passage of Lorem Ipsum you need to be sure there isn't is anything aembarrassing hidden in the middle of text.Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words.</p>
-                            <br>
-                            <p>Bontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                            <br>
-                            <p>The face of the moon was in shadow.The spectacle before us was indeed sublime.All their equipment tha and instruments are alive.All their equipment and instruments are alive.I watched the storm, so beautiful yet terrific.Silver mist suffused the deck of the ship.The recorded voice scratched in the speaker.Almost is before we knew it, we had left the ground.ilver mist suffused the deck of the ship.</p>
+                            <h5 class="pb-3 pt-4">{{$post->title}}</h5>
+                            <div>
+                                {!!$post->content!!}
+                            </div>
                         </div>
                         
                         <div class="meta-data">
@@ -85,17 +83,21 @@
                                     <div class="media-left">
                                         <a href="#"><img alt="" src="assets/img/blog-sidebar/avatar01.png"> </a>
                                     </div>
+                                    @foreach ($comments as $cmt)
+                                        
+                                    
                                     <div class="media-body">
-                                        <h5 class="comment-author"><a href="#">Jennifer Aniston</a></h5>
-                                        <p class="comment">There are many variations of passages of Lorem Ipsum available, but the majority have  alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything barrassing hidden in the middle of text. </p>
+                                        <h5 class="comment-author"><a href="#">{{$cmt->name}}</a></h5>
+                                        <p class="comment">{{$cmt->description}} </p>
                                         <a href="#" class="comment-date">October 19,2018</a>
                                         <ul>
                                             <li><i class="fas fa-thumbs-up"></i>108</li>
                                             <li class="comment-replay"><i class="fas fa-external-link-alt"></i>Reply</li>
                                         </ul>
                                     </div>
+                                    @endforeach
                                 </li>
-                                <li class="media-replay">
+                                {{-- <li class="media-replay">
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#"><img alt="" src="assets/img/blog-sidebar/avatar02.png"> </a>
@@ -110,7 +112,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </li>
+                                </li> --}}
                                 <li class="media">
                                     <div class="media-left">
                                         <a href="#"><img alt="" src="assets/img/blog-sidebar/avatar03.png"> </a>
