@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         
-                        <div class="meta-data">
+                        {{-- <div class="meta-data">
                             <ul>
                                 <li class="pr-1">Tags:</li>
                                 <li><a href="#">Massage,</a></li>
@@ -79,7 +79,7 @@
                                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                 <li><a href="#"><i class="fab fa-envelope"></i></a></li>
                             </ul>
-                        </div>
+                        </div> --}}   
 
                         <hr>
 
@@ -107,7 +107,7 @@
                                 {{-- <li class="media-replay">
                                     <div class="media">
                                         <div class="media-left">
-                                            <a href="#"><img alt="" src="assets/img/blog-sidebar/avatar02.png"> </a>
+                                            <a href="#"><img alt="" src="{{asset('')}}assets/img/blog-sidebar/avatar02.png"> </a>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="comment-author"><a href="#">Tony Robbins</a></h5>
@@ -162,7 +162,7 @@
                     <section class="sidebar">
                         
                         <aside class="widget widget-search">
-                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Search</h5>
+                            <h5 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Search</h5>
                             <form class="search-form" action="#">
                                 <span class="input input--hantus">
                                     <input class="input__field input__field--hantus" type="text" id="input-01" />
@@ -178,71 +178,66 @@
                         </aside>
 
                         <aside class="widget widdget-recent-post">
-                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Recent News</h5>
+                            <h5 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Bài viết mới</h5>
+                            @foreach ($relatetive_posts as $post)
+                                
+                         
                             <div class="recent-post">
-                                <a href="#"><h6>Stephenson will bring his trademark leadership approach to Elements Massage</h6></a>
-                                <p>Jul 08, 2017</p>
+                                <a href="{{route('post-detail',['post_id'=>$post->id])}}"><h6>{{$post->title}}</h6></a>
+                                <?php
+                                    $date = new DateTime($post->created_at);
+                                ?>
+                                <p>{{$date->format('Y-m-d')}}</p>
                             </div>
-                            <div class="recent-post">
-                                <a href="#"><h6>In addition to Stephenson’s internal he will also serve as a spokesperson.</h6></a>
-                                <p>Jul 08, 2017</p>
-                            </div>
-                            <div class="recent-post">
-                                <a href="#"><h6>In addition to Stephenson’s internal he will also serve as a spokesperson.</h6></a>
-                                <p>Jul 08, 2017</p>
-                            </div>
-                            <div class="recent-post">
-                                <a href="#"><h6>To learn more about Elements Massage and franchise.</h6></a>
-                                <p>Jul 08, 2017</p>
-                            </div>
+                            @endforeach
                         </aside>
 
-                        <aside class="widget widdget-instagram">
-                            <h4 class="widget-title"><img src="assets/img/section-icon.png" alt="">Instagram</h4>
+                        {{-- <aside class="widget widdget-instagram">
+                            <h4 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Instagram</h4>
                             <ul class="instagram-photos">                                
                                 <li>
-                                    <img src="assets/img/instagram/instagram01.jpg" alt="">
+                                    <img src="{{asset('')}}assets/img/instagram/instagram01.jpg" alt="">
                                     <div class="instagram-overlay">
                                         <a href="#">+</a>
                                     </div>
                                 </li>                                
                                 <li>
-                                    <img src="assets/img/instagram/instagram02.jpg" alt="">
+                                    <img src="{{asset('')}}assets/img/instagram/instagram02.jpg" alt="">
                                     <div class="instagram-overlay">
                                         <a href="#">+</a>
                                     </div>
                                     
                                 </li>                                
                                 <li>
-                                    <img src="assets/img/instagram/instagram03.jpg" alt="">
+                                    <img src="{{asset('')}}assets/img/instagram/instagram03.jpg" alt="">
                                     <div class="instagram-overlay">
                                         <a href="#">+</a>
                                     </div>
                                 </li>                               
                                 <li>
-                                    <img src="assets/img/instagram/instagram04.jpg" alt="">
+                                    <img src="{{asset('')}}assets/img/instagram/instagram04.jpg" alt="">
                                     <div class="instagram-overlay">
                                         <a href="#">+</a>
                                     </div>
                                 </li>                                
                                 <li>
-                                    <img src="assets/img/instagram/instagram05.jpg" alt="">
+                                    <img src="{{asset('')}}assets/img/instagram/instagram05.jpg" alt="">
                                     <div class="instagram-overlay">
                                         <a href="#">+</a>
                                     </div>
                                     
                                 </li>                                
                                 <li>
-                                    <img src="assets/img/instagram/instagram06.jpg" alt="">
+                                    <img src="{{asset('')}}assets/img/instagram/instagram06.jpg" alt="">
                                     <div class="instagram-overlay">
                                         <a href="#">+</a>
                                     </div>
                                 </li>
                             </ul>
-                        </aside>
+                        </aside> --}}
 
-                        <aside class="widget widget-tag">
-                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Tags</h5>
+                        {{-- <aside class="widget widget-tag">
+                            <h5 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Tags</h5>
                             <ul class="tags">
                                 <li><a href="#">News</a></li>
                                 <li><a href="#">Popular</a></li>
@@ -255,10 +250,10 @@
                                 <li><a href="#">Skin Care</a></li>
                                 <li><a href="#">Massage Body</a></li>
                             </ul>
-                        </aside>
+                        </aside> --}}
 
-                        <aside class="widget widget-acrhives">
-                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Archives</h5>
+                        {{-- <aside class="widget widget-acrhives">
+                            <h5 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Archives</h5>
                             <ul>
                                 <li><a href="#">November 2017 <span>23</span></a></li>
                                 <li><a href="#">November 2017 <span>23</span></a></li>
@@ -267,9 +262,9 @@
                                 <li><a href="#">November 2017 <span>23</span></a></li>
                                 <li><a href="#">November 2017 <span>23</span></a></li>
                             </ul>
-                        </aside>
+                        </aside> --}}
 
-                        <aside class="widget widget-calender">
+                        {{-- <aside class="widget widget-calender">
                             <div class="widget-title">
                                 <ul>
                                     <li><i class="fas fa-angle-left left"></i>January 2017<i class="fas fa-angle-right right"></i></li>
@@ -323,7 +318,7 @@
                                     <li>31</li>
                                 </ul>
                             </div>
-                        </aside>
+                        </aside> --}}
 
                     </section>
                 </div>

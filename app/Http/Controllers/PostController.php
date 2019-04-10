@@ -17,8 +17,12 @@ class PostController extends Controller
         $comments = Comment::where('post_id',$post_id)
         ->where('type',1)
         ->get();
+        $relatetive_posts = Post::where('id','<>',$post_id)
+            ->orderBy('created_at','DESC')
+            ->limit(4)
+            ->get();
         // dd($comments);
-        return view('client.post_detail',compact('post','comments'));
+        return view('client.post_detail',compact('post','comments','relatetive_posts'));
     }
 
     // trang ds bai viet admin
