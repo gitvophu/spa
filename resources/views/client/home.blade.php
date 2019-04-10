@@ -57,7 +57,7 @@
                     <div class="product-img">
                         <img src="{{url('/') . "/uploads/product/" . $product->image }}" alt="">
                     </div>
-                    <a href="#" class="boxed-btn">Detail</a>
+                    <a href="{{route('product-detail', ['id' => $product->id])}}" class="boxed-btn">Detail</a>
                    
                 </div>
             </div>
@@ -96,7 +96,7 @@
 
                         <div class="overlay">
                             <ul class="icons">
-                                <li><a href="#" class="mfp-popup"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="{{route('post-detail', ['post_id' => $post->id])}}"><i class="fas fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>

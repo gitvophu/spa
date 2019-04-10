@@ -43,7 +43,7 @@
                                             <div class="form-group">
                                                 <label for="">Hình ảnh </label>
                                                 <input type="file" class="form-control" id="imageproduct" name="imageproduct">
-                                                <img src="{{url('/') . "/assets/img/product/" . $product->image }}">
+                                                <img src="{{url('/') . "/uploads/product/" . $product->image }}">
                                             </div>
 
                                             <div class="form-group">

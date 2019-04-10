@@ -1,6 +1,9 @@
 @extends('client.layout.master')
 @section('script')
-<script src="{{asset('assets/js/pages/product_detail.js')}}"></script>
+<script src="{{asset('assets/js/pages/post_detail.js')}}"></script>
+@endsection
+@section('link')
+    <link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
 @endsection
 @section('content')
 <section id="breadcrumb-area">
@@ -9,7 +12,7 @@
                 <div class="col-12 text-center">
                     <h2>Blog</h2>
                     <ul class="breadcrumb-nav list-inline">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{route('/')}}">Home</a></li>
                         <li>Blog</li>
                         <li>Blog Single</li>
                     </ul>
@@ -32,20 +35,25 @@
                 <div class="col-lg-8 col-md-12 mb-5 mb-lg-0">
                     <article class="blog-post">                        
                         <div class="post-thumb">
-                            <img src="assets/img/blog-sidebar/blog-full-post.jpg" alt="">
+                        <img src="{{asset('uploads/post/'.$post->image)}}" alt="">
                         </div>
                         <div class="post-content">
                         <div class="post-header">
-                            <h3 class="post-title"><a href="blog-single.html">Elements Massage Appoints First Ever "Chief Wellness Officer”</a></h3>
+                            <h3 class="post-title">{{$post->title}}</h3>
                             <ul class="meta-info text-left">
-                                <li class="post-date"><a href="#">Gary Coleman-12 July 2017 </a></li>
+                                <li class="post-date"><a href="#">
+                                    <?php
+                                    $date = strtotime($post->created_at);
+                                    $date = date('Y-m-d',$date);
+                                    ?>
+                                    {{$date}} </a></li>
                             </ul>
-                            <ul class="text-right">
+                            {{-- <ul class="text-right">
                                 <li><a href="#"><i class="fas fa-tags"></i>Beauty</a></li>
                                 <li><a href="#"><i class="fas fa-comments"></i>3 Comments</a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
-                            <h5 class="pb-3 pt-4">{{$post->title}}</h5>
+                            {{-- <h5 class="pb-3 pt-4">{{$post->title}}</h5> --}}
                             <div>
                                 {!!$post->content!!}
                             </div>
@@ -77,26 +85,25 @@
 
                         <!-- Post Comment Area -->
                         <div class="post-comments-area">
-                            <h4 class="pb-2">(13) Comments</h4>
+                            <h4 class="pb-2">({{count($comments)}}) Bình luận</h4>
                             <ul class="media-list">
+                                @foreach ($comments as $cmt)
                                 <li class="media">
                                     <div class="media-left">
-                                        <a href="#"><img alt="" src="assets/img/blog-sidebar/avatar01.png"> </a>
+                                    <a href="#"><img  class="img-responsive" alt="" src="{{asset('uploads/static/avatar-icon.png')}}"> </a>
                                     </div>
-                                    @foreach ($comments as $cmt)
-                                        
-                                    
                                     <div class="media-body">
                                         <h5 class="comment-author"><a href="#">{{$cmt->name}}</a></h5>
                                         <p class="comment">{{$cmt->description}} </p>
-                                        <a href="#" class="comment-date">October 19,2018</a>
-                                        <ul>
+                                        <a href="#" class="comment-date">{{$cmt->created_at}}</a>
+                                        {{-- <ul>
                                             <li><i class="fas fa-thumbs-up"></i>108</li>
                                             <li class="comment-replay"><i class="fas fa-external-link-alt"></i>Reply</li>
-                                        </ul>
+                                        </ul> --}}
                                     </div>
-                                    @endforeach
                                 </li>
+                                
+                                @endforeach
                                 {{-- <li class="media-replay">
                                     <div class="media">
                                         <div class="media-left">
@@ -113,65 +120,38 @@
                                         </div>
                                     </div>
                                 </li> --}}
-                                <li class="media">
-                                    <div class="media-left">
-                                        <a href="#"><img alt="" src="assets/img/blog-sidebar/avatar03.png"> </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h5 class="comment-author"><a href="#">Kayla Shriver</a></h5>
-                                        <p class="comment">The face of the moon was in shadow.The spectacle before us was indeed sublime.All their dummy equipment and instruments are alive.All their equipment and instruments are alive.I watched the is storm, so beautiful yet terrific.</p>
-                                        <a href="#" class="comment-date">October 19,2018</a>
-                                        <ul>
-                                            <li><i class="fas fa-thumbs-up"></i>108</li>
-                                            <li class="comment-replay"><i class="fas fa-external-link-alt"></i>Reply</li>
-                                        </ul>
-                                    </div>
-                                </li>
+                                
                             </ul>
                         </div>
                         <!-- Post New Comment Area -->
                         <div class="post-new-comment">
-                            <h4>Write a Comment</h4>
+                            <h4>Viết bình luận</h4>
                             <p>Your email address will not be published. Required fields are marked *</p>
                             <form action="#">
+                                {{ csrf_field() }}
+                            <input type="hidden" name="asset" id="asset" value="{{asset('')}}">
+                            <input type="hidden" name="post_id" id="post_id" value="{{$post->id}}">
+                            <input type="hidden" name="type" id="type" value="1">
                                 <div class="row">
                                     <div class="col-sm-12 form-group pt-4">
-                                        <span class="input input--hantus textarea">
-                                            <textarea class="input__field input__field--hantus" rows="5" id="input-05"></textarea>
-                                            <label class="input__label input__label--hantus" for="input-05">
-                                                <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                </svg>
-                                                <span class="input__label-content input__label-content--hantus">Message</span>
-                                            </label>
-                                        </span>
+                                        <div class="form-group">
+                                          <label for="">Nội dung</label>
+                                          <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                                        </div>
                                     </div>
 
                                     <div class="col-sm-6 form-group">
-                                        <span class="input input--hantus">
-                                            <input class="input__field input__field--hantus" type="text" id="input-06" />
-                                            <label class="input__label input__label--hantus" for="input-06">
-                                                <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                </svg>
-                                                <span class="input__label-content input__label-content--hantus">Name</span>
-                                            </label>
-                                        </span>
+                                       <div class="form-group">
+                                         <label for="">Tên</label>
+                                         <input type="text"
+                                           class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
+                                        
+                                       </div>
                                     </div>
 
-                                    <div class="col-sm-6 form-group">
-                                        <span class="input input--hantus">
-                                            <input class="input__field input__field--hantus" type="text" id="input-07" />
-                                            <label class="input__label input__label--hantus" for="input-07">
-                                                <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                </svg>
-                                                <span class="input__label-content input__label-content--hantus">Email</span>
-                                            </label>
-                                        </span>
-                                    </div>
+                                   
                                 </div>
-                                <button type="submit" class="boxed-btn">Send Message</button>
+                                <button id="btnComment" type="submit" class="boxed-btn">Gửi</button>
                             </form>
                         </div>
                     </article>

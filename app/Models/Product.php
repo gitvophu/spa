@@ -8,4 +8,9 @@ class Product extends Model
 {
     protected $table = 'products';
     protected $primaryKey = 'id';
+
+    public static function getProductByID($id)
+    {
+        return Product::find($id);
+    }
 }
