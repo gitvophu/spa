@@ -197,7 +197,7 @@
                      <li><a href="#">&copy; 2018 Nayra Themes </a></li>
                      <li><a href="#">Terms & Conditions</a></li>
                      <li><a href="#">Privacy Policy</a></li>
-                     <li><a id="contact-btn" href="">Contact</a></li>
+                     <li><a id="contact-btn" href="#">Contact</a></li>
                  </ul>
              </div>
              <div class="col-lg-6 col-12">

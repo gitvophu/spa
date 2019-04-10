@@ -309,7 +309,7 @@
                                         </li>
 
                                         <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="contact-us.html">Contact</a></li>
+                                        <li><a href="#" id="contact-btn">Contact</a></li>
                                     </ul>
                                 </nav>
                                 

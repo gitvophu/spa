@@ -18,7 +18,8 @@ Route::get('/','HomeController@index');
 //Product detail layout
 Route::get('/product-detail','HomeController@product_detail');
 //Blog detail layout
-Route::get('/post-detail/{post_id}','PostController@post_detail');
+Route::get('/post-detail/{post_id}','PostController@post_detail')->name('post-detail');
+Route::post('/post-detail/comment-ajax','PostController@comment_ajax');
 
 /* Admin layout */
 Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function () {
@@ -70,4 +71,5 @@ Route::group(['prefix' => '/admin/posts', 'middleware' => array('admin','can_see
     Route::get('/detele/{id}', 'PostController@delete')->name('delete-post');
     Route::get('/edit/{post_id}', 'PostController@edit')->name('edit-post');
     Route::post('/update', 'PostController@update')->name('update-post');
+    
 });
