@@ -27,22 +27,23 @@ Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function 
     Route::get('/logout', 'AdminController@logout')->name('logout');
 });
 
-Route::group(['prefix' => '/admin', 'middleware' => array(/*'admin',*/'can_see')], function () {
+Route::group(['prefix' => '/admin', 'middleware' => array('admin','can_see')], function () {
     //Home layout
     Route::get('/', 'AdminController@index')->name('admin-index');
 });
 
-Route::group(['prefix' => '/admin/comments', 'middleware' => array(/*'admin',*/'can_see')], function () {
+Route::group(['prefix' => '/admin/comments', 'middleware' => array('admin','can_see')], function () {
     //Comments layout
     Route::get('/list-comment', 'CommentController@index')->name('list-comment');
 });
 
-Route::group(['prefix' => '/admin/message', 'middleware' => array(/*'admin',*/'can_see')], function () {
+Route::group(['prefix' => '/admin/message', 'middleware' => array('admin','can_see')], function () {
     //message layout
     Route::get('/list-message', 'MessageController@index')->name('list-message');
+    Route::get('/create-message', 'MessageController@create')->name('create-message');
 });
 
-Route::group(['prefix' => '/admin/banners', 'middleware' => array(/*'admin',*/'can_see')], function () {
+Route::group(['prefix' => '/admin/banners', 'middleware' => array('admin','can_see')], function () {
     //banner layout
     Route::get('/list-banner', 'BannerController@index')->name('list-banner');
     Route::get('/create-banner', 'BannerController@create_banner')->name('create-banner');
@@ -53,7 +54,7 @@ Route::group(['prefix' => '/admin/banners', 'middleware' => array(/*'admin',*/'c
 });
 
 //product
-Route::group(['prefix' => '/admin/products', 'middleware' => array(/*'admin',*/'can_see')], function () {
+Route::group(['prefix' => '/admin/products', 'middleware' => array('admin','can_see')], function () {
     Route::get('/list-product', 'ProductController@index')->name('list-product');
     Route::get('/create-product', 'ProductController@create')->name('create');
     Route::post('/create-product', 'ProductController@create_product')->name('create-product');
@@ -61,11 +62,13 @@ Route::group(['prefix' => '/admin/products', 'middleware' => array(/*'admin',*/'
     Route::get('/update/{id}', 'ProductController@update')->name('update');
     Route::post('update', 'ProductController@update_product')->name('update-product');
 });
-Route::group(['prefix' => '/admin/posts', 'middleware' => array(/*'admin',*/'can_see')], function () {
+Route::group(['prefix' => '/admin/posts', 'middleware' => array('admin','can_see')], function () {
 
     //Comments layout
     Route::get('/', 'PostController@index')->name('list-post');
     Route::get('/create', 'PostController@create')->name('create-post');
+    Route::post('/store', 'PostController@store')->name('store-post');
     Route::get('/detele/{id}', 'PostController@delete')->name('delete-post');
-    Route::get('/edit', 'PostController@edit')->name('edit-post');
+    Route::get('/edit/{post_id}', 'PostController@edit')->name('edit-post');
+    Route::post('/update', 'PostController@update')->name('update-post');
 });

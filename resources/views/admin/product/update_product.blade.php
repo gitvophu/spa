@@ -31,23 +31,24 @@
                                             <input type="hidden" class="form-control" id="idproduct" value="{{$product['id']}}" name="idproduct" >
                                             <div class="form-group">
                                                 <label for="">Tên Sản phẩm</label>
-                                                <input type="text" class="form-control" id="nameproduct" value="{{$product['name']}}" name="nameproduct" >
+                                                <input type="text" class="form-control" id="nameproduct" value="{{$product->name}}" name="nameproduct" >
                                             </div>
                                         
                                              <div class="form-group">
                                                 <label for="">Giá Sản phẩm</label>
-                                                <input type="text" class="form-control" id="priceproduct" value="{{$product['price']}}" name="priceproduct" >
+                                                <input type="text" class="form-control" id="priceproduct" value="{{$product->price}}" name="priceproduct" >
                                             </div>
                                         
                                             
                                             <div class="form-group">
                                                 <label for="">Hình ảnh </label>
-                                                <input type="file" value="{{$product['image']}}" class="form-control" id="imageproduct" name="imageproduct">
+                                                <input type="file" class="form-control" id="imageproduct" name="imageproduct">
+                                                <img src="{{url('/') . "/assets/img/product/" . $product->image }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="">Mô tả sản phẩm</label>
-                                                <input type="text" value="{{$product['description']}}" class="form-control" id="desproduct" name="desproduct" >
+                                                <input type="text" value="{{$product->description}}" class="form-control" id="desproduct" name="desproduct" >
                                             </div>
                                             <button type="submit" class="btn btn-primary" id="btnUpdate">Cập Nhật</button>
                                         </form>

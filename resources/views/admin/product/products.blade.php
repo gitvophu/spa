@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Banners</h1>
+                <h1 class="page-header">Product</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -24,27 +24,24 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                                    <th>Tên Sản Phẩm</th>
-                                                    <th>Giá</th>
-                                                    <th>Hình ảnh</th>
-                                                    <th>Mô tả</th>
-                                                    <th>Thao tác</th>
+                                    <th>Tên Sản Phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Mô tả</th>
+                                    <th>Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach($products as $product)
-                                                <tr class="">
-                                                    <td style="text-align: center;">{{$product->id}}</td>
-                                                    <td style="text-align: center;">{{$product->name}}</td>
-                                                    <td style="text-align: center;">{{$product->price}}</td>
-                                                    <!-- <td><img src="{{asset($product['image'])}}" alt=""></td>
-                                                     -->
-
-                                                    <td><img src="{{url('/') . "/assets/img/sliders/" . $product->image }}"></td>
-                                                    <td class="center">{{$product['description']}}</td>
-                                                    <td ><button><a href="{{route('delete-product',['id'=>$product['id']])}}">Xóa</a></button><br><button><a href="{{route('update',['id'=>$product['id']])}}">Sửa</a></button></td>
-                                                </tr>
-                                            @endforeach
+                                <tr class="">
+                                    <td style="text-align: center;">{{$product->id}}</td>
+                                    <td style="text-align: center;">{{$product->name}}</td>
+                                    <td style="text-align: center;">{{$product->price}}</td>
+                                    <td><img src="{{url('/') . "/assets/img/product/" . $product->image }}"></td>
+                                    <td class="center">{{$product['description']}}</td>
+                                    <td ><button><a href="{{route('delete-product',['id'=>$product['id']])}}">Xóa</a></button><button><a href="{{route('update',['id'=>$product['id']])}}">Sửa</a></button></td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                 </div>

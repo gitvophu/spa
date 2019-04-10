@@ -23,8 +23,7 @@
                          <div class="modal-body">
                                 <div class="col-lg-12 contact-form">
                                         
-                                        <form action="#">
-                    
+                                        <form action="route{{'create-message'}}">
                                             <span class="input input--hantus">
                                                 <input class="input__field input__field--hantus" type="text" id="input-01" />
                                                 <label class="input__label input__label--hantus" for="input-01">
@@ -64,9 +63,6 @@
                                                     <span class="input__label-content input__label-content--hantus">Message</span>
                                                 </label>
                                             </span>
-                    
-                                            
-                                            
                                         </form>
                                     </div>
                          </div>

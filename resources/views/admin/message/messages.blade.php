@@ -31,11 +31,11 @@
                                             <tbody>
                                             @foreach($message as $mess)
                                                 <tr class="odd gradeX">
-                                                    <td>{{$mess['title']}}</td>
-                                                    <td>a</td>
-                                                    <td>Win 95+</td>
-                                                    <td class="center">4</td>
-                                                    <td class="center">X</td>
+                                                    <td>{{$mess->id}}</td>
+                                                    <td>{{$mess->name}}</td>
+                                                    <td>{{$mess->phone}}</td>
+                                                    <td>{{$mess->email}}</td>
+                                                    <td>{{$mess->message}}</td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

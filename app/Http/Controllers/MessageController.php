@@ -12,5 +12,8 @@ class MessageController extends Controller
         return view('admin.message.messages',compact('message'));
     }
 
-
+    public function create(){
+        $message = Message::all();
+        return view('admin.message.messages',compact('message'));
+    }
 }

@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1,100) as $index) {
             DB::table('messages')->insert([
                 'name' =>$faker->name(),
-                'phone' => $faker->phoneNumber,
+                'phone' => $faker->phoneNumber,             
                 'email' => $faker->paragraph,             
                 'message' => $faker->paragraph(5),
             ]);
