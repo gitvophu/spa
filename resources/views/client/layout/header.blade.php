@@ -138,77 +138,77 @@
                     <div class="col-lg-10 col-md-10 d-none d-lg-block text-right">
                         <nav class="main-menu">
                             <ul>
-                                <li class="active">
-                                    <a href="index.html">Home</a>
+                                <li>
+                                    <a href="#">Trang chủ</a>
                                 </li>
                                 <li>
-                                    <a href="services.html">Services</a>
+                                    <a href="#">Sản phẩm</a>
                                 </li>
-                                <li class="c-dropdowns">
-                                    <a href="">Portfolio</a>
-                                    <ul class="cr-dropdown-menu">
-                                        <li>
-                                            <a href="portfolio-2-column.html">Portfolio 2 Column</a>
-                                        </li>
-                                        <li>
-                                            <a href="portfolio-3-column.html">Portfolio 3 Column</a>
-                                        </li>
-                                        <li>
-                                            <a href="portfolio-4-column.html">Portfolio 4 Column</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="c-dropdowns">
-                                    <a href="">Pages</a>
-                                    <ul class="cr-dropdown-menu">
-                                        <li>
-                                            <a href="about-us.html">About</a>
-                                        </li>
-                                        <li>
-                                            <a href="pricing.html">Pricing</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Other Pages</a>
-                                            <ul class="cr-sub-dropdown-menu">
-                                                <li>
-                                                    <a href="404.html">404 Page</a>
-                                                </li>
-                                                <li>
-                                                    <a href="coming-soon.html">Coming Soon</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="c-dropdowns">
-                                    <a href="">Blog</a>
-                                    <ul class="cr-dropdown-menu">
-                                        <li>
-                                            <a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-full-width.html">Blog Full Width</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-single.html">Blog Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                {{--<li class="c-dropdowns">--}}
+                                    {{--<a href="">Portfolio</a>--}}
+                                    {{--<ul class="cr-dropdown-menu">--}}
+                                        {{--<li>--}}
+                                            {{--<a href="portfolio-2-column.html">Portfolio 2 Column</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="portfolio-3-column.html">Portfolio 3 Column</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="portfolio-4-column.html">Portfolio 4 Column</a>--}}
+                                        {{--</li>--}}
+                                    {{--</ul>--}}
+                                {{--</li>--}}
+                                {{--<li class="c-dropdowns">--}}
+                                    {{--<a href="">Pages</a>--}}
+                                    {{--<ul class="cr-dropdown-menu">--}}
+                                        {{--<li>--}}
+                                            {{--<a href="about-us.html">About</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="pricing.html">Pricing</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="">Other Pages</a>--}}
+                                            {{--<ul class="cr-sub-dropdown-menu">--}}
+                                                {{--<li>--}}
+                                                    {{--<a href="404.html">404 Page</a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a href="coming-soon.html">Coming Soon</a>--}}
+                                                {{--</li>--}}
+                                            {{--</ul>--}}
+                                        {{--</li>--}}
+                                    {{--</ul>--}}
+                                {{--</li>--}}
+                                {{--<li class="c-dropdowns">--}}
+                                    {{--<a href="">Blog</a>--}}
+                                    {{--<ul class="cr-dropdown-menu">--}}
+                                        {{--<li>--}}
+                                            {{--<a href="blog-left-sidebar.html">Blog Left Sidebar</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="blog-right-sidebar.html">Blog Right Sidebar</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="blog-full-width.html">Blog Full Width</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="blog-single.html">Blog Details</a>--}}
+                                        {{--</li>--}}
+                                    {{--</ul>--}}
+                                {{--</li>--}}
 
-                                <li><a href="gallery.html">Gallery</a></li>
-                                <li><a href="#" id="contact-btn">Contact</a></li>
-                                <li class="search-button">
-                                    <div id="sb-search" class="sb-search " >
-                                        <form>
-                                            <input class="sb-search-input " onkeyup="buttonUp();" placeholder="Search"  type="search" value="" name="search" id="search">
-                                            <input class="sb-search-submit" type="submit"  value="">
-                                            <span class="sb-icon-search"><i class="ei ei-search"></i></span>
-                                        </form>
-                                    </div>
-                                </li>
+                                <li><a href="#">Bài viết</a></li>
+                                <li><a href="#" id="contact-btn">Liên hệ</a></li>
+                                {{--<li class="search-button">--}}
+                                    {{--<div id="sb-search" class="sb-search " >--}}
+                                    {{--    <form>--}}
+                                    {{--        <input class="sb-search-input " onkeyup="buttonUp();" placeholder="Search"  type="search" value="" name="search" id="search">--}}
+                                    {{--        <input class="sb-search-submit" type="submit"  value="">--}}
+                                    {{--        <span class="sb-icon-search"><i class="ei ei-search"></i></span>--}}
+                                    {{--    </form>--}}
+                                    {{--</div>--}}
+                                {{--</li>--}}
                                 <!-- <li class="cart-icon">
                                     <div id="cd-cart-trigge" class="cart-icon-wrapper cart--open">
                                         <i class="ei ei-icon_bag_alt"></i>
