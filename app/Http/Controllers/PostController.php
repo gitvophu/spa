@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use App\Models\Post;
 use App\Models\Comment;
 use Illuminate\Http\Request;
@@ -14,9 +15,9 @@ class PostController extends Controller
     function post_detail($post_id){
         $post = Post::find($post_id);
         $comments = Comment::where('post_id',$post_id)
-        ->where('type','1')
+        ->where('type',1)
         ->get();
-        dd($comments);
+        // dd($comments);
         return view('client.post_detail',compact('post','comments'));
     }
 
@@ -118,7 +119,24 @@ class PostController extends Controller
         // $post->title = $request->title;
         
         return redirect()->route('create-post')->with('success','Tạo bài viết thành công');
+    }
 
+    // xử lý ajax cho comment bai post
+    function comment_ajax(Request $request){
+        // dd($request->all());
+        $data = $request->only('name','message','type','post_id');
+        // $validator = Validator::make()
+        $comment = new Comment();
+        $comment->name = $data['name'];
+        $comment->description = $data['message'];
+        $comment->post_id = $data['post_id'];
+        $comment->type = $data['type'];
+        // $comment->created_at = date('Y-m-d');
+        $comment->save();
+        $date = new DateTime($comment->created_at);
+        $data['date'] = $date->format('Y-m-d H:m:i');
+      
 
+        return response()->json($data);
     }
 }

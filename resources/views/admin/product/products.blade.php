@@ -1,5 +1,7 @@
+
 @extends('admin.layout.master')
 @section('content')
+
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
@@ -32,14 +34,14 @@
                             <tbody>
                             @foreach($products as $product)
                                 <tr class="">
-                                <td style="text-align: center;">{{$product->id}}</td>
-                                <td style="text-align: center;">{{$product->name}}</td>
-                                <td style="text-align: center;">{{$product->price}}</td>
-                                <td><img src="{{url('/') . "/assets/img/product/" . $product->image }}"></td>
-                                <td class="center">{{$product['description']}}</td>
-                                <td ><button><a href="{{route('delete-product',['id'=>$product['id']])}}">Xóa</a></button><button><a href="{{route('update',['id'=>$product['id']])}}">Sửa</a></button></td>
-                                                </tr>
-                                            @endforeach
+                                    <td style="text-align: center;">{{$product->id}}</td>
+                                    <td style="text-align: center;">{{$product->name}}</td>
+                                    <td style="text-align: center;">{{$product->price}}</td>
+                                    <td><img src="{{url('/') . "/uploads/product/" . $product->image }}"></td>
+                                    <td class="center">{{$product['description']}}</td>
+                                    <td ><button><a href="{{route('delete-product',['id'=>$product['id']])}}">Xóa</a></button><button><a href="{{route('update',['id'=>$product['id']])}}">Sửa</a></button></td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                 </div>
@@ -54,4 +56,5 @@
         </div>
     </div>
 </div>
+
 @endsection

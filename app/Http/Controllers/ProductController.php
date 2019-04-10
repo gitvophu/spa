@@ -37,7 +37,7 @@ class ProductController extends Controller
     	$product = new Product();
     	if(Input::hasFile('imageproduct')){
             $file = Input::file('imageproduct');
-            $file->move(public_path().'/assets/img/product', $file->getClientOriginalName());
+            $file->move(public_path().'/uploads/product', $file->getClientOriginalName());
             $product->image = $file->getClientOriginalName();
         }
         $product->name = $request->nameproduct;
@@ -71,7 +71,7 @@ class ProductController extends Controller
             // $oldFile = $product->image;
             // Storage::delete($oldFile);
             $file = Input::file('imageproduct');
-            $file->move(public_path().'/assets/img/product', $file->getClientOriginalName());
+            $file->move(public_path().'/uploads/product', $file->getClientOriginalName());
             $product->image = $file->getClientOriginalName();  
         }
         $product->name = $request->nameproduct;

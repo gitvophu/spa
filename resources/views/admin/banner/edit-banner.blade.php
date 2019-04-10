@@ -20,20 +20,23 @@
                                 <div class="col-lg-12">
                                     <form role="form" action="{{route('update-banner')}}" enctype="multipart/form-data" method="post">
                                         {{csrf_field()}}
-                                        @foreach($listBanner as $itemBanner)
+                                        <input type="hidden" name="id" value="{{$listBanner['id']}}">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" id="title" name="title" value="{{$listBanner['title']}}">
+                                        </div>
                                         <div class="form-group">
                                             <label>File input</label>
-                                            <input type="file">
+                                            <input type="file" id="image" name="image">
                                             <br>
                                             <div>
-                                                <img src="{{url('/') . "/assets/img/sliders/" . $itemBanner->image }}" width="100px" height="100px">
+                                                <img src="{{url('/') . "/uploads/banner/" . $listBanner['image'] }}" width="1000px" height="1000px" class="img-responsive">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="3">{{ $itemBanner->description }}</textarea>
+                                            <textarea id="description" name="description" class="form-control" rows="3">{{ $listBanner['description'] }}</textarea>
                                         </div>
-                                        @endforeach
                                         <button type="submit" class="btn btn-default">Update Banner</button>
 
                                     </form>
