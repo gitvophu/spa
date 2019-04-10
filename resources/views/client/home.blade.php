@@ -12,51 +12,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header-slider">
-                    <div class="header-single-slider">
-                        <figure>
-                            <img src="{{asset('assets/img/sliders/slider01.jpg')}}" alt="">
-                            <figcaption>
-                                <div class="content">
-                                    <div class="container inner-content text-left">
-                                        <h3>Welcome To Hantus Spa</h3>
-                                        <h1>Beauty & Spa Wellness</h1>
-                                        <p>The Spa at Sun Valley is a serene oasis amid all the exciting  activities our iconic valley has delivered for decades.</p>
-                                        <a href="#" class="boxed-btn">Make an Appoinment</a>
+                    @foreach($bannerHome as $itemBanner)
+                        <div class="header-single-slider">
+                            <figure>
+                                <img src="{{url('/') . "/uploads/banner/" . $itemBanner->image }}" alt="">
+                                <figcaption>
+                                    <div class="content">
+                                        <div class="container inner-content text-center">
+                                            <h3>Welcome To Hantus Spa</h3>
+                                            <h1>{{ $itemBanner->title }}</h1>
+                                            <p>{{ $itemBanner->description }}</p>
+                                            {{--<a href="#" class="boxed-btn">Make an Appoinment</a>--}}
+                                        </div>
                                     </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="header-single-slider">
-                        <figure>
-                            <img src="{{asset('assets/img/sliders/slider02.jpg')}}" alt="">
-                            <figcaption>
-                                <div class="content">
-                                    <div class="container inner-content text-center">
-                                        <h3>Welcome To Hantus Spa</h3>
-                                        <h1>Beauty & Spa Wellness</h1>
-                                        <p>The Spa at Sun Valley is a serene oasis amid all the exciting  activities our iconic valley has delivered for decades.</p>
-                                        <a href="#" class="boxed-btn">Make an Appoinment</a>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="header-single-slider">
-                        <figure>
-                            <img src="{{asset('assets/img/sliders/slider03.jpg')}}" alt="">
-                            <figcaption>
-                                <div class="content">
-                                    <div class="container inner-content text-right">
-                                        <h3>Welcome To Hantus Spa</h3>
-                                        <h1>Beauty & Spa Wellness</h1>
-                                        <p>The Spa at Sun Valley is a serene oasis amid all the exciting  activities our iconic valley has delivered for decades.</p>
-                                        <a href="#" class="boxed-btn">Make an Appoinment</a>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -83,7 +55,7 @@
                     <h3>{{$product->name}}</h3>
                     <hr>
                     <div class="product-img">
-                        <img src="assets/img/full-width/fullwidth02.jpg" alt="">
+                        <img src="{{url('/') . "/uploads/product/" . $product->image }}" alt="">
                     </div>
                     <a href="#" class="boxed-btn">Detail</a>
                    
@@ -115,13 +87,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="product-carousel">
-                    <div class="single-product text-center">
+                    @foreach($posts as $post)
+                        <div class="single-product text-center">
                         <div class="product-img">
-                            <img src="assets/img/full-width/fullwidth01.jpg" alt="">
+                            <img src="{{url('/') . "/uploads/post/" . $post->image }}" alt="">
                         </div>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam perferendis voluptate
-                            laboriosam veritatis blanditiis similique inventore recusandae deserunt ex culpa quia quas
-                            molestiae delectus maiores, aut neque consequuntur, tempore quidem?</h5>
+                        <h5>{{ str_limit($post->content, 100, '[...]')}}</h5>
 
                         <div class="overlay">
                             <ul class="icons">
@@ -129,48 +100,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="single-product text-center">
-                        <div class="product-img">
-                            <img src="assets/img/full-width/fullwidth01.jpg" alt="">
-                        </div>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam perferendis voluptate
-                            laboriosam veritatis blanditiis similique inventore recusandae deserunt ex culpa quia quas
-                            molestiae delectus maiores, aut neque consequuntur, tempore quidem?</h5>
-
-                        <div class="overlay">
-                            <ul class="icons">
-                                <li><a href="#" class="mfp-popup"><i class="fas fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-product text-center">
-                        <div class="product-img">
-                            <img src="assets/img/full-width/fullwidth01.jpg" alt="">
-                        </div>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam perferendis voluptate
-                            laboriosam veritatis blanditiis similique inventore recusandae deserunt ex culpa quia quas
-                            molestiae delectus maiores, aut neque consequuntur, tempore quidem?</h5>
-
-                        <div class="overlay">
-                            <ul class="icons">
-                                <li><a href="#" class="mfp-popup"><i class="fas fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-product text-center">
-                        <div class="product-img">
-                            <img src="assets/img/full-width/fullwidth01.jpg" alt="">
-                        </div>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam perferendis voluptate
-                            laboriosam veritatis blanditiis similique inventore recusandae deserunt ex culpa quia quas
-                            molestiae delectus maiores, aut neque consequuntur, tempore quidem?</h5>
-
-                        <div class="overlay">
-                            <ul class="icons">
-                                <li><a href="#" class="mfp-popup"><i class="fas fa-eye"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

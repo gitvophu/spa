@@ -26,6 +26,7 @@
                                                     <th>Phone</th>
                                                     <th>Email</th>
                                                     <th>Message</th>
+                                                    <th>Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -36,6 +37,7 @@
                                                     <td>{{$mess->phone}}</td>
                                                     <td>{{$mess->email}}</td>
                                                     <td>{{$mess->message}}</td>
+                                                    <td style="text-align: center;"><a href="{{route('delete-message', ['id'=>$mess->id])}}"><i class="fa fa-trash-o fa-fw"></i></a></td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

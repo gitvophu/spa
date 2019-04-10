@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class BannerController extends Controller
 {
-    //Lấy danh sách banner trong db và hiển thị ra view
+    //Lấy danh sách banner trong db và hiển thị ra view admin: list-banner
     public function index(){
         $listBanner = Banner::get();
         return view('admin.banner.list-banner', compact('listBanner'));
@@ -25,8 +25,9 @@ class BannerController extends Controller
         $banner= new Banner();
         $validator = Validator::make($request->all(), [
             'image' => 'required',
+            'title' => 'required',
             'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'description' => '',
+            'description' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -37,13 +38,14 @@ class BannerController extends Controller
             {
                 $image = $request->file('image');
                 $name = $image->getClientOriginalName();
-                $image->move(public_path().'/assets/img/sliders/', $name);
+                $image->move(public_path().'/uploads/banner/', $name);
                 $banner->image = $name;
             }
+            $banner->title = $request->title;
             $banner->description = $request->description;
             $banner->save();
 
-            return back()->with('success', 'Your images has been successfully');
+            return back()->with('success', 'Create Successfully');
         }
 
         return view('admin.banner.create-banner');
@@ -55,6 +57,7 @@ class BannerController extends Controller
             'image' => '',
             'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => '',
+            'title' => '',
         ]);
 
         if ($validator->fails()) {
@@ -65,11 +68,12 @@ class BannerController extends Controller
             {
                 $image = $request->file('image');
                 $name = $image->getClientOriginalName();
-                $image->move(public_path().'/assets/img/sliders/', $name);
+                $image->move(public_path().'/uploads/banner/', $name);
                 $oldFile = $banner->image;
                 $banner->image = $name;
                 Storage::delete($oldFile);
             }
+            $banner->title = $request->title;
             $banner->description = $request->description;
             $banner->save();
         }

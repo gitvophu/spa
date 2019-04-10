@@ -40,7 +40,8 @@ Route::group(['prefix' => '/admin/comments', 'middleware' => array('admin','can_
 Route::group(['prefix' => '/admin/message', 'middleware' => array('admin','can_see')], function () {
     //message layout
     Route::get('/list-message', 'MessageController@index')->name('list-message');
-    Route::get('/create-message', 'MessageController@create')->name('create-message');
+    Route::post('/create-message', 'MessageController@create')->name('create-message');
+    Route::get('/delete-message/{id}', 'MessageController@delete_message')->name('delete-message');
 });
 
 Route::group(['prefix' => '/admin/banners', 'middleware' => array('admin','can_see')], function () {
@@ -51,6 +52,7 @@ Route::group(['prefix' => '/admin/banners', 'middleware' => array('admin','can_s
     Route::get('/delete-banner/{id}', 'BannerController@delete_banner')->name('delete-banner');
     Route::get('/edit-banner/{id}', 'BannerController@edit_banner')->name('edit-banner');
     Route::post('/update-banner', 'BannerController@update_banner')->name('update-banner');
+
 });
 
 //product

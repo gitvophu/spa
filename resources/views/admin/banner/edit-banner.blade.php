@@ -22,11 +22,15 @@
                                         {{csrf_field()}}
                                         <input type="hidden" name="id" value="{{$listBanner['id']}}">
                                         <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" id="title" name="title" value="{{$listBanner['title']}}">
+                                        </div>
+                                        <div class="form-group">
                                             <label>File input</label>
                                             <input type="file" id="image" name="image">
                                             <br>
                                             <div>
-                                                <img src="{{url('/') . "/assets/img/sliders/" . $listBanner['image'] }}" width="1000px" height="1000px" class="img-responsive">
+                                                <img src="{{url('/') . "/uploads/banner/" . $listBanner['image'] }}" width="1000px" height="1000px" class="img-responsive">
                                             </div>
                                         </div>
                                         <div class="form-group">

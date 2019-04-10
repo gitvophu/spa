@@ -22,10 +22,15 @@
                          </div>
                          <div class="modal-body">
                                 <div class="col-lg-12 contact-form">
-                                        
-                                        <form action="route{{'create-message'}}">
+                                    @if(session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+                                        <form action="{{route('create-message')}}" method="post">
+                                            {{csrf_field()}}
                                             <span class="input input--hantus">
-                                                <input class="input__field input__field--hantus" type="text" id="input-01" />
+                                                <input class="input__field input__field--hantus" type="text" name="name" id="input-01" />
                                                 <label class="input__label input__label--hantus" for="input-01">
                                                     <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
                                                     <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
@@ -35,7 +40,7 @@
                                             </span>
                     
                                             <span class="input input--hantus">
-                                                <input class="input__field input__field--hantus" type="text" id="input-02" />
+                                                <input class="input__field input__field--hantus" type="text" name="email" id="input-02" />
                                                 <label class="input__label input__label--hantus" for="input-02">
                                                     <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
                                                     <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
@@ -45,17 +50,17 @@
                                             </span>
                     
                                             <span class="input input--hantus">
-                                                <input class="input__field input__field--hantus" type="text" id="input-03" />
+                                                <input class="input__field input__field--hantus" type="text" name="phone" id="input-03" />
                                                 <label class="input__label input__label--hantus" for="input-03">
                                                     <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
                                                     <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
                                                     </svg>
-                                                    <span class="input__label-content input__label-content--hantus">Subject</span>
+                                                    <span class="input__label-content input__label-content--hantus">Phone</span>
                                                 </label>
                                             </span>
                     
                                             <span class="input input--hantus textarea">
-                                                <textarea class="input__field input__field--hantus" rows="6" id="input-04"></textarea>
+                                                <textarea class="input__field input__field--hantus" rows="6" name="message" id="input-04"></textarea>
                                                 <label class="input__label input__label--hantus" for="input-04">
                                                     <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
                                                     <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
@@ -63,14 +68,16 @@
                                                     <span class="input__label-content input__label-content--hantus">Message</span>
                                                 </label>
                                             </span>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Send Message</button>
+                                                {{-- <button class="boxed-btn"></button> --}}
+                                            </div>
                                         </form>
-                                    </div>
+                                </div>
                          </div>
-                         <div class="modal-footer">
-                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                             <button type="button" class="btn btn-primary">Send Message</button>
-                             {{-- <button class="boxed-btn"></button> --}}
-                         </div>
+
                      </div>
                  </div>
              </div>

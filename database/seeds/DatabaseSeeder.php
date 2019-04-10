@@ -38,9 +38,10 @@ class DatabaseSeeder extends Seeder
                 'description' => $faker->paragraph(5),                
             ]);
         }
-        foreach (range(1,100) as $index) {
+        foreach (range(1,5) as $index) {
             DB::table('banners')->insert([
                 'image' =>'fullwidth01.jpg',
+                'title' => $faker->sentence(),
                 'description' => $faker->paragraph(5),             
             ]);
         }
@@ -48,7 +49,7 @@ class DatabaseSeeder extends Seeder
             DB::table('messages')->insert([
                 'name' =>$faker->name(),
                 'phone' => $faker->phoneNumber,             
-                'email' => $faker->paragraph,             
+                'email' => $faker->paragraph,
                 'message' => $faker->paragraph(5),
             ]);
         }

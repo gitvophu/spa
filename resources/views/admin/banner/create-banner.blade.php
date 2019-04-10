@@ -36,6 +36,10 @@
                                     <form role="form" action="{{route('store-banner')}}" enctype="multipart/form-data" method="post">
                                         {{csrf_field()}}
                                         <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" id="title" name="title">
+                                        </div>
+                                        <div class="form-group">
                                             <label>File input</label>
                                             <input type="file" id="image" name="image">
                                         </div>
