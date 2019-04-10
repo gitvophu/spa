@@ -6,12 +6,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="keywords" content="Hantus, Responsive, SPA Template, Bootstrap 4,">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{asset('')}}assets/img/favicon.png" type="image/x-icon" />
     <title>Hantus - Spa and Beauty HTML template</title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{{asset('')}}assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('')}}assets/css/responsive.css">
 
 
     <!--[if lt IE 9]>
@@ -72,7 +72,7 @@
     <!-- Start: Sidenav
     ============================= -->
 
-    <div class="sidenav cart ">
+    <!-- <div class="sidenav cart ">
         <div class="sidenav-header">
             <h3>Your cart</h3>
             <span class="fas fa-times close-sidenav"></span>
@@ -118,7 +118,7 @@
             <a href="#" class="boxed-btn">View Cart</a>
             <a href="#" class="boxed-btn fl">Check Out</a>
         </div>
-    </div>
+    </div> -->
     <span class="cart-overlay"></span>
 
     <!-- End: Sidenav
@@ -132,7 +132,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-6">
                         <div class="logo main">
-                            <a href="index.html"><img class="responsive" src="assets/img/logo.png" alt="Startkit"></a>
+                            <a href="index.html"><img class="responsive" src="{{asset('')}}/assets/img/logo.png" alt="Startkit"></a>
                         </div>
                     </div>
                     <div class="col-lg-10 col-md-10 d-none d-lg-block text-right">
@@ -199,7 +199,7 @@
                                 </li>
 
                                 <li><a href="gallery.html">Gallery</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="#" id="contact-btn">Contact</a></li>
                                 <li class="search-button">
                                     <div id="sb-search" class="sb-search " >
                                         <form>
@@ -209,12 +209,12 @@
                                         </form>
                                     </div>
                                 </li>
-                                <li class="cart-icon">
+                                <!-- <li class="cart-icon">
                                     <div id="cd-cart-trigge" class="cart-icon-wrapper cart--open">
                                         <i class="ei ei-icon_bag_alt"></i>
                                         <span class="cart-count">2</span>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </div>
