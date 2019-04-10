@@ -3,13 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
-    // trang index
-    public function index(){
+    // type = 1 là post, 2 là product
+    // trang chi tiết bài viết
+    function post_detail($post_id){
+        $post = Post::find($post_id);
+        $comments = Comment::where('post_id',$post_id)
+        ->where('type','1')
+        ->get();
+        dd($comments);
+        return view('client.post_detail',compact('post','comments'));
+    }
+
+    // trang ds bai viet admin
+    public function list_post(){
         $list_post = Post::get();
 
         return view('admin.post.post_list',compact('list_post'));

@@ -4,7 +4,7 @@
  <footer id="footer-widgets">
      <div class="container">
          <div class="col-xs-12">
-             <button type="submit" class="boxed-btn" id="contact-btn">Contact</button>
+             {{-- <button type="submit" class="boxed-btn" id="contact-btn">Contact</button> --}}
              <!-- Button trigger modal -->
              {{-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
                Launch
@@ -84,7 +84,7 @@
 
              <div class="col-lg-3 col-md-6 col-sm-6 mb-lg-0 mb-4">
                  <aside class="widget widget_about">
-                     <div class="footer-logo"><img src="assets/img/logo.png" alt=""></div>
+                     <div class="footer-logo"><img src="{{asset('')}}assets/img/logo.png" alt=""></div>
                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.
                      </p>
                      <ul class="widget-info">
@@ -97,7 +97,7 @@
 
              <div class="col-lg-3 col-md-6 col-sm-6 mb-lg-0 mb-md-0 mb-4">
                  <aside class="widget widget_recent">
-                     <h4 class="widget-title"><img src="assets/img/section-icon.png" alt="">Latest News</h4>
+                     <h4 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Latest News</h4>
 
                      <ul>
                          <li class="latest-news">
@@ -117,7 +117,7 @@
              </div>
              <div class="col-lg-3 col-md-6 col-sm-6 mb-lg-0 mb-4">
                  <aside class="widget widget_links">
-                     <h4 class="widget-title"><img src="assets/img/section-icon.png" alt="">Quick Link</h4>
+                     <h4 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Quick Link</h4>
                      <ul>
                          <li><a href="#">Home</a></li>
                          <li><a href="#">About</a></li>
@@ -136,42 +136,42 @@
              </div>
              <div class="col-lg-3 col-md-6 col-sm-6">
                  <aside class="widget widdget-instagram">
-                     <h4 class="widget-title"><img src="assets/img/section-icon.png" alt="">Instagram</h4>
+                     <h4 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Instagram</h4>
                      <ul class="instagram-photos">
                          <li>
-                             <img src="assets/img/instagram/instagram01.jpg" alt="">
+                             <img src="{{asset('')}}assets/img/instagram/instagram01.jpg" alt="">
                              <div class="instagram-overlay">
                                  <a href="#">+</a>
                              </div>
                          </li>
                          <li>
-                             <img src="assets/img/instagram/instagram02.jpg" alt="">
-                             <div class="instagram-overlay">
-                                 <a href="#">+</a>
-                             </div>
-
-                         </li>
-                         <li>
-                             <img src="assets/img/instagram/instagram03.jpg" alt="">
-                             <div class="instagram-overlay">
-                                 <a href="#">+</a>
-                             </div>
-                         </li>
-                         <li>
-                             <img src="assets/img/instagram/instagram04.jpg" alt="">
-                             <div class="instagram-overlay">
-                                 <a href="#">+</a>
-                             </div>
-                         </li>
-                         <li>
-                             <img src="assets/img/instagram/instagram05.jpg" alt="">
+                             <img src="{{asset('')}}assets/img/instagram/instagram02.jpg" alt="">
                              <div class="instagram-overlay">
                                  <a href="#">+</a>
                              </div>
 
                          </li>
                          <li>
-                             <img src="assets/img/instagram/instagram06.jpg" alt="">
+                             <img src="{{asset('')}}assets/img/instagram/instagram03.jpg" alt="">
+                             <div class="instagram-overlay">
+                                 <a href="#">+</a>
+                             </div>
+                         </li>
+                         <li>
+                             <img src="{{asset('')}}assets/img/instagram/instagram04.jpg" alt="">
+                             <div class="instagram-overlay">
+                                 <a href="#">+</a>
+                             </div>
+                         </li>
+                         <li>
+                             <img src="{{asset('')}}assets/img/instagram/instagram05.jpg" alt="">
+                             <div class="instagram-overlay">
+                                 <a href="#">+</a>
+                             </div>
+
+                         </li>
+                         <li>
+                             <img src="{{asset('')}}assets/img/instagram/instagram06.jpg" alt="">
                              <div class="instagram-overlay">
                                  <a href="#">+</a>
                              </div>
@@ -197,13 +197,13 @@
                      <li><a href="#">&copy; 2018 Nayra Themes </a></li>
                      <li><a href="#">Terms & Conditions</a></li>
                      <li><a href="#">Privacy Policy</a></li>
-                     <li><a href="#">Contact</a></li>
+                     <li><a id="contact-btn" href="">Contact</a></li>
                  </ul>
              </div>
              <div class="col-lg-6 col-12">
                  <ul class="text-lg-right text-center payment-method">
-                     <li><a href="#"><img src="assets/img/payment-icon/mastercard.png" alt=""></a></li>
-                     <li><a href="#"><img src="assets/img/payment-icon/shopify.png" alt=""></a></li>
+                     <li><a href="#"><img src="{{asset('')}}assets/img/payment-icon/mastercard.png" alt=""></a></li>
+                     <li><a href="#"><img src="{{asset('')}}assets/img/payment-icon/shopify.png" alt=""></a></li>
                      <li><a href="#"><i class="fab fa-paypal"></i></a></li>
                      <li><a href="#"><i class="fab fa-cc-visa"></i></a></li>
                  </ul>
@@ -219,19 +219,19 @@
 
 
  <!-- Scripts -->
- <script src="assets/js/jquery-3.2.1.min.js"></script>
- <script src="assets/js/popper.min.js"></script>
- <script src="assets/js/bootstrap.min.js"></script>
- <script src="assets/js/jquery.sticky.js"></script>
- <script src="assets/js/owl.carousel.min.js"></script>
- <script src="assets/js/jquery.shuffle.min.js"></script>
- <script src="assets/js/jquery.counterup.min.js"></script>
- <script src="assets/js/wow.min.js"></script>
- <script src="assets/js/jquery.meanmenu.min.js"></script>
- <script src="assets/js/jquery.magnific-popup.min.js"></script>
+ <script src="{{asset('')}}assets/js/jquery-3.2.1.min.js"></script>
+ <script src="{{asset('')}}assets/js/popper.min.js"></script>
+ <script src="{{asset('')}}assets/js/bootstrap.min.js"></script>
+ <script src="{{asset('')}}assets/js/jquery.sticky.js"></script>
+ <script src="{{asset('')}}assets/js/owl.carousel.min.js"></script>
+ <script src="{{asset('')}}assets/js/jquery.shuffle.min.js"></script>
+ <script src="{{asset('')}}assets/js/jquery.counterup.min.js"></script>
+ <script src="{{asset('')}}assets/js/wow.min.js"></script>
+ <script src="{{asset('')}}assets/js/jquery.meanmenu.min.js"></script>
+ <script src="{{asset('')}}assets/js/jquery.magnific-popup.min.js"></script>
 
  <!-- Custom Script -->
- <script src="assets/js/custom.js"></script>
+ <script src="{{asset('')}}assets/js/custom.js"></script>
  @yield('script')    
  </body>
 
