@@ -76,7 +76,7 @@
                                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                 <li><a href="#"><i class="fab fa-envelope"></i></a></li>
                             </ul>
-                        </div> --}}
+                        </div> --}}   
 
                         <hr>
 
