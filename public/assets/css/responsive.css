@@ -1,11 +1,15 @@
 @media only screen and (min-width:1550px) {
 
-
+    .section-padding {
+        overflow: hidden;
+    }
 }
 
 @media only screen and (min-width:1350px) {
 
-
+    .section-padding {
+        overflow: hidden;
+    }
 
 }
 
@@ -44,6 +48,7 @@
     .header-slider:hover .owl-next {
         right: 400px;
     }
+    
 
     .testimonial-carousel .owl-prev {
         left: 250px;
@@ -84,6 +89,7 @@
 
     #product.section-padding {
         padding-bottom: 128px;
+       
     }
 
     .portfolio-tab-sorting {
@@ -130,6 +136,9 @@
 
     #product.section-padding {
         padding-bottom: 128px;
+    }
+    .section-padding {
+        overflow: hidden;
     }
 
     #testimonial,
@@ -337,6 +346,7 @@
     .section-padding {
         overflow: hidden;
     }
+
 
     #header-top p {
         margin-right: 0;

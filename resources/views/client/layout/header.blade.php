@@ -72,7 +72,7 @@
     <!-- Start: Sidenav
     ============================= -->
 
-    <div class="sidenav cart ">
+    <!-- <div class="sidenav cart ">
         <div class="sidenav-header">
             <h3>Your cart</h3>
             <span class="fas fa-times close-sidenav"></span>
@@ -118,7 +118,7 @@
             <a href="#" class="boxed-btn">View Cart</a>
             <a href="#" class="boxed-btn fl">Check Out</a>
         </div>
-    </div>
+    </div> -->
     <span class="cart-overlay"></span>
 
     <!-- End: Sidenav
@@ -209,12 +209,12 @@
                                         </form>
                                     </div>
                                 </li>
-                                <li class="cart-icon">
+                                <!-- <li class="cart-icon">
                                     <div id="cd-cart-trigge" class="cart-icon-wrapper cart--open">
                                         <i class="ei ei-icon_bag_alt"></i>
                                         <span class="cart-count">2</span>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </div>
