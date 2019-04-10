@@ -174,7 +174,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-edit fa-fw"></i> Messages</a>
+                                <a href="{{route('list-message')}}"><i class="fa fa-edit fa-fw"></i> Messages</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Banners<span class="fa arrow"></span></a>
