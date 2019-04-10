@@ -14,9 +14,9 @@
 /* Client layout */
 
 //Home layout
-Route::get('/','HomeController@index');
+Route::get('/','HomeController@index')->name('/');
 //Product detail layout
-Route::get('/product-detail','HomeController@product_detail');
+Route::get('/product-detail/{id}','ProductController@product_detail')->name('product-detail');
 //Blog detail layout
 Route::get('/post-detail/{post_id}','PostController@post_detail');
 

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Comment;
 use App\Models\Product;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -15,6 +16,14 @@ class ProductController extends Controller
     	$products = Product::all();
         return view('admin.product.products',compact('products'));
     }
+
+    public function product_detail($id){
+        $product = new Product();
+        $product_ = $product->getProductByID($id);     
+        $comments = Comment::where('product_id', $id)->where('type', '2')->get()->toArray();   
+        $total_cmt = count($comments);
+        return view('client.product_detail', compact('product_', 'comments', 'total_cmt'));
+    }    
 
     //Giao diện thêm sản phẩm
     public function create()

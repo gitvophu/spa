@@ -82,7 +82,7 @@
                     <div class="product-img">
                         <img src="assets/img/full-width/fullwidth02.jpg" alt="">
                     </div>
-                    <a href="#" class="boxed-btn">Detail</a>
+                    <a href="{{route('product-detail', ['id' => $product->id])}}" class="boxed-btn">Detail</a>
                    
                 </div>
             </div>

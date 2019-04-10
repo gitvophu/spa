@@ -9,7 +9,7 @@
                 <div class="col-12 text-center">
                     <h2>Blog</h2>
                     <ul class="breadcrumb-nav list-inline">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{route('/')}}">Home</a></li>
                         <li>Blog</li>
                         <li>Blog Single</li>
                     </ul>
