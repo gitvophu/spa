@@ -57,7 +57,7 @@
                     <div class="product-img">
                         <img src="{{url('/') . "/uploads/product/" . $product->image }}" alt="">
                     </div>
-                    <a href="#" class="boxed-btn">Detail</a>
+                    <a href="{{route('product-detail', ['id' => $product->id])}}" class="boxed-btn">Detail</a>
                    
                 </div>
             </div>

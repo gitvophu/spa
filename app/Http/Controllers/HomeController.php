@@ -16,9 +16,4 @@ class HomeController extends Controller
         $posts = Post::get();
         return view('client.home',compact('products', 'bannerHome', 'posts'));
     }
-
-    public function product_detail(){
-        return view('client.product_detail');
-    }
-
 }
