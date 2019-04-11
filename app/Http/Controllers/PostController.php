@@ -59,16 +59,18 @@ class PostController extends Controller
             'title'=>'required',
             'content'=>'required',
             // 'image'=>'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'post_id'=>'required'
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
+            'image.image' => 'File ảnh phải là hình ảnh',
+            'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
+            'image.max' => 'File ảnh tối đa là 2MB',
             // 'image.required'=>'Bạn chưa chọn ảnh'
         ]);
         
         if ($validator->fails()) {
-        
-            
             return redirect()->route('edit-post',$request->post_id)->withErrors($validator) ;
         }
         $post = Post::find($request->post_id);
@@ -107,11 +109,14 @@ class PostController extends Controller
         $validator = Validator::make($request->all(),[
             'title'=>'required',
             'content'=>'required',
-            'image'=>'required'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
-            'image.required'=>'Bạn chưa chọn ảnh'
+            'image.required'=>'Bạn chưa chọn ảnh',
+            'image.image' => 'File ảnh phải là hình ảnh',
+            'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
+            'image.max' => 'File ảnh tối đa là 2MB',
         ]);
         
         if ($validator->fails()) {
