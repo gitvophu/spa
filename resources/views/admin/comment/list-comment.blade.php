@@ -1,4 +1,7 @@
 @extends('admin.layout.master')
+@section('script')
+<script src="{{asset('assets/js/pages/comment.js')}}"></script>
+@endsection
 @section('content')
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -45,13 +48,13 @@
                                         <td class="center">{{$comment->title}}</td>
                                         <td class="center">{{$comment->product_name}}</td>
                                         <td class="center">
-                                            <button type="submit" id="btnUpadteStatus">
+                                            <a href=""></a><button type="submit" class="btnUpdateStatus">
                                                 @if($comment->status == 1)
-                                                    Hiện
-                                                @else
                                                     Ẩn
+                                                @else
+                                                    Hiển
                                                 @endif
-                                            </button>
+                                            </button></a>
                                         </td>
                                     </tr>
                                     @endforeach
