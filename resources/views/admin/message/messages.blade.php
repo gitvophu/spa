@@ -22,11 +22,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>STT</th>
-                                                    <th>Name</th>
-                                                    <th>Phone</th>
+                                                    <th>Người gửi</th>
+                                                    <th>Số điện thoại</th>
                                                     <th>Email</th>
-                                                    <th>Message</th>
-                                                    <th>Delete</th>
+                                                    <th>Nội dung</th>
+                                                    <th>Xóa</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -37,7 +37,7 @@
                                                     <td>{{$mess->phone}}</td>
                                                     <td>{{$mess->email}}</td>
                                                     <td>{{$mess->message}}</td>
-                                                    <td style="text-align: center;"><a href="{{route('delete-message', ['id'=>$mess->id])}}"><i class="fa fa-trash-o fa-fw"></i></a></td>
+                                                    <td style="text-align: center;"><a href="{{route('delete-message', ['id'=>$mess->id])}}" onclick="return confirm('Bạn có chắc muốn xoá tin nhắn ?')"><i class="fa fa-trash-o fa-fw"></i></a></td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

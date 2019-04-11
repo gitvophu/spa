@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use App\Models\Comment;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -27,9 +28,11 @@ class ProductController extends Controller
     public function product_detail($id){
         $product = new Product();
         $product_ = $product->getProductByID($id);     
-        $comments = Comment::where('product_id', $id)->where('type', '2')->get()->toArray();   
+        $comments = Comment::where('product_id', $id)->where('type', '2')->orderBy('updated_at', 'desc')->take(10)->get()->toArray();   
         $total_cmt = count($comments);
-        return view('client.product_detail', compact('product_', 'comments', 'total_cmt'));
+        $product_news = Product::orderBy('created_at', 'desc')->take(4)->get()->toArray();
+        //var_dump($product_news);die();
+        return view('client.product_detail', compact('product_', 'comments', 'total_cmt', 'product_news'));
     }    
 
     //Giao diện thêm sản phẩm
@@ -88,5 +91,20 @@ class ProductController extends Controller
         $product->price = $request->priceproduct;
         $product->save();
         return back()->with(['message' =>'Cập nhật thành công']);
+    }
+
+    // xử lý ajax cho comment san pham
+    function comment_ajax(Request $request){
+        $data = $request->only('name','message','type','product_id');
+        $comment = new Comment();
+        $comment->name = $data['name'];
+        $comment->description = $data['message'];
+        $comment->product_id = $data['product_id'];
+        $comment->type = $data['type'];
+        $comment->save();
+        $date = new DateTime($comment->created_at);
+        $data['date'] = $date->format('Y-m-d H:m:i');
+
+        return response()->json($data);
     }
 }
