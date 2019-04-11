@@ -34,39 +34,29 @@
                                         <th>Tiêu đề</th>
                                         <th>Hình ảnh</th>
                                         <th>Tóm tắt</th>
-                                        <th>Thao tác</th>
+                                        <th>Xóa</th>
+                                        <th>Sửa</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($list_post as $post)
                                         
                                     <tr class="gradeU">
-                                    <td width='5%'>{{$loop->index+1}}</td>
-                                    <td width='30%'>{{$post->title}}</td>
+                                        <td width='5%'>{{$loop->index+1}}</td>
+                                        <td width='30%'>{{$post->title}}</td>
                                         <td width='30%'>
                                             <img src="{{asset('/uploads/post/'.$post->image)}}" alt="" class="img-responsive">
                                         </td>
                                         <td width='20%' class="center" >{{$post->getExcerpt()}}</td>
-                                        <td class="center">
-                                        <a href="{{route('delete-post',['id'=>$post->id])}}" onclick="return confirm('Bạn có chắc muốn xoá bài viết ?')">Xóa</a>
-                                        <a href="{{route('edit-post',['post_id'=>$post->id])}}">Sửa</a>
-                                        </td>
+                                        <td style="text-align: center;"><a href="{{route('delete-post',['id'=>$post->id])}}" onclick="return confirm('Bạn có chắc muốn xoá bài viết ?')"><i class="fa fa-trash-o fa-fw"></i></a></td>
+                                        <td style="text-align: center;"><a href="{{route('edit-post',['post_id'=>$post->id])}}"><i class="fa fa-pencil fa-fw"></i></a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-                        <div class="well">
-                            <h4>DataTables Usage Information</h4>
-                            <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are
-                                using a specialized version of DataTables built for Bootstrap 3. We have also customized
-                                the table headings to use Font Awesome icons in place of images. For complete
-                                documentation on DataTables, visit their website at <a target="_blank"
-                                    href="https://datatables.net/">https://datatables.net/</a>.</p>
-                            <a class="btn btn-default btn-lg btn-block" target="_blank"
-                                href="https://datatables.net/">View DataTables Documentation</a>
-                        </div>
+
                     </div>
                     <!-- /.panel-body -->
                 </div>
