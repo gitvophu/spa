@@ -22,11 +22,11 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Image</th>
-                                    <th>Description</th>
-                                    <th>Delete</th>
-                                    <th>Edit</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Nội dung</th>
+                                    <th>Xóa</th>
+                                    <th>Sửa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,7 +36,7 @@
                                     <td style="text-align: center;">{{ $itemBanner->title }}</td>
                                     <td><img src="{{url('/') . "/uploads/banner/" . $itemBanner->image }}" class="img-responsive"></td>
                                     <td>{{ $itemBanner->description }}</td>
-                                    <td style="text-align: center;"><a href="{{route('delete-banner', ['id'=>$itemBanner->id])}}"><i class="fa fa-trash-o fa-fw"></i></a></td>
+                                    <td style="text-align: center;"><a href="{{route('delete-banner', ['id'=>$itemBanner->id])}}" onclick="return confirm('Bạn có chắc muốn xoá banner ?')"><i class="fa fa-trash-o fa-fw"></i></a></td>
                                     <td style="text-align: center;"><a href="{{route('edit-banner', ['id'=>$itemBanner->id])}}"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                             @endforeach

@@ -62,11 +62,11 @@
                     <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
                 </ul>
 
-                {{--<ul class="nav navbar-right navbar-top-links">--}}
-                    {{--<li class="dropdown navbar-inverse">--}}
-                        {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">--}}
-                            {{--<i class="fa fa-bell fa-fw"></i> <b class="caret"></b>--}}
-                        {{--</a>--}}
+                <ul class="nav navbar-right navbar-top-links">
+                    <li class="dropdown navbar-inverse">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                        </a>
                         {{--<ul class="dropdown-menu dropdown-alerts">--}}
                             {{--<li>--}}
                                 {{--<a href="#">--}}
@@ -116,21 +116,21 @@
                                 {{--</a>--}}
                             {{--</li>--}}
                         {{--</ul>--}}
-                    {{--</li>--}}
-                    {{--<li class="dropdown">--}}
-                    {{--@if(Auth::check())--}}
-                        {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">--}}
-                            {{--<i class="fa fa-user fa-fw"></i> {{Session::get('email')}} <b class="caret"></b>--}}
-                        {{--</a>--}}
-                        {{--<ul class="dropdown-menu dropdown-user">--}}
-                            {{--<li><a href="#"><i class="fa fa-user fa-fw"></i> Change password</a>--}}
-                            {{--</li>--}}
-                            {{--<li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                    {{--@endif--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
+                    </li>
+                    <li class="dropdown">
+                        @if(Auth::check())
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user fa-fw"></i> {{Session::get('email')}} <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#"><i class="fa fa-user fa-fw"></i> Change password</a>
+                                </li>
+                                <li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                </li>
+                            </ul>
+                        @endif
+                    </li>
+                </ul>
                 <!-- /.navbar-top-links -->
 
                 <div class="navbar-default sidebar" role="navigation">
@@ -163,18 +163,18 @@
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
+                                <a href="{{route('list-message')}}"><i class="fa fa-edit fa-fw"></i> Messages</a>
+                            </li>
+                            <li>
                                 <a href="#"><i class="fa fa-table fa-fw"></i> Posts<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                    <a href="{{route('create-post')}}">Create post</a>
+                                        <a href="{{route('create-post')}}">Create post</a>
                                     </li>
                                     <li>
-                                    <a href="{{route('list-post')}}">List post</a>
+                                        <a href="{{route('list-post')}}">List post</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="{{route('list-message')}}"><i class="fa fa-edit fa-fw"></i> Messages</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Banners<span class="fa arrow"></span></a>
@@ -200,18 +200,18 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
-                            <li>
-                                <a href="#"><i class="fa fa-user-o fa-fw"></i> Users<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="#">Create user</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">List user</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="#"><i class="fa fa-user-o fa-fw"></i> Users<span class="fa arrow"></span></a>--}}
+                                {{--<ul class="nav nav-second-level">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#">Create user</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#">List user</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                                {{--<!-- /.nav-second-level -->--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                 </div>
