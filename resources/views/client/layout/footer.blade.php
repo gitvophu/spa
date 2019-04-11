@@ -27,51 +27,33 @@
                                             {{ session('success') }}
                                         </div>
                                     @endif
-                                        <form action="{{route('create-message')}}" method="post">
+                                    {{-- {{route('create-message')}} --}}
+                                        <form action="#" method="post">
                                             {{csrf_field()}}
-                                            <span class="input input--hantus">
-                                                <input class="input__field input__field--hantus" type="text" name="name" id="input-01" />
-                                                <label class="input__label input__label--hantus" for="input-01">
-                                                    <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                    <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                    </svg>
-                                                    <span class="input__label-content input__label-content--hantus">Name</span>
-                                                </label>
-                                            </span>
-                    
-                                            <span class="input input--hantus">
-                                                <input class="input__field input__field--hantus" type="text" name="email" id="input-02" />
-                                                <label class="input__label input__label--hantus" for="input-02">
-                                                    <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                    <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                    </svg>
-                                                    <span class="input__label-content input__label-content--hantus">Email</span>
-                                                </label>
-                                            </span>
-                    
-                                            <span class="input input--hantus">
-                                                <input class="input__field input__field--hantus" type="text" name="phone" id="input-03" />
-                                                <label class="input__label input__label--hantus" for="input-03">
-                                                    <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                    <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                    </svg>
-                                                    <span class="input__label-content input__label-content--hantus">Phone</span>
-                                                </label>
-                                            </span>
-                    
-                                            <span class="input input--hantus textarea">
-                                                <textarea class="input__field input__field--hantus" rows="6" name="message" id="input-04"></textarea>
-                                                <label class="input__label input__label--hantus" for="input-04">
-                                                    <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                    <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                    </svg>
-                                                    <span class="input__label-content input__label-content--hantus">Message</span>
-                                                </label>
-                                            </span>
-
+                                           <div class="form-group">
+                                             <label for="">Họ tên</label>
+                                             <input required type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
+                                            
+                                           </div>
+                                          
+                                          <div class="form-group">
+                                            <label for="">Email</label>
+                                            <input required  type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+                                           
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="">Số điện thoại</label>
+                                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="" aria-describedby="helpId">
+                                           
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="">Lời nhắn</label>
+                                            <textarea required class="form-control" name="message" id="message" rows="3"></textarea>
+                                          </div>
+                                          
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Send Message</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                                <button id="btnContact" type="submit" class="btn btn-primary">Gửi</button>
                                                 {{-- <button class="boxed-btn"></button> --}}
                                             </div>
                                         </form>
@@ -235,6 +217,7 @@
 
  <!-- Custom Script -->
  <script src="{{asset('')}}assets/js/custom.js"></script>
+ <script src="{{asset('assets/js/pages/ajax_contact_form.js')}}"></script>
  @yield('script')    
  </body>
 

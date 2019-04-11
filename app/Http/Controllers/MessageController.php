@@ -14,15 +14,16 @@ class MessageController extends Controller
     }
 
     public function create(Request $request){
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
-            'phone' => 'required|numeric',
+            'phone' => 'required',
             'message' => 'required',
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return response()->json($validator->errors());
         } else {
             Message::insert([
                 'name'=> $request->name,
