@@ -32,10 +32,17 @@ $(document).ready(function(){
             $('.media-list').append(comment_element);
             $('#message').attr("value","");
             $('#name').text("value","");
-                console.log(data);
+            var count = parseInt($('#count-comment').text());
+            count +=1;
+            $('#count-comment').text(count)
+            if (count%5==1) {
+                location.reload();
+            }
             }
         })
     })
+
+    
 
 
 })

@@ -17,6 +17,7 @@ class PostController extends Controller
         
         $comments = Comment::where('post_id',$post_id)
         ->where('type',1)
+        ->orderBy('created_at','DESC')
         ->paginate(5);
         $comments_count = Comment::where('post_id',$post_id)
         ->where('type',1)
