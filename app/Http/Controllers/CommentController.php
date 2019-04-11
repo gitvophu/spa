@@ -10,6 +10,6 @@ class CommentController extends Controller
 {
     public function index(){       
         $list_comment = Comment::getListComment();
-        return view('admin.list-comment', compact('list_comment'));
+        return view('admin.comment.list-comment', compact('list_comment'));
     }
 }
