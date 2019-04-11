@@ -30,6 +30,7 @@
                                     {{-- {{route('create-message')}} --}}
                                         <form action="#" method="post">
                                             {{csrf_field()}}
+                                            
                                            <div class="form-group">
                                              <label for="">Họ tên</label>
                                              <input required type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">

@@ -17,10 +17,12 @@ class PostController extends Controller
         
         $comments = Comment::where('post_id',$post_id)
         ->where('type',1)
+        ->where('status',1)
         ->orderBy('created_at','DESC')
         ->paginate(5);
         $comments_count = Comment::where('post_id',$post_id)
         ->where('type',1)
+        ->where('status',1)
         ->get();
         $comments_count = count($comments_count);
         $relatetive_posts = Post::where('id','<>',$post_id)

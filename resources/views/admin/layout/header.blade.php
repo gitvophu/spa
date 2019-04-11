@@ -44,7 +44,7 @@
     <body>
 
         <div id="wrapper">
-
+        <div id="base-url" data-content="{{url('')}}"></div>
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">

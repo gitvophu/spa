@@ -19,6 +19,9 @@
                         Bảng Bình Luận
                     </div>
                     <!-- /.panel-heading -->
+                    <form action="">
+                        {{ csrf_field() }}
+                    </form>
                     <div class="panel-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -48,13 +51,19 @@
                                         <td class="center">{{$comment->title}}</td>
                                         <td class="center">{{$comment->product_name}}</td>
                                         <td class="center">
-                                            <a href=""></a><button type="submit" class="btnUpdateStatus">
-                                                @if($comment->status == 1)
-                                                    Ẩn
-                                                @else
-                                                    Hiển
-                                                @endif
-                                            </button></a>
+                                            @if($comment->status == 1)
+                                            (Hiện)
+                                            <button data-content="{{$comment->id}}" type="submit" class="btnToggleStatus btn btn-danger">
+                                                Ẩn
+                                            </button>
+                                            @else
+                                                (Ẩn)
+                                            <button type="submit" data-content="{{$comment->id}}" class="btnToggleStatus btn btn-success">
+                                                Hiện
+                                            </button>
+                                            @endif
+
+                                            
                                         </td>
                                     </tr>
                                     @endforeach
