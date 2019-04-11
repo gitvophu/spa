@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         }
         foreach (range(1,5) as $index) {
             DB::table('banners')->insert([
-                'image' =>'fullwidth01.jpg',
+                'image' =>'slider03.jpg',
                 'title' => $faker->sentence(),
                 'description' => $faker->paragraph(5),             
             ]);
