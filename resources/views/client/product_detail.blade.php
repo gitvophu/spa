@@ -3,7 +3,7 @@
 <script src="{{asset('assets/js/pages/product_detail.js')}}"></script>
 @endsection
 @section('link')
-    <link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
 @endsection
 @section('content')
     

@@ -12,7 +12,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset('')}}assets/css/style.css">
     <link rel="stylesheet" href="{{asset('')}}assets/css/responsive.css">
-
     @yield('link')
 
     <!--[if lt IE 9]>

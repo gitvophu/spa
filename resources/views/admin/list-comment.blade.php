@@ -27,6 +27,7 @@
                                         <th>Bình Luận</th>
                                         <th>Tên Bài Viết</th>
                                         <th>Tên Sản Phẩm</th>
+                                        <th>Hành động</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,6 +44,15 @@
                                             @endif</td>
                                         <td class="center">{{$comment->title}}</td>
                                         <td class="center">{{$comment->product_name}}</td>
+                                        <td class="center">
+                                            <button type="submit" id="btnUpadteStatus">
+                                                @if($comment->status == 1)
+                                                    Hiện
+                                                @else
+                                                    Ẩn
+                                                @endif
+                                            </button>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
