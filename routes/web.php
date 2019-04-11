@@ -41,7 +41,6 @@ Route::group(['prefix' => '/admin', 'middleware' => array('admin','can_see')], f
 Route::group(['prefix' => '/admin/comments', 'middleware' => array('admin','can_see')], function () {
     //Comments layout
     Route::get('/list-comment', 'CommentController@index')->name('list-comment');
-    Route::post('/list-comment', 'CommentController@updateStatus')->name('updateStatus');
     
 });
 
