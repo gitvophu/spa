@@ -17,6 +17,13 @@ class ProductController extends Controller
         return view('admin.product.products',compact('products'));
     }
 
+    //Hiển thị danh sách sản phẩm client
+    public function view_product(){
+        $products = Product::all();
+        return view('client.products', compact('products'));
+    }
+
+    //Hiển thị trang chi tiết sản phẩm
     public function product_detail($id){
         $product = new Product();
         $product_ = $product->getProductByID($id);     
@@ -80,6 +87,6 @@ class ProductController extends Controller
         $product->description= $request->desproduct;
         $product->price = $request->priceproduct;
         $product->save();
-        return redirect()->route('list-product')->with(['message' =>'Cập nhật thành công']);
+        return back()->with(['message' =>'Cập nhật thành công']);
     }
 }

@@ -96,7 +96,7 @@
 
                         <div class="overlay">
                             <ul class="icons">
-                                <li><a href="#" class="mfp-popup"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="{{route('post-detail', ['post_id' => $post->id])}}"><i class="fas fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>

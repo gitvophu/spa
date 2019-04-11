@@ -15,6 +15,10 @@
 
 //Home layout
 Route::get('/','HomeController@index')->name('/');
+//Product layout
+Route::get('/view_product','ProductController@view_product')->name('view_product');
+//Post layout
+Route::get('/view_post','PostController@view_post')->name('view_post');
 //Product detail layout
 Route::get('/product-detail/{id}','ProductController@product_detail')->name('product-detail');
 //Blog detail layout
