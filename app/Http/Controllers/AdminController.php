@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\Comment;
+use App\Models\Message;
+use App\Models\Post;
+use App\Models\Product;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +20,12 @@ class AdminController extends Controller
 {
 
     public function index(){
-        return view('admin.home');
+        $countComment = Comment::count();
+        $countPost = Post::count();
+        $countMess = Message::count();
+        $countBanner = Banner::count();
+        $countProduct = Product::count();
+        return view('admin.home', compact('countComment', 'countPost', 'countMess', 'countBanner', 'countProduct'));
     }
 
     //list infor banner

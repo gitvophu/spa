@@ -28,7 +28,8 @@
                                     <th>Giá</th>
                                     <th>Hình ảnh</th>
                                     <th>Mô tả</th>
-                                    <th>Thao tác</th>
+                                    <th>Xóa</th>
+                                    <th>Sửa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,9 +38,10 @@
                                     <td style="text-align: center;">{{$product->id}}</td>
                                     <td style="text-align: center;">{{$product->name}}</td>
                                     <td style="text-align: center;">{{$product->price}}</td>
-                                    <td><img src="{{url('/') . "/uploads/product/" . $product->image }}"></td>
+                                    <td><img src="{{url('/') . "/uploads/product/" . $product->image }}" class="img-responsive"></td>
                                     <td class="center">{{$product['description']}}</td>
-                                    <td ><button><a href="{{route('delete-product',['id'=>$product['id']])}}">Xóa</a></button><button><a href="{{route('update',['id'=>$product['id']])}}">Sửa</a></button></td>
+                                    <td style="text-align: center;"><a href="{{route('delete-product',['id'=>$product['id']])}}" onclick="return confirm('Bạn có chắc muốn xoá sản phẩm ?')"><i class="fa fa-trash-o fa-fw"></i></a></td>
+                                    <td style="text-align: center;"><a href="{{route('update',['id'=>$product['id']])}}"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                             @endforeach
                             </tbody>

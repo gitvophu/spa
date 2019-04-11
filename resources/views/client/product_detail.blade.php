@@ -113,7 +113,6 @@
                 <!-- Sidebar -->
                 <div class="col-lg-4 col-md-12">
                     <section class="sidebar">
-
                         <aside class="widget widdget-recent-post">
                             <h5 class="widget-title">Sản phẩm mới</h5>
                             <div class="recent-post">

@@ -67,68 +67,68 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-comment fa-fw"></i> New Comment
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small">12 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-tasks fa-fw"></i> New Task
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
+                        {{--<ul class="dropdown-menu dropdown-alerts">--}}
+                            {{--<li>--}}
+                                {{--<a href="#">--}}
+                                    {{--<div>--}}
+                                        {{--<i class="fa fa-comment fa-fw"></i> New Comment--}}
+                                        {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="#">--}}
+                                    {{--<div>--}}
+                                        {{--<i class="fa fa-twitter fa-fw"></i> 3 New Followers--}}
+                                        {{--<span class="pull-right text-muted small">12 minutes ago</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="#">--}}
+                                    {{--<div>--}}
+                                        {{--<i class="fa fa-envelope fa-fw"></i> Message Sent--}}
+                                        {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="#">--}}
+                                    {{--<div>--}}
+                                        {{--<i class="fa fa-tasks fa-fw"></i> New Task--}}
+                                        {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="#">--}}
+                                    {{--<div>--}}
+                                        {{--<i class="fa fa-upload fa-fw"></i> Server Rebooted--}}
+                                        {{--<span class="pull-right text-muted small">4 minutes ago</span>--}}
+                                    {{--</div>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="divider"></li>--}}
+                            {{--<li>--}}
+                                {{--<a class="text-center" href="#">--}}
+                                    {{--<strong>See All Alerts</strong>--}}
+                                    {{--<i class="fa fa-angle-right"></i>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
                     </li>
                     <li class="dropdown">
-                    @if(Auth::check())
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> {{Session::get('email')}} <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> Change password</a>
-                            </li>
-                            <li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                            </li>
-                        </ul>
-                    @endif
+                        @if(Auth::check())
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user fa-fw"></i> {{Session::get('email')}} <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#"><i class="fa fa-user fa-fw"></i> Change password</a>
+                                </li>
+                                <li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                </li>
+                            </ul>
+                        @endif
                     </li>
                 </ul>
                 <!-- /.navbar-top-links -->
@@ -136,19 +136,19 @@
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
-                            <li class="sidebar-search">
-                                <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                </span>
-                                </div>
-                                <!-- /input-group -->
-                            </li>
+                            {{--<li class="sidebar-search">--}}
+                                {{--<div class="input-group custom-search-form">--}}
+                                    {{--<input type="text" class="form-control" placeholder="Search...">--}}
+                                    {{--<span class="input-group-btn">--}}
+                                        {{--<button class="btn btn-primary" type="button">--}}
+                                            {{--<i class="fa fa-search"></i>--}}
+                                        {{--</button>--}}
+                                    {{--</span>--}}
+                                {{--</div>--}}
+                                {{--<!-- /input-group -->--}}
+                            {{--</li>--}}
                             <li>
-                                <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="{{route('admin-index')}}" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
                                 <a href="{{route('list-comment')}}"><i class="fa fa-comments fa-fw"></i> Comments </a>
@@ -163,18 +163,18 @@
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-table fa-fw"></i> Posts</a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                    <a href="{{route('create-post')}}">Create post</a>
-                                    </li>
-                                    <li>
-                                    <a href="{{route('list-post')}}">List post</a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('list-message')}}"><i class="fa fa-edit fa-fw"></i> Messages</a>
                             </li>
                             <li>
-                                <a href="{{route('list-message')}}"><i class="fa fa-edit fa-fw"></i> Messages</a>
+                                <a href="#"><i class="fa fa-table fa-fw"></i> Posts<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{route('create-post')}}">Create post</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('list-post')}}">List post</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Banners<span class="fa arrow"></span></a>
@@ -200,18 +200,18 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
-                            <li>
-                                <a href="#"><i class="fa fa-user-o fa-fw"></i> Users<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="#">Create user</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">List user</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="#"><i class="fa fa-user-o fa-fw"></i> Users<span class="fa arrow"></span></a>--}}
+                                {{--<ul class="nav nav-second-level">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#">Create user</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#">List user</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                                {{--<!-- /.nav-second-level -->--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                 </div>
