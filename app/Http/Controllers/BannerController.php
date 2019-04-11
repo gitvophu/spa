@@ -24,10 +24,16 @@ class BannerController extends Controller
     public function store_banner(Request $request){
         $banner= new Banner();
         $validator = Validator::make($request->all(), [
-            'image' => 'required',
             'title' => 'required',
-            'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
+        ],[
+            'title.required' => 'Tiêu đề không được bỏ trống',
+            'image.required' => 'File ảnh không được bỏ trống',
+            'image.image' => 'File ảnh phải là hình ảnh',
+            'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
+            'image.max' => 'File ảnh tối đa là 2MB',
+            'description.required' => 'Nội dung không được bỏ trống',
         ]);
 
         if ($validator->fails()) {
@@ -37,7 +43,7 @@ class BannerController extends Controller
             if($request->hasfile('image'))
             {
                 $image = $request->file('image');
-                $name = $image->getClientOriginalName();
+                $name = time().'.'. $image->getClientOriginalName();
                 $image->move(public_path().'/uploads/banner/', $name);
                 $banner->image = $name;
             }
@@ -54,10 +60,13 @@ class BannerController extends Controller
     //Cập nhật lại banner
     public function update_banner(Request $request){
         $validator = Validator::make($request->all(), [
-            'image' => '',
-            'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => '',
             'title' => '',
+        ],[
+            'image.image' => 'File ảnh phải là hình ảnh',
+            'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
+            'image.max' => 'File ảnh tối đa là 2MB',
         ]);
 
         if ($validator->fails()) {

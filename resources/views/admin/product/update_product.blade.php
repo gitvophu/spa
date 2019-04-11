@@ -6,18 +6,23 @@
                         <div class="col-lg-12">
                             <h1 class="page-header">Product</h1>
                         </div>
-                        {{-- successful message --}}
-            <?php $message = Session::get('message'); ?>
-            @if( isset($message) )
-                <div class="alert alert-success">{!! $message !!}</div>
-            @endif
-            @if($errors->any() )
-                @foreach($errors->all() as $err)
-                    <div class="alert alert-danger">{!! $err !!}</div>
-                @endforeach
-            @endif
                         <!-- /.col-lg-12 -->
                     </div>
+                    {{-- successful message --}}
+                    <?php $message = Session::get('message'); ?>
+                    @if( isset($message) )
+                        <div class="alert alert-success">{!! $message !!}</div>
+                    @endif
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <strong>Lỗi!</strong><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <!-- /.row -->
                     <div class="row">
                         <div class="col-lg-12">
