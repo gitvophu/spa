@@ -85,7 +85,7 @@
 
                         <!-- Post Comment Area -->
                         <div class="post-comments-area">
-                            <h4 class="pb-2">({{count($comments)}}) Bình luận</h4>
+                            <h4 class="pb-2">({{$comments_count}}) Bình luận</h4>
                             <ul class="media-list">
                                 @foreach ($comments as $cmt)
                                 <li class="media">
@@ -122,6 +122,7 @@
                                 </li> --}}
                                 
                             </ul>
+                            {{$comments->links('vendor.pagination.bootstrap-4')}}
                         </div>
                         <!-- Post New Comment Area -->
                         <div class="post-new-comment">
@@ -161,7 +162,7 @@
                 <div class="col-lg-4 col-md-12">
                     <section class="sidebar">
                         
-                        <aside class="widget widget-search">
+                        {{-- <aside class="widget widget-search">
                             <h5 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Search</h5>
                             <form class="search-form" action="#">
                                 <span class="input input--hantus">
@@ -175,7 +176,7 @@
                                 </span>
                                 <input type="button" class="search-btn" value="Go">
                             </form>
-                        </aside>
+                        </aside> --}}
 
                         <aside class="widget widdget-recent-post">
                             <h5 class="widget-title"><img src="{{asset('')}}assets/img/section-icon.png" alt="">Bài viết mới</h5>

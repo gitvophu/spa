@@ -14,15 +14,20 @@ class PostController extends Controller
     // trang chi tiết bài viết
     function post_detail($post_id){
         $post = Post::find($post_id);
+        
         $comments = Comment::where('post_id',$post_id)
         ->where('type',1)
+        ->paginate(5);
+        $comments_count = Comment::where('post_id',$post_id)
+        ->where('type',1)
         ->get();
+        $comments_count = count($comments_count);
         $relatetive_posts = Post::where('id','<>',$post_id)
             ->orderBy('created_at','DESC')
             ->limit(4)
             ->get();
         // dd($comments);
-        return view('client.post_detail',compact('post','comments','relatetive_posts'));
+        return view('client.post_detail',compact('post','comments','relatetive_posts','comments_count'));
     }
 
     // trang ds bai viet admin
@@ -45,7 +50,6 @@ class PostController extends Controller
     // trang sửa bài viết
     public function edit($post_id){
         $post = Post::find($post_id);
-        
         return view('admin.post.post_edit',compact('post_id','post'));
     }
     public function update(Request $request){
