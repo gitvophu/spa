@@ -73,7 +73,7 @@
                                     <div class="media-body">
                                         <h5 class="comment-author"><span>{{$comment['name']}}</span></h5>
                                         <p class="comment">{{$comment['description']}}. </p>
-                                        <span class="comment-date">{{date('d-m-Y', strtotime($comment['updated_at']))}}</span>
+                                        <span class="comment-date">{{$comment['created_at']}}</span>
                                     </div>
                                 </li>
                                 @endforeach
@@ -84,44 +84,27 @@
                             <h4>Hãy để lại nhận xét của bạn về sản phẩm của chúng tôi</h4>
                             <p>Email của bạn sẽ không được hiển thị công khai. Các trường bắt buộc được đánh dấu *</p>
                             <form action="#">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="asset" id="asset" value="{{asset('')}}">
+                                <input type="hidden" name="product_id" id="product_id" value="{{$product_->id}}">
+                                <input type="hidden" name="type" id="type" value="2">
                                 <div class="row">
                                     <div class="col-sm-12 form-group pt-4">
-                                        <span class="input input--hantus textarea">
-                                            <textarea class="input__field input__field--hantus" rows="5" id="input-05"></textarea>
-                                            <label class="input__label input__label--hantus" for="input-05">
-                                                <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                </svg>
-                                                <span class="input__label-content input__label-content--hantus">Nhận xét của bạn *</span>
-                                            </label>
-                                        </span>
+                                        <div class="form-group">
+                                          <label for="">Nội dung</label>
+                                          <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                                        </div>
                                     </div>
 
                                     <div class="col-sm-6 form-group">
-                                        <span class="input input--hantus">
-                                            <input class="input__field input__field--hantus" type="text" id="input-06" />
-                                            <label class="input__label input__label--hantus" for="input-06">
-                                                <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                </svg>
-                                                <span class="input__label-content input__label-content--hantus">Tên *</span>
-                                            </label>
-                                        </span>
-                                    </div>
-
-                                    <div class="col-sm-6 form-group">
-                                        <span class="input input--hantus">
-                                            <input class="input__field input__field--hantus" type="text" id="input-07" />
-                                            <label class="input__label input__label--hantus" for="input-07">
-                                                <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                                </svg>
-                                                <span class="input__label-content input__label-content--hantus">Email *</span>
-                                            </label>
-                                        </span>
+                                       <div class="form-group">
+                                         <label for="">Tên</label>
+                                         <input type="text"
+                                           class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">                                        
+                                       </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="boxed-btn">Gửi đi</button>
+                                <button id="btnSubmit_Product" type="submit" class="boxed-btn">Gửi đi</button>
                             </form>
                         </div>
                     </article>
@@ -132,7 +115,7 @@
                     <section class="sidebar">
 
                         <aside class="widget widdget-recent-post">
-                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Sản phẩm mới</h5>
+                            <h5 class="widget-title">Sản phẩm mới</h5>
                             <div class="recent-post">
                                 <div class="row">
                                     <div class="col-md-12">

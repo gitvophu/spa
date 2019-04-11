@@ -21,6 +21,7 @@ Route::get('/view_product','ProductController@view_product')->name('view_product
 Route::get('/view_post','PostController@view_post')->name('view_post');
 //Product detail layout
 Route::get('/product-detail/{id}','ProductController@product_detail')->name('product-detail');
+Route::post('/product-detail/comment-ajax','ProductController@comment_ajax');
 //Blog detail layout
 Route::get('/post-detail/{post_id}','PostController@post_detail')->name('post-detail');
 Route::post('/post-detail/comment-ajax','PostController@comment_ajax');
