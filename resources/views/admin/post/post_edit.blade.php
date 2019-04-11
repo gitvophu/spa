@@ -10,12 +10,17 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">CHỈNH SỬA BÀI VIẾT</h1>
                     @if (session()->has('success'))
-                <p class="alert alert-success"><strong>{{session('success')}}</strong></p>    
+                        <p class="alert alert-success"><strong>{{session('success')}}</strong></p>
                     @endif
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $err)
-                        <p class="alert alert-danger"><strong>{{$err}}</strong></p>    
-                        @endforeach
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <strong>Lỗi!</strong><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
                 </div>
                 <!-- /.col-lg-12 -->
