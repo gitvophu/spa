@@ -20,9 +20,11 @@ class ProductController extends Controller
     public function product_detail($id){
         $product = new Product();
         $product_ = $product->getProductByID($id);     
-        $comments = Comment::where('product_id', $id)->where('type', '2')->get()->toArray();   
+        $comments = Comment::where('product_id', $id)->where('type', '2')->orderBy('updated_at', 'desc')->take(10)->get()->toArray();   
         $total_cmt = count($comments);
-        return view('client.product_detail', compact('product_', 'comments', 'total_cmt'));
+        $product_news = Product::orderBy('updated_at', 'desc')->take(4)->get()->toArray();
+        //var_dump($product_news);die();
+        return view('client.product_detail', compact('product_', 'comments', 'total_cmt', 'product_news'));
     }    
 
     //Giao diện thêm sản phẩm

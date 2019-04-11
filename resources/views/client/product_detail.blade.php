@@ -43,9 +43,9 @@
                                         <img src="{{url('assets/img/product/' . $product_->image)}}" alt="">
                             </div>
                             <div class="col-lg-6 col-md-6 mb-5 mb-lg-0">
-                                <div>  
+                                <div>
                                     <h4><b>{{$product_->name}}</b></h4>
-                                    <hr>                                    
+                                    <hr>
                                     <h4 style="color: #EC5598; font-size: 3em;">{{$product_->price}} <sup><u>đ</u></sup></h4>
                                 </div>
                             </div>
@@ -127,40 +127,25 @@
                 <!-- Sidebar -->
                 <div class="col-lg-4 col-md-12">
                     <section class="sidebar">
-                        
-                        <aside class="widget widget-search">
-                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Search</h5>
-                            <form class="search-form" action="#">
-                                <span class="input input--hantus">
-                                    <input class="input__field input__field--hantus" type="text" id="input-01" />
-                                    <label class="input__label input__label--hantus" for="input-01">
-                                        <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                        <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-                                        </svg>
-                                        <span class="input__label-content input__label-content--hantus">Search product</span>
-                                    </label>
-                                </span>
-                                <input type="button" class="search-btn" value="Go">
-                            </form>
-                        </aside>
 
                         <aside class="widget widdget-recent-post">
-                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Recent News</h5>
+                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Sản phẩm mới</h5>
                             <div class="recent-post">
-                                <a href="#"><h6>Stephenson will bring his trademark leadership approach to Elements Massage</h6></a>
-                                <p>Jul 08, 2017</p>
-                            </div>
-                            <div class="recent-post">
-                                <a href="#"><h6>In addition to Stephenson’s internal he will also serve as a spokesperson.</h6></a>
-                                <p>Jul 08, 2017</p>
-                            </div>
-                            <div class="recent-post">
-                                <a href="#"><h6>In addition to Stephenson’s internal he will also serve as a spokesperson.</h6></a>
-                                <p>Jul 08, 2017</p>
-                            </div>
-                            <div class="recent-post">
-                                <a href="#"><h6>To learn more about Elements Massage and franchise.</h6></a>
-                                <p>Jul 08, 2017</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                            @foreach($product_news as $key)
+                                                <div class="pricing-box text-center">  
+                                                    <h3>{{$key['name']}}</h3>
+                                                    <hr>
+                                                    <div class="product-img">
+                                                        <img src="{{url('assets/img/product/' . $key['image'])}}" alt="">
+                                                    </div>
+                                                    <a href="{{route('product-detail', ['id' => $key['id']])}}" class="boxed-btn">Detail</a>
+                                                
+                                                </div>
+                                            @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </aside>
                     </section>
