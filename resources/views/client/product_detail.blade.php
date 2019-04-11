@@ -130,7 +130,6 @@
                 <!-- Sidebar -->
                 <div class="col-lg-4 col-md-12">
                     <section class="sidebar">
-                        
                         <aside class="widget widget-search">
                             <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Search</h5>
                             <form class="search-form" action="#">

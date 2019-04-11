@@ -37,7 +37,7 @@
                                     <td style="text-align: center;">{{$product->id}}</td>
                                     <td style="text-align: center;">{{$product->name}}</td>
                                     <td style="text-align: center;">{{$product->price}}</td>
-                                    <td><img src="{{url('/') . "/uploads/product/" . $product->image }}"></td>
+                                    <td><img src="{{url('/') . "/uploads/product/" . $product->image }}" class="img-responsive"></td>
                                     <td class="center">{{$product['description']}}</td>
                                     <td ><button><a href="{{route('delete-product',['id'=>$product['id']])}}">Xóa</a></button><button><a href="{{route('update',['id'=>$product['id']])}}">Sửa</a></button></td>
                                 </tr>

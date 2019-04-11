@@ -19,7 +19,7 @@ class ProductController extends Controller
 
     //Hiển thị danh sách sản phẩm client
     public function view_product(){
-        $products = Product::all();
+        $products = Product::paginate(9);
         return view('client.products', compact('products'));
     }
 

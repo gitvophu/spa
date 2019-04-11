@@ -34,7 +34,7 @@ class PostController extends Controller
 
     //danh sách bài viết client
     public function view_post(){
-        $posts = Post::all();
+        $posts = Post::paginate(9);
         return view('client.posts', compact('posts'));
     }
 

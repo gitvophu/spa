@@ -148,7 +148,7 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="{{route('admin-index')}}" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
                                 <a href="{{route('list-comment')}}"><i class="fa fa-comments fa-fw"></i> Comments </a>
@@ -163,7 +163,7 @@
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-table fa-fw"></i> Posts</a>
+                                <a href="#"><i class="fa fa-table fa-fw"></i> Posts<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
                                     <a href="{{route('create-post')}}">Create post</a>
