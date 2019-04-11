@@ -17,7 +17,7 @@ class MessageController extends Controller
         // dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'message' => 'required',
         ]);
@@ -31,7 +31,9 @@ class MessageController extends Controller
                 'phone'=> $request->phone,
                 'message'=> $request->message,
             ]);
-            return back()->with('success', 'Send Message Successful');
+            return response()->json([
+                'success'=>'Bạn đã gửi thành công thông tin liên hệ'
+            ]);
         }
 
         return view('client.layout.footer');
