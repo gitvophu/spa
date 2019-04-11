@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,8 @@ class AdminController extends Controller
 {
 
     public function index(){
-        return view('admin.home');
+        $countComment = Comment::count();
+        return view('admin.home', compact('countComment'));
     }
 
     //list infor banner

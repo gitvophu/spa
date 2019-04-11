@@ -133,7 +133,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-6">
                         <div class="logo main">
-                            <a href="{{route('/')}}"><img class="responsive" src="{{asset('')}}/assets/img/logo.png" alt="Startkit"></a>
+                            <a href="{{route('/')}}"><img class="responsive" src="{{asset('assets/img/logo.png')}}" alt="Startkit"></a>
                         </div>
                     </div>
                     <div class="col-lg-10 col-md-10 d-none d-lg-block text-right">
