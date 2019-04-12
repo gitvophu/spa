@@ -35,7 +35,8 @@ class PostController extends Controller
 
     // trang ds bai viet admin
     public function list_post(){
-        $list_post = Post::get();
+        $list_post = Post::get(); 
+        
 
         return view('admin.post.post_list',compact('list_post'));
     }
