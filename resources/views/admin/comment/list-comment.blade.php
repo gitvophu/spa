@@ -52,12 +52,12 @@
                                         <td class="center">{{$comment->product_name}}</td>
                                         <td class="center">
                                             @if($comment->status == 1)
-                                            (Hiện)
+                                            <span>(Hiện)</span>
                                             <button data-content="{{$comment->id}}" type="submit" class="btnToggleStatus btn btn-danger">
                                                 Ẩn
                                             </button>
                                             @else
-                                                (Ẩn)
+                                                <span>(Ẩn)</span>
                                             <button type="submit" data-content="{{$comment->id}}" class="btnToggleStatus btn btn-success">
                                                 Hiện
                                             </button>

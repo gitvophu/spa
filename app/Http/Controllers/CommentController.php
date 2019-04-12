@@ -20,7 +20,12 @@ class CommentController extends Controller
         // dd($comment);
         $comment->status =  !$comment->status;
         $comment->save();
-
-        return response()->json(['success'=>'thành công']);
+        if ($comment->status==1) {
+            return response()->json(['status'=>1]);
+        } else {
+            return response()->json(['status'=>0]);
+        }
+        
+        
     }
 }

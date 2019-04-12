@@ -1,10 +1,10 @@
-$(document).ready(function(){
-    $('#contact-btn').on('click',function(e){
+$(document).ready(function () {
+    $('#contact-btn').on('click', function (e) {
         e.preventDefault();
         $('#contact-modal').modal('show')
     })
 
-    $('#btnComment').on('click',function(e){
+    $('#btnComment').on('click', function (e) {
         e.preventDefault();
         var _token = $('input[name="_token"]').val();
         var message = $('#message').val();
@@ -14,35 +14,46 @@ $(document).ready(function(){
         var asset = $('#asset').val();
         console.log(message + ":::" + name + ':::' + _token);
         $.ajax({
-            url:"/post-detail/comment-ajax",
-            type:'post',
-            data:{message,name,_token,type,post_id},
-            success:function(data){
-                var comment_element = `<li class="media">
-                <div class="media-left">
-                <a href="#"><img  class="img-responsive" alt="" src="${asset}uploads/static/avatar-icon.png"> </a>
-                </div>
-                <div class="media-body">
-                    <h5 class="comment-author"><a href="#">${data.name}</a></h5>
-                    <p class="comment">${data.message}</p>
-                    <a href="#" class="comment-date">${data.created_at}</a>
+            url: "/post-detail/comment-ajax",
+            type: 'post',
+            data: {
+                message,
+                name,
+                _token,
+                type,
+                post_id
+            },
+            success: function (data) {
+                swal({
+                    text:"Cảm ơn đóng góp của bạn!",
+                    button:true,
+                    icon:"success"
+                })
+            //     var comment_element = `<li class="media">
+            //     <div class="media-left">
+            //     <a href="#"><img  class="img-responsive" alt="" src="${asset}uploads/static/avatar-icon.png"> </a>
+            //     </div>
+            //     <div class="media-body">
+            //         <h5 class="comment-author"><a href="#">${data.name}</a></h5>
+            //         <p class="comment">${data.message}</p>
+            //         <a href="#" class="comment-date">${data.created_at}</a>
                     
-                </div>
-            </li>`;
-            $('.media-list').append(comment_element);
-            $('#message').attr("value","");
-            $('#name').text("value","");
-            var count = parseInt($('#count-comment').text());
-            count +=1;
-            $('#count-comment').text(count)
-            if (count%5==1) {
-                location.reload();
-            }
+            //     </div>
+            // </li>`;
+            //     $('.media-list').append(comment_element);
+            //     $('#message').attr("value", "");
+            //     $('#name').text("value", "");
+            //     var count = parseInt($('#count-comment').text());
+            //     count += 1;
+            //     $('#count-comment').text(count)
+            //     if (count % 5 == 1) {
+            //         location.reload();
+            //     }
             }
         })
     })
 
-    
+
 
 
 })
