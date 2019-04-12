@@ -25,7 +25,8 @@ $(document).ready(function () {
             },
             success: function (data) {
                 swal({
-                    text:"Cảm ơn đóng góp của bạn!",
+                    
+                    text:"Đã ghi nhận đóng góp ý kiến!",
                     button:true,
                     icon:"success"
                 })

@@ -6,8 +6,9 @@ $(document).ready(function () {
         var message = $('#message').val();
         var phone = $('input[name="phone"]').val();
         var _token = $('input[name="_token"]').val();
+        console.log(window.location.origin);
         $.ajax({
-            url: 'admin/message/create-message',
+            url: window.location.origin + '/admin/message/create-message',
             type: 'post',
             data: {
                 name,
@@ -59,7 +60,7 @@ $(document).ready(function () {
                 }
                 else{
                     swal({
-                        title: "Cảnh báo !!!",
+                        title: "Thông báo !!!",
                         text: data.success,
                         icon: "success",
                         button: true,

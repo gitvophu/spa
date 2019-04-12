@@ -6,7 +6,7 @@ $(document).ready(function(){
         var button_element = $(this);
         // console.log(comment_id);
         $.ajax({
-            url:  '/comments/update-status',
+            url:  window.location.origin +'/comments/update-status',
             type:'post',
             data:{comment_id,_token},
             success:function(data){
