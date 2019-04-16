@@ -29,6 +29,7 @@
                                     <tr>
                                         <th>STT</th>
                                         <th>Tên Khách Hàng</th>
+                                        <th style="min-width: 100px;">Thời gian</th>
                                         <th>Mô Tả</th>
                                         <th>Bình Luận</th>
                                         <th>Tên Bài Viết</th>
@@ -39,8 +40,9 @@
                                 <tbody>
                                     @foreach($list_comment as $comment)
                                     <tr class="odd gradeX">
-                                        <td>{{$comment->id}}</td>
+                                        <td>{{$loop->index+1}}</td>
                                         <td>{{$comment->name}}</td>
+                                        <td>{{$comment->created_at}}</td>
                                         <td>{{$comment->description}}</td>
                                         <td class="center">
                                             @if($comment->type == 1)

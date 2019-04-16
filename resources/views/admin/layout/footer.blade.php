@@ -20,8 +20,7 @@
         <script>
             $(document).ready(function() {
                 $('#dataTables-example').DataTable({
-                        responsive: true,
-                        ordering:false
+                        responsive: true
                 });
             });
         </script>

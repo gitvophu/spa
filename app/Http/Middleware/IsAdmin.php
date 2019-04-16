@@ -18,10 +18,10 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        // if(!Auth::check()){
-        //     $errors = new MessageBag(['errors' => 'Vui lòng đăng nhập!']);
-        //     return redirect('/admin/ad-login')->withInput()->withErrors($errors);
-        // }
+        if(!Auth::check()){
+            $errors = new MessageBag(['errors' => 'Vui lòng đăng nhập!']);
+            return redirect('/admin/ad-login')->withInput()->withErrors($errors);
+        }
         return $next($request);
     }
 }
