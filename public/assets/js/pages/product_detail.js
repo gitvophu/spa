@@ -20,7 +20,7 @@ $(document).ready(function(){
                 button: true,
                 icon: "error"
             }) 
-        }if (!name){
+        }else if (!name){
             swal({
                 text: "Vui lòng để lại tên trước khi gửi!",
                 button: true,
