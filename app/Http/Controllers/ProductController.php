@@ -131,6 +131,7 @@ class ProductController extends Controller
 
     // xử lý ajax cho comment san pham
     function comment_ajax(Request $request){
+        
         $data = $request->only('name','message','type','product_id');
         $comment = new Comment();
         $comment->name = $data['name'];

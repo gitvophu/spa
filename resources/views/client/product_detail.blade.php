@@ -63,7 +63,7 @@
 
                         <!-- Post Comment Area -->
                         <div class="post-comments-area">
-                            <h4 class="pb-2">({{$total_cmt}}) Bình Luận</h4>
+                            <h4 class="pb-2">(<span id="count-comment" >{{$total_cmt}}</span>) Bình Luận</h4>
                             <ul class="media-list">
                                 @foreach($comments as $comment)
                                 <li class="media">
