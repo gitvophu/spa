@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Edit Banner</h1>
+                    <h1 class="page-header">Cập nhật Banner</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -23,7 +23,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
+                            Cập nhật Banner
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -32,11 +32,11 @@
                                         {{csrf_field()}}
                                         <input type="hidden" name="id" value="{{$listBanner['id']}}">
                                         <div class="form-group">
-                                            <label>Title</label>
+                                            <label>Tiêu đề</label>
                                             <input type="text" id="title" name="title" value="{{$listBanner['title']}}">
                                         </div>
                                         <div class="form-group">
-                                            <label>File input</label>
+                                            <label>Hình ảnh</label>
                                             <input type="file" id="image" name="image">
                                             <br>
                                             <div>
@@ -44,10 +44,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Description</label>
+                                            <label>Nội dung</label>
                                             <textarea id="description" name="description" class="form-control" rows="3">{{ $listBanner['description'] }}</textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-default">Update Banner</button>
+                                        <button type="submit" class="btn btn-default">Cập nhật Banner</button>
 
                                     </form>
                                 </div>

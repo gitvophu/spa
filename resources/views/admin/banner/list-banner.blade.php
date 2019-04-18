@@ -21,7 +21,7 @@
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>STT</th>
                                     <th>Tiêu đề</th>
                                     <th>Hình ảnh</th>
                                     <th>Nội dung</th>
