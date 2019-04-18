@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Models\Post;
 use App\Models\Banner;
 use App\Models\Comment;
 use App\Models\Message;
-use App\Models\Post;
 use App\Models\Product;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -90,7 +91,7 @@ class AdminController extends Controller
                 ]
             );
             if ($validator->fails()) {
-                $errors = new MessageBag(['error' => 'xx']);
+                
                 return redirect()->back()->withInput()->withErrors($validator->errors());
             }
             else {
@@ -105,7 +106,67 @@ class AdminController extends Controller
             $errors = new MessageBag(['error' => 'Vui lòng nhập mật khẩu trước khi gửi yêu cầu!']);
             return redirect()->back()->withInput()->withErrors($errors);
         }
-        return redirect()->back()->with('alert-success', 'Thay đổi mật khẩu thành công.');;
+        return redirect()->back()->with('alert-success', 'Thay đổi mật khẩu thành công.');
+    }
+
+    public function sendMail(Request $request){
+        $validator = Validator::make($request->all(),[
+            'email'=>'required|email',
+        ],[
+            'email.required' => 'Mật khẩu là trường bắt buộc.'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator->errors());
+        }
+        $email = $request->email;
+        $reset_pass_token = str_random(30);
+        $user = User::where('email',$email)->first();
+        if (!$user) {
+            $error = new MessageBag(['error' => 'Email không hợp lệ!']);
+            return redirect()->back()->withInput()->withErrors($error);
+        }
+        $user->reset_pass_token = $reset_pass_token;
+        $user->save();
+        $link = route('reset-link',['token'=>$reset_pass_token,'email'=>$email]);
+        Mail::send('admin.emails.reset_email', array(
+            'link'=> $link
+        ), function($message) use ($email){
+	        $message->to($email, 'User')->subject('Xin chào');
+	    });        
+        return redirect()->back()->with('alert-success', 'Vui lòng kiểm tra mail để thay đổi mật khẩu mới!');
+    }
+
+    public function reset_link($token, $email){
+        $user = User::where('email',$email)->first();
+
+        if ($user->reset_pass_token == $token) {
+            return view("admin.reset_form",compact('email'));
+        }
+        else{
+            echo "sai ";
+        }
+    }
+
+    function do_reset(Request $request){
+        $validator = Validator::make($request->all(),[
+            'email'=>'required|email',
+            'password'=>'required|min:6'
+        ],[]);
+        if ($validator->fails()) {
+            $errors = new MessageBag(['error' => 'Reset mật khẩu thất bại, lỗi dữ liệu truyền vào ko đúng ràng buộc']);
+            return redirect()->back()->withInput()->withErrors($errors);
+        }
+        $email = $request->email;
+        $password = $request->password;
+        $user = User::where('email',$email)->first();
+        $user->password = bcrypt($password);
+        $user->reset_pass_token = "";
+        $user->save();
+        return redirect('/admin');
+    }
+
+    public function forget_password(){
+        return view('admin.forget-password');
     }
 
     public function logout(){

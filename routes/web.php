@@ -34,6 +34,10 @@ Route::group(['prefix'=>'comments'],function(){
 Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function () {
     Route::get('/ad-login', 'AdminController@ad_login')->name('ad-login');
     Route::post('/ad-login', 'AdminController@doLogin')->name('ad-login');
+    Route::get('/forget-password', 'AdminController@forget_password')->name('forget-password');
+    Route::post('/sendMail','AdminController@sendMail')->name('send-mail');
+    Route::get('/reset-pass/{token}/{email}','AdminController@reset_link')->name('reset-link');
+    Route::post('/do-reset','AdminController@do_reset')->name('do-reset');
     Route::get('/logout', 'AdminController@logout')->name('logout');
 });
 
