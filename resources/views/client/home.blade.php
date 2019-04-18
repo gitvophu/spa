@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3 col-12 text-center">
                 <div class="section-title">
-                    <h2>Product</h2>
+                    <h2>Danh Sách Sản Phẩm</h2>
                     <hr>
                     <p>You can select a package from the list below to save more</p>
                 </div>
@@ -77,7 +77,7 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3 col-12 text-center">
                 <div class="section-title">
-                    <h2>Our Post</h2>
+                    <h2>Bài Viết</h2>
                     <hr>
                     <p>We are using only the high quality original product</p>
                 </div>

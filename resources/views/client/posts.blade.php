@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-lg-3 col-md-12">
                     <section class="sidebar">
-                        <aside class="widget widget-search">
+                        <!-- <aside class="widget widget-search">
                             <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Search</h5>
                             <form class="search-form" action="#">
                             <span class="input input--hantus">
@@ -62,10 +62,10 @@
                             </span>
                                 <input type="button" class="search-btn" value="Go">
                             </form>
-                        </aside>
+                        </aside> -->
 
                         <aside class="widget widdget-recent-post">
-                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Recent News</h5>
+                            <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Bài viết mới</h5>
                             @foreach($posts as $post)
                                 <div class="recent-post">
                                     <a href="{{route('post-detail', ['post_id' => $post->id])}}"><h6>{{$post->title}}</h6></a>
