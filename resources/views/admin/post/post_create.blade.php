@@ -48,7 +48,7 @@
                                        
                                        <div class="clearfix"></div>
                                         <div class="form-group ">
-                                            <label>File input</label>
+                                            <label>Hình ảnh</label>
                                             <input type="file" name="image">
                                         </div>
                                         <div class="clearfix"></div>
