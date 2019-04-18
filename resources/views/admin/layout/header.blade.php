@@ -94,10 +94,10 @@
                                 {{--<!-- /input-group -->--}}
                             {{--</li>--}}
                             <li>
-                                <a href="{{route('admin-index')}}" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="{{route('admin-index')}}" class="active"><i class="fa fa-dashboard fa-fw"></i> Thống kê</a>
                             </li>
                             <li>
-                                <a href="{{route('list-comment')}}"><i class="fa fa-comments fa-fw"></i> Comments </a>
+                                <a href="{{route('list-comment')}}"><i class="fa fa-comments fa-fw"></i> Bình luận </a>
                                 <!-- <ul class="nav nav-second-level">
                                     <li>
                                         <a href="#">Create </a>
@@ -109,16 +109,16 @@
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href="{{route('list-message')}}"><i class="fa fa-edit fa-fw"></i> Messages</a>
+                                <a href="{{route('list-message')}}"><i class="fa fa-edit fa-fw"></i>Lời nhắn</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-table fa-fw"></i> Posts<span class="fa arrow"></span></a>
+                                <a href="#"><i class="fa fa-table fa-fw"></i> Bài viết<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{route('create-post')}}">Create post</a>
+                                        <a href="{{route('create-post')}}">Tạo bài viết</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('list-post')}}">List post</a>
+                                        <a href="{{route('list-post')}}">Danh sách bài viết</a>
                                     </li>
                                 </ul>
                             </li>
@@ -126,22 +126,22 @@
                                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Banners<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{route('create-banner')}}">Create banner</a>
+                                        <a href="{{route('create-banner')}}">Tạo banner</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('list-banner')}}">List banner</a>
+                                        <a href="{{route('list-banner')}}">Danh sách banner</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Products<span class="fa arrow"></span></a>
+                                <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{route('create')}}">Create product</a>
+                                        <a href="{{route('create')}}">Tạo sản phẩm</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('list-product')}}">List product</a>
+                                        <a href="{{route('list-product')}}">Danh sách sản phẩm</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
