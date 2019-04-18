@@ -43,12 +43,13 @@ class BannerController extends Controller
             if($request->hasfile('image'))
             {
                 $image = $request->file('image');
-                $name = time().'.'. $image->getClientOriginalName();
+                $name = $image->getClientOriginalName();
                 $image->move(public_path().'/uploads/banner/', $name);
                 $banner->image = $name;
             }
             $banner->title = $request->title;
             $banner->description = $request->description;
+            $banner->created_at = date('Y-m-d');
             $banner->save();
 
             return back()->with('success', 'Create Successfully');
@@ -84,6 +85,7 @@ class BannerController extends Controller
             }
             $banner->title = $request->title;
             $banner->description = $request->description;
+            $banner->updated_at = date('Y-m-d');
             $banner->save();
         }
         return redirect()->route('list-banner');
