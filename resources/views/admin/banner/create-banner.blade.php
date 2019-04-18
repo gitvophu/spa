@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Create Banner</h1>
+                    <h1 class="page-header">Banner</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -28,7 +28,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
+                            Tạo banner
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -36,18 +36,18 @@
                                     <form role="form" action="{{route('store-banner')}}" enctype="multipart/form-data" method="post">
                                         {{csrf_field()}}
                                         <div class="form-group">
-                                            <label>Title</label>
+                                            <label>Tiêu đề</label>
                                             <input type="text" id="title" name="title">
                                         </div>
                                         <div class="form-group">
-                                            <label>File input</label>
+                                            <label>Hình ảnh</label>
                                             <input type="file" id="image" name="image">
                                         </div>
                                         <div class="form-group">
-                                            <label>Description</label>
+                                            <label>Nội dung</label>
                                             <textarea id="description" name="description" class="form-control" rows="3"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-default">Create Banner</button>
+                                        <button type="submit" class="btn btn-default">Tạo Banner</button>
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->

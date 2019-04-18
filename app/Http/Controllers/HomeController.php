@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index(){
         $products = Product::get()->take(-6);
-        $bannerHome = Banner::get()->take(-3);
+        $bannerHome = Banner::orderBy('created_at','desc')->get()->take(3);
         $posts = Post::get();
         return view('client.home',compact('products', 'bannerHome', 'posts'));
     }

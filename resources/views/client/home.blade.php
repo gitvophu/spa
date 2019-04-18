@@ -15,7 +15,7 @@
                     @foreach($bannerHome as $itemBanner)
                         <div class="header-single-slider">
                             <figure>
-                                <img src="{{url('/') . "/uploads/banner/" . $itemBanner->image }}" alt="">
+                                <img src="{{url('/') . "/uploads/banner/" . $itemBanner->image }}" class="img-fluid" alt="">
                                 <figcaption>
                                     <div class="content">
                                         <div class="container inner-content text-center">
@@ -55,9 +55,9 @@
                     <h3>{{$product->name}}</h3>
                     <hr>
                     <div class="product-img">
-                        <img src="{{url('/') . "/uploads/product/" . $product->image }}" alt="">
+                        <img src="{{url('/') . "/uploads/product/" . $product->image }}" alt="" >
                     </div>
-                    <a href="{{route('product-detail', ['id' => $product->id])}}" class="boxed-btn">Detail</a>
+                    <a href="{{route('product-detail', ['id' => $product->id])}}" class="boxed-btn">Chi tiết</a>
                    
                 </div>
             </div>
