@@ -7,7 +7,7 @@
     <meta name="keywords" content="Hantus, Responsive, SPA Template, Bootstrap 4,">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{asset('')}}assets/img/favicon.png" type="image/x-icon" />
-    <title>Hantus - Spa and Beauty HTML template</title>
+    <title>Trang chủ - Spa and Beauty</title>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset('')}}assets/css/style.css">

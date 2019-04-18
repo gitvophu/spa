@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Banners</h1>
+                <h1 class="page-header">Danh sách Banner</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -32,7 +32,7 @@
                             <tbody>
                             @foreach($listBanner as $itemBanner)
                                 <tr class="">
-                                    <td style="text-align: center;">{{ $itemBanner->id }}</td>
+                                    <td style="text-align: center;">{{ $loop->index + 1 }}</td>
                                     <td style="text-align: center;">{{ $itemBanner->title }}</td>
                                     <td><img src="{{url('/') . "/uploads/banner/" . $itemBanner->image }}" class="img-responsive"></td>
                                     <td>{{ $itemBanner->description }}</td>

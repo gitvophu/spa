@@ -6,9 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
+        
         <meta name="author" content="">
-
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <link rel="shortcut icon" href="{{asset('')}}assets/img/favicon.png" type="image/x-icon" />
+        <title> Admin - Spa</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{url('/assets/admin/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -59,7 +60,7 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                <li><a href="{{route('/')}}"><i class="fa fa-home fa-fw"></i> Trang chủ</a></li>
                 </ul>
 
                 <ul class="nav navbar-right navbar-top-links">
