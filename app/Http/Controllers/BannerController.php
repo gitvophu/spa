@@ -11,7 +11,7 @@ class BannerController extends Controller
 {
     //Lấy danh sách banner trong db và hiển thị ra view admin: list-banner
     public function index(){
-        $listBanner = Banner::get();
+        $listBanner = Banner::orderBy('created_at','desc')->get();
         return view('admin.banner.list-banner', compact('listBanner'));
     }
 

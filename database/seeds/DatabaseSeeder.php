@@ -35,14 +35,18 @@ class DatabaseSeeder extends Seeder
                 'name' => $faker->sentence(),
                 'price' =>$faker->numberBetween( 10, 1000),
                 'image' =>'fullwidth01.jpg',
-                'description' => $faker->paragraph(5),                
+                'description' => $faker->paragraph(5),       
+                'updated_at' => $faker->dateTimeBetween(),
+                'created_at' => $faker->dateTimeBetween(),            
             ]);
         }
         foreach (range(1,5) as $index) {
             DB::table('banners')->insert([
                 'image' =>'slider03.jpg',
                 'title' => $faker->sentence(),
-                'description' => $faker->paragraph(5),             
+                'description' => $faker->paragraph(5),      
+                'updated_at' => $faker->dateTimeBetween(),
+                'created_at' => $faker->dateTimeBetween(),          
             ]);
         }
         foreach (range(1,100) as $index) {
@@ -51,6 +55,8 @@ class DatabaseSeeder extends Seeder
                 'phone' => $faker->phoneNumber,             
                 'email' => $faker->paragraph,
                 'message' => $faker->paragraph(5),
+                'updated_at' => $faker->dateTimeBetween(),
+                'created_at' => $faker->dateTimeBetween(),   
             ]);
         }
 
