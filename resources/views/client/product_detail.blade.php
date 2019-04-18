@@ -115,10 +115,7 @@
                     <section class="sidebar">
                         <aside class="widget widdget-recent-post">
                             <h5 class="widget-title">Sản phẩm mới</h5>
-                            <div class="recent-post">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                            @foreach($product_news as $key)
+                                            <!-- @foreach($product_news as $key)
                                                 <div class="pricing-box text-center">  
                                                     <h3>{{$key['name']}}</h3>
                                                     <hr>
@@ -128,10 +125,16 @@
                                                     <a href="{{route('product-detail', ['id' => $key['id']])}}" class="boxed-btn">Detail</a>
                                                 
                                                 </div>
+                                            @endforeach -->
+                                            @foreach($product_news as $key)
+                                                <div class="recent-post">
+                                                    <a href="{{route('product-detail', ['id' => $key['id']])}}"><h6>{{$key['name']}}</h6></a>
+                                                    <?php
+                                                        $date = new DateTime($key['created_at']);
+                                                    ?>
+                                                    <p>{{$date->format('Y-m-d')}}</p>
+                                                </div>
                                             @endforeach
-                                    </div>
-                                </div>
-                            </div>
                         </aside>
                     </section>
                 </div>

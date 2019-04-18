@@ -40,6 +40,8 @@ Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function 
 Route::group(['prefix' => '/admin', 'middleware' => array('admin','can_see')], function () {
     //Home layout
     Route::get('/', 'AdminController@index')->name('admin-index');
+    Route::get('/change-password/{id}', 'AdminController@change_password')->name('change-password');
+    Route::post('/change-password', 'AdminController@change_password_')->name('change-password_');
 });
 
 Route::group(['prefix' => '/admin/comments', 'middleware' => array('admin','can_see')], function () {

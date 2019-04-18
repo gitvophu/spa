@@ -58,14 +58,54 @@ class AdminController extends Controller
             $email = $request->input('email');
             $password = $request->input('password');
             $remember_me = $request->has('remember') ? true : false;
+            $user = User::all()->first();
+            
             if (Auth::attempt(['email' => $email, 'password' => $password], $remember_me)) {
-                Session::put('email', $email);
+                Session::put('name', $user['name']);
+                Session::put('id', $user['id']);
                 return redirect('/admin');
             } else {
                 $errors = new MessageBag(['errors' => 'Email hoặc mật khẩu không đúng!']);
                 return redirect()->back()->withInput()->withErrors($errors);
             }                
         }
+    }
+
+    public function change_password($id)
+    {
+        $user = User::find($id)->first();
+        return view('/admin.change-password', compact('user'));
+    }
+
+    public function change_password_(Request $request){
+        if($request->password != null)
+        {
+            $validator = Validator::make($request->all(),
+                [
+                    'password' => 'required|min:6'
+                ],
+                [
+                    'password.required' => 'Mật khẩu là trường bắt buộc',
+                    'password.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
+                ]
+            );
+            if ($validator->fails()) {
+                $errors = new MessageBag(['error' => 'xx']);
+                return redirect()->back()->withInput()->withErrors($validator->errors());
+            }
+            else {
+                User::where('id', $request['id'])
+                ->update([
+                    'password' => bcrypt($request['password']),
+                ]);
+            }
+        }
+        if($request->password == null)
+        {
+            $errors = new MessageBag(['error' => 'Vui lòng nhập mật khẩu trước khi gửi yêu cầu!']);
+            return redirect()->back()->withInput()->withErrors($errors);
+        }
+        return redirect()->back()->with('alert-success', 'Thay đổi mật khẩu thành công.');;
     }
 
     public function logout(){
