@@ -52,7 +52,7 @@ class BannerController extends Controller
             $banner->created_at = date('Y-m-d');
             $banner->save();
 
-            return back()->with('success', 'Create Successfully');
+            return back()->with('success', 'Tạo thành công');
         }
 
         return view('admin.banner.create-banner');
