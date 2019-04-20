@@ -6,9 +6,11 @@ $(document).ready(function () {
         var message = $('#message').val();
         var phone = $('input[name="phone"]').val();
         var _token = $('input[name="_token"]').val();
+        var url = $('#create-message-url').val();
+        
         console.log(window.location.origin);
         $.ajax({
-            url: window.location.origin + '/admin/message/create-message',
+            url: url,
             type: 'post',
             data: {
                 name,
