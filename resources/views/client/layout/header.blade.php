@@ -245,9 +245,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="mobile-menu">
+                            <div class="mobile-menu ">
                                 <nav class="mobile-menu-active">
-                                    <ul>
+                                    <ul class="nav-mobile">
                                         <li>
                                             <a href="{{route('/')}}">Trang chủ</a>
                                         </li>
