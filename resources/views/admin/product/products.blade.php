@@ -28,6 +28,10 @@
                                     <th>Giá</th>
                                     <th>Hình ảnh</th>
                                     <th>Mô tả</th>
+                                    <th>Seo-Title</th>
+                                    <th>Seo-Descripption</th>
+                                    <th>Seo-Keyword</th>
+                                    <th>Seo-Image</th>
                                     <th>Xóa</th>
                                     <th>Sửa</th>
                                 </tr>
