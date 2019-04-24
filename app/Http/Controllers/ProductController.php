@@ -74,6 +74,9 @@ class ProductController extends Controller
             $product->name = $request->nameproduct;
             $product->price = $request->priceproduct;
             $product->description = $request->desproduct;
+            $product->seotitle = $request->seotitlepro;
+            $product->seodescription = $request->seodespro;
+            $product->seokeyword = $request->seokeypro;
             $product->created_at = date('Y-m-d');
             $product->updated_at = date('Y-m-d');
             $product->save();
@@ -124,6 +127,9 @@ class ProductController extends Controller
             $product->name = $request->nameproduct;
             $product->description = $request->desproduct;
             $product->price = $request->priceproduct;
+            $product->seotitle = $request->title;
+            $product->seokeyword = $request->key;
+            $product->seodescription = $request->des;
             $product->save();
             return back()->with(['message' => 'Cập nhật thành công']);
         }
