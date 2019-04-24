@@ -3,11 +3,10 @@ $(document).ready(function () {
         e.preventDefault();
         var name = $('input[name="name"]').val();
         var email = $('input[name="email"]').val();
-        var message = $('#message'). val();
+        var message = $('#message').val();
         var phone = $('input[name="phone"]').val();
         var _token = $('input[name="_token"]').val();
         var url = $('#create-message-url').val();
-        console.log(message);
         $.ajax({
             url: url,
             type: 'post',
