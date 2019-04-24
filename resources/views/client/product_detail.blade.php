@@ -128,7 +128,7 @@
                                             @endforeach -->
                                             @foreach($product_news as $key)
                                                 <div class="recent-post">
-                                                    <a href="{{route('product-detail', ['id' => $key['id']])}}"><h6>{{$key['name']}}</h6></a>
+                                                    <a href="{{route('product-detail', ['slug' => $key['slug']])}}"><h6>{{$key['name']}}</h6></a>
                                                     <?php
                                                         $date = new DateTime($key['created_at']);
                                                     ?>

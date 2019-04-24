@@ -14,6 +14,7 @@ class PostController extends Controller
     // trang chi tiết bài viết
     function post_detail($slug){
         $post = Post::where('slug',$slug)->first();
+       
         $post_id = $post->id;
         $comments = Comment::where('post_id',$post_id)
         ->where('type',1)
@@ -136,6 +137,15 @@ class PostController extends Controller
         $post->image = $img_name;
         $post->title = $request->title;
         $post->content = $request->content;
+        //slug
+        if ($request->slug==null) {
+            $slug = Str::slug($post->title,"-");
+        }
+        else{
+            $slug = $request->slug;
+        }
+        $post->slug = $request->slug;
+
         $post->created_at = date('Y-m-d');
         $post->updated_at = date('Y-m-d');
         $post->save();

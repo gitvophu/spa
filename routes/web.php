@@ -20,7 +20,7 @@ Route::get('/san-pham','ProductController@view_product')->name('view_product');
 //Post layout
 Route::get('/bai-viet','PostController@view_post')->name('view_post');
 //Product detail layout
-Route::get('/chi-tiet-san-pham/{id}','ProductController@product_detail')->name('product-detail');
+Route::get('/chi-tiet-san-pham/{slug}','ProductController@product_detail')->name('product-detail');
 Route::post('/product-detail/comment-ajax','ProductController@comment_ajax');
 //Blog detail layout
 Route::get('/chi-tiet-bai-viet/{slug}','PostController@post_detail')->name('post-detail');

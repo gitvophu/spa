@@ -54,6 +54,12 @@
                                                 <label for="">Mô tả sản phẩm</label>
                                                 <input type="text" class="form-control" id="desproduct" name="desproduct" placeholder="Nhập mô tả sản phẩm">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="">Slug sản phẩm</label>
+                                                <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
+                                                <small id="helpId" class="text-muted">Nếu bỏ trống thì hệ thống sẽ dùng tên sản phẩm làm slug</small>
+                                            </div>
+                                            
                                             <button type="submit" class="btn btn-primary" id="btnAdd">Thêm</button>
                                         </form>
                                     </div>

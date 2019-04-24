@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DateTime;
 use App\Models\Comment;
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
@@ -25,10 +26,10 @@ class ProductController extends Controller
     }
 
     //Hiển thị trang chi tiết sản phẩm
-    public function product_detail($id){
+    public function product_detail($slug){
         $product = new Product();
-        $product_ = $product->getProductByID($id);     
-        $comments = Comment::where('product_id', $id)
+        $product_ = $product->getProductByID($slug);     
+        $comments = Comment::where('product_id', $product->id)
         ->where('status',1)
         ->where('type', '2')->orderBy('updated_at', 'desc')->take(10)->get()->toArray();   
         $total_cmt = count($comments);
@@ -76,6 +77,15 @@ class ProductController extends Controller
             $product->description = $request->desproduct;
             $product->created_at = date('Y-m-d');
             $product->updated_at = date('Y-m-d');
+            
+            //slug
+            if ($request->slug==null) {
+                $slug = Str::slug($product->name,"-");
+            }
+            else{
+                $slug = $request->slug;
+            }
+            $product->slug = $slug;
             $product->save();
             return redirect()->route('create')->with(['message' => 'Thêm thành công']);
         }

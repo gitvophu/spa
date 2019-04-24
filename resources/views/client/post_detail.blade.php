@@ -184,7 +184,7 @@
                                 
                          
                             <div class="recent-post">
-                                <a href="{{route('post-detail',['post_id'=>$post->id])}}"><h6>{{$post->title}}</h6></a>
+                                <a href="{{route('post-detail',['slug'=>$post->slug])}}"><h6>{{$post->title}}</h6></a>
                                 <?php
                                     $date = new DateTime($post->created_at);
                                 ?>
