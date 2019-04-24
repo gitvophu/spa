@@ -34,6 +34,10 @@ Route::group(['prefix'=>'comments'],function(){
 Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function () {
     Route::get('/ad-login', 'AdminController@ad_login')->name('ad-login');
     Route::post('/ad-login', 'AdminController@doLogin')->name('ad-login');
+    Route::get('/forget-password', 'AdminController@forget_password')->name('forget-password');
+    Route::post('/sendMail','AdminController@sendMail')->name('send-mail');
+    Route::get('/reset-pass/{token}/{email}','AdminController@reset_link')->name('reset-link');
+    Route::post('/do-reset','AdminController@do_reset')->name('do-reset');
     Route::get('/logout', 'AdminController@logout')->name('logout');
 });
 
@@ -49,11 +53,10 @@ Route::group(['prefix' => '/admin/comments', 'middleware' => array('admin','can_
     Route::get('/list-comment', 'CommentController@index')->name('list-comment');
     
 });
-
-Route::group(['prefix' => '/admin/message'], function () {
     //message layout
+Route::post('/admin/message/create-message', 'MessageController@create')->name('create-message');
+Route::group(['prefix' => '/admin/message', 'middleware' => array('admin','can_see')], function () {
     Route::get('/list-message', 'MessageController@index')->name('list-message');
-    Route::post('/create-message', 'MessageController@create')->name('create-message');
     Route::get('/delete-message/{id}', 'MessageController@delete_message')->name('delete-message');
 });
 

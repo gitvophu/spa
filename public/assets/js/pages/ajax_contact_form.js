@@ -8,7 +8,7 @@ $(document).ready(function () {
         var _token = $('input[name="_token"]').val();
         console.log(message);
         $.ajax({
-            url: window.location.origin + '/admin/message/create-message',
+            url: url,
             type: 'post',
             data: {
                 name,
