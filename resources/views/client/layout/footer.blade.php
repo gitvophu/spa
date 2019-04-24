@@ -30,7 +30,7 @@
                                     {{-- {{route('create-message')}} --}}
                                         <form action="#" method="post">
                                             {{csrf_field()}}
-                                            
+                                        <input type="hidden" id="create-message-url" value="{{route('create-message')}}">
                                            <div class="form-group">
                                              <label for="">Họ tên</label>
                                              <input required type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
@@ -183,7 +183,7 @@
                      <li><a href="#">&copy; 2018 Nayra Themes </a></li>
                      <li><a href="#">Terms & Conditions</a></li>
                      <li><a href="#">Privacy Policy</a></li>
-                     <li><a id="contact-btn" href="#">Contact</a></li>
+                     <li><a class="contact-btn" href="#">Contact</a></li>
                  </ul>
              </div>
              <div class="col-lg-6 col-12">
