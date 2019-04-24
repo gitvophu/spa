@@ -44,7 +44,7 @@ class PostController extends Controller
 
     //danh sách bài viết client
     public function view_post(){
-        $posts = Post::paginate(9);
+        $posts = Post::orderBy('created_at','desc')->paginate(9);
         return view('client.posts', compact('posts'));
     }
 
