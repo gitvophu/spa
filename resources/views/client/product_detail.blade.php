@@ -18,10 +18,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2>Sản Phẩm</h2>
+                    <h2>SẢN PHẨM</h2>
                     <ul class="breadcrumb-nav list-inline">
-                        <li><a href="{{route('/')}}">Trang chủ</a></li>
-                        <li>Sản phẩm</li>
+                        {{--<li><a href="{{route('/')}}">Trang chủ</a></li>--}}
+                        <li>{{$product_->name}}</li>
                     </ul>
                 </div>
             </div>

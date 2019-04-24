@@ -82,7 +82,8 @@ class DatabaseSeeder extends Seeder
         }
 
         DB::table('users')->insert([
-                'name' => 'Admin',
+
+                'name'=> 'admin',
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('123456'),
                 'updated_at' => $faker->dateTimeBetween(),
