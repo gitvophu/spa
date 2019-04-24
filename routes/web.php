@@ -16,14 +16,14 @@
 //Home layout
 Route::get('/','HomeController@index')->name('/');
 //Product layout
-Route::get('/view_product','ProductController@view_product')->name('view_product');
+Route::get('/san-pham','ProductController@view_product')->name('view_product');
 //Post layout
-Route::get('/view_post','PostController@view_post')->name('view_post');
+Route::get('/bai-viet','PostController@view_post')->name('view_post');
 //Product detail layout
-Route::get('/product-detail/{id}','ProductController@product_detail')->name('product-detail');
+Route::get('/chi-tiec-san-pham/{id}','ProductController@product_detail')->name('product-detail');
 Route::post('/product-detail/comment-ajax','ProductController@comment_ajax');
 //Blog detail layout
-Route::get('/post-detail/{post_id}','PostController@post_detail')->name('post-detail');
+Route::get('/chi-tiec-bai-viet/{post_id}','PostController@post_detail')->name('post-detail');
 Route::post('/post-detail/comment-ajax','PostController@comment_ajax');
 
 Route::group(['prefix'=>'comments'],function(){
@@ -34,6 +34,10 @@ Route::group(['prefix'=>'comments'],function(){
 Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function () {
     Route::get('/ad-login', 'AdminController@ad_login')->name('ad-login');
     Route::post('/ad-login', 'AdminController@doLogin')->name('ad-login');
+    Route::get('/forget-password', 'AdminController@forget_password')->name('forget-password');
+    Route::post('/sendMail','AdminController@sendMail')->name('send-mail');
+    Route::get('/reset-pass/{token}/{email}','AdminController@reset_link')->name('reset-link');
+    Route::post('/do-reset','AdminController@do_reset')->name('do-reset');
     Route::get('/logout', 'AdminController@logout')->name('logout');
 });
 
@@ -49,11 +53,11 @@ Route::group(['prefix' => '/admin/comments', 'middleware' => array('admin','can_
     Route::get('/list-comment', 'CommentController@index')->name('list-comment');
     
 });
-
+Route::post('admin/message/create-message', 'MessageController@create')->name('create-message');
 Route::group(['prefix' => '/admin/message', 'middleware' => array('admin','can_see')], function () {
     //message layout
     Route::get('/list-message', 'MessageController@index')->name('list-message');
-    Route::post('/create-message', 'MessageController@create')->name('create-message');
+  
     Route::get('/delete-message/{id}', 'MessageController@delete_message')->name('delete-message');
 });
 

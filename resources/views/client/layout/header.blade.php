@@ -199,7 +199,7 @@
                                 {{--</li>--}}
 
                                 <li><a href="{{route('view_post')}}">Bài viết</a></li>
-                                <li><a href="#" id="contact-btn">Liên hệ</a></li>
+                                <li><a href="#" class="contact-btn">Liên hệ</a></li>
                                 {{--<li class="search-button">--}}
                                     {{--<div id="sb-search" class="sb-search " >--}}
                                     {{--    <form>--}}
@@ -309,7 +309,7 @@
                                         {{--</li>--}}
 
                                         <li><a href="{{route('view_post')}}">Bài viết</a></li>
-                                        <li><a href="#" id="contact-btn">Liên hệ</a></li>
+                                        <li><a href="#" class="contact-btn">Liên hệ</a></li>
                                     {{--<li class="search-button">--}}
                                     {{--<div id="sb-search" class="sb-search " >--}}
                                     {{--    <form>--}}

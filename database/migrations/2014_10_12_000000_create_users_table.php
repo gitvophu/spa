@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email',100)->unique();
             $table->string('phone',100)->nullable();
             $table->string('password');
+            $table->string('reset_pass_token',100);
             $table->timestamp('last_access')->nullable();
             $table->integer('attempt')->nullable()->default(0);
             $table->integer('active')->default(1);
@@ -28,6 +29,8 @@ class CreateUsersTable extends Migration
         });
     }
 
+    // $table->rememberToken();
+    // $table->timestamps();
     /**
      * Reverse the migrations.
      *

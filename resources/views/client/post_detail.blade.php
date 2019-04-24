@@ -10,11 +10,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2>Blog</h2>
+                    <h2>BÀI VIẾT</h2>
                     <ul class="breadcrumb-nav list-inline">
-                        <li><a href="{{route('/')}}">Home</a></li>
-                        <li>Blog</li>
-                        <li>Blog Single</li>
+                        {{--<li><a href="{{route('/')}}">Trang chủ</a></li>--}}
+                        {{--<li>Bài Viết</li>--}}
+                        <li>{{$post->title}}</li>
                     </ul>
                 </div>
             </div>
