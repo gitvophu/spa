@@ -34,7 +34,7 @@
                                         <th>Bình Luận</th>
                                         <th>Tên Bài Viết</th>
                                         <th>Tên Sản Phẩm</th>
-                                        <th>Hành động</th>
+                                        <th>Trạng Thái</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,7 +54,7 @@
                                         <td class="center">{{$comment->product_name}}</td>
                                         <td class="center">
                                             @if($comment->status == 1)
-                                            <span>(Hiện)</span>
+                                            <span style="text-align: center">(Hiện)</span>
                                             <button data-content="{{$comment->id}}" type="submit" class="btnToggleStatus btn btn-danger">
                                                 Ẩn
                                             </button>
