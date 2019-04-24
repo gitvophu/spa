@@ -14,7 +14,7 @@
                     <ul class="breadcrumb-nav list-inline">
                         <li><a href="{{route('/')}}">Home</a></li>
                         <li>Blog</li>
-                        <li>Blog Single</li>
+                        <li>Blog Single</li>\
                     </ul>
                 </div>
             </div>
