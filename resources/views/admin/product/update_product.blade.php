@@ -55,6 +55,23 @@
                                                 <label for="">Mô tả sản phẩm</label>
                                                 <input type="text" value="{{$product->description}}" class="form-control" id="desproduct" name="desproduct" >
                                             </div>
+
+                                            <legend>Sửa Thông tin SEO</legend>
+
+                                            <div class="form-group">
+                                                <label for="">Seo title</label>
+                                                <input type="text" value="{{$product->seotitle}}" class="form-control" id="title" name="title" >
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">Seo description</label>
+                                                <input type="text" value="{{$product->seodescription}}" class="form-control" id="des" name="des" >
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">Seo keyword</label>
+                                                <input type="text" value="{{$product->seokeyword}}" class="form-control" id="key" name="key" >
+                                            </div>
                                             <button type="submit" class="btn btn-primary" id="btnUpdate">Cập Nhật</button>
                                         </form>
                                     </div>

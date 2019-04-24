@@ -44,11 +44,6 @@
                                                 <input type="text" class="form-control" id="priceproduct" name="priceproduct" placeholder="Nhập giá sản phẩm">
                                             </div>
                                         
-                                            
-                                            <div class="form-group">
-                                                <label for="">Hình ảnh </label>
-                                                <input type="file" class="form-control" id="imageproduct" name="imageproduct">
-                                            </div>
 
                                             <div class="form-group">
                                                 <label for="">Mô tả sản phẩm</label>
@@ -60,6 +55,25 @@
                                                 <small id="helpId" class="text-muted">Nếu bỏ trống thì hệ thống sẽ dùng tên sản phẩm làm slug</small>
                                             </div>
                                             
+
+                                            <legend>Thông tin Seo</legend>
+                                            <div class="form-group">
+                                                <label for="">Seo Title</label>
+                                                <input type="text" class="form-control" id="seotitlepro" name="seotitlepro" placeholder="Nhập mô tả sản phẩm">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Seo Description</label>
+                                                <input type="text" class="form-control" id="seodespro" name="seodespro" placeholder="Nhập mô tả sản phẩm">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Seo Keyword</label>
+                                                <input type="text" class="form-control" id="seokeypro" name="seokeypro" placeholder="Nhập mô tả sản phẩm">
+                                            </div>
+                                             
+                                            <div class="form-group">
+                                                <label for="">Seo Image</label>
+                                                <input type="file" class="form-control" id="imageproduct" name="imageproduct">
+                                            </div>
                                             <button type="submit" class="btn btn-primary" id="btnAdd">Thêm</button>
                                         </form>
                                     </div>

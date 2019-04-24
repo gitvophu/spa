@@ -19,10 +19,9 @@ class CreateProductsTable extends Migration
             $table->float('price',11);
             $table->string('image',150);
             $table->text('description');
-            $table->string('seo-title',50)->nullable();
-            $table->string('seo-keyword',50)->nullable();
-            $table->string('seo-description',50)->nullable();
-            $table->string('seo-image',50)->nullable();
+            $table->string('seotitle',50)->nullable();
+            $table->string('seokeyword',50)->nullable();
+            $table->string('seodescription',50)->nullable();
             $table->string('fb_app_id',50)->nullable();
             $table->string('google_analyst',50)->nullable();
             $table->string('slug',50)->nullable();
