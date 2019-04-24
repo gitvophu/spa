@@ -28,6 +28,10 @@
                                     <th>Giá</th>
                                     <th>Hình ảnh</th>
                                     <th>Mô tả</th>
+                                    <th>Seo-Title</th>
+                                    <th>Seo-Descripption</th>
+                                    <th>Seo-Keyword</th>
+                                    <th>Seo-Image</th>
                                     <th>Xóa</th>
                                     <th>Sửa</th>
                                 </tr>
@@ -40,6 +44,10 @@
                                     <td style="text-align: center;">{{$product->price}}</td>
                                     <td><img src="{{url('/') . "/uploads/product/" . $product->image }}" class="img-responsive"></td>
                                     <td class="center">{{$product['description']}}</td>
+                                    <td class="center">{{$product['seo-title']}}</td>
+                                    <td class="center">{{$product['seo-description']}}</td>
+                                    <td class="center">{{$product['seo-keyword']}}</td>
+                                    <td class="center">{{$product['seo-image']}}</td>
                                     <td style="text-align: center;"><a href="{{route('delete-product',['id'=>$product['id']])}}" onclick="return confirm('Bạn có chắc muốn xoá sản phẩm ?')"><i class="fa fa-trash-o fa-fw"></i></a></td>
                                     <td style="text-align: center;"><a href="{{route('update',['id'=>$product['id']])}}"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
