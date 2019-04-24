@@ -30,7 +30,9 @@ class ProductController extends Controller
         $product_ = $product->getProductByID($id);     
         $comments = Comment::where('product_id', $id)
         ->where('status',1)
-        ->where('type', '2')->orderBy('updated_at', 'desc')->take(10)->get()->toArray();   
+        ->where('type', '2')        
+        ->orderBy('created_at', 'desc')
+        ->paginate(5);   
         $total_cmt = count($comments);
         $product_news = Product::orderBy('created_at', 'desc')->take(4)->get()->toArray();
         //var_dump($product_news);die();
