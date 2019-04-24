@@ -53,7 +53,7 @@ Route::group(['prefix' => '/admin/comments', 'middleware' => array('admin','can_
     Route::get('/list-comment', 'CommentController@index')->name('list-comment');
     
 });
-Route::post('/create-message', 'MessageController@create')->name('create-message');
+Route::post('admin/message/create-message', 'MessageController@create')->name('create-message');
 Route::group(['prefix' => '/admin/message', 'middleware' => array('admin','can_see')], function () {
     //message layout
     Route::get('/list-message', 'MessageController@index')->name('list-message');
