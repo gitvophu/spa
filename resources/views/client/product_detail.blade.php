@@ -43,7 +43,7 @@
                     <article class="blog-post">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 mb-5 mb-lg-0">
-                                        <img src="{{url('assets/img/product/' . $product_->image)}}" alt="">
+                                        <img src="{{url('uploads/product/' . $product_->image)}}" alt="">
                             </div>
                             <div class="col-lg-6 col-md-6 mb-5 mb-lg-0">
                                 <div>
