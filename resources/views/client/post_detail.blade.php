@@ -2,8 +2,21 @@
 @section('script')
 <script src="{{asset('assets/js/pages/post_detail.js')}}"></script>
 @endsection
+
 @section('link')
     <link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
+@endsection
+@section('title')
+    {{$post->title}}
+@endsection
+@section('seo_image')
+    {{$post->title}}
+@endsection
+@section('seo_description')
+    {{$post->seo_description}}
+@endsection 
+@section('seo_url')
+    {{}}
 @endsection
 @section('content')
 <section id="breadcrumb-area">

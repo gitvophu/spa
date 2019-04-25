@@ -6,6 +6,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="keywords" content="Hantus, Responsive, SPA Template, Bootstrap 4,">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{-- meta SEO --}}
+    <meta property="fb:app_id" content="">
+    <meta property="og:type" content="article">
+    <meta property="fb:title" content="@yield('title')">
+    <meta property="fb:image" content="@yield('seo_image')">
+    <meta property="fb:description" content="@yield('seo_description')">
+    <meta property="fb:url" content="@yield('seo_url')">
+    <meta property="fb:site_name" content="">
     <link rel="shortcut icon" href="{{asset('')}}assets/img/favicon.png" type="image/x-icon" />
     <title>Trang chủ - Spa and Beauty</title>
 
