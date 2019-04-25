@@ -45,13 +45,7 @@
                                             
                                             {{-- <p class="help-block">Example block-level help text here.</p> --}}
                                         </div>
-                                       
-                                       <div class="clearfix"></div>
-                                        <div class="form-group ">
-                                            <label>Hình ảnh</label>
-                                            <input type="file" name="image">
-                                        </div>
-                                        <div class="clearfix"></div>
+
                                         <div class="form-group">
                                             <label>Nội dung</label>
                                             <textarea name="content" id="ckeditor1" class="form-control" rows="5">
@@ -62,6 +56,25 @@
                                             <script>
                                                 CKEDITOR.replace('ckeditor1')
                                             </script>
+                                        </div>
+                                    <div>
+                                        <h2>Thông tin SEO</h2>
+                                    </div>
+                                        <div class="form-group">
+                                            <label for="">SEO Title</label>
+                                            <input type="text" class="form-control" id="seoTitle" name="seoTitle">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">SEO Desciption</label>
+                                            <input type="text" class="form-control" id="seoDescription" name="seoDescription">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">SEO Keyword</label>
+                                            <input type="text" class="form-control" id="seoKeyword" name="seoKeyword">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">SEO Image</label>
+                                            <input type="file" name="image">
                                         </div>
                                        
                                         <button id="btnSave" type="submit" class="btn btn-primary">Lưu</button>

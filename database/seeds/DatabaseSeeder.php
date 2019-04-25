@@ -25,10 +25,9 @@ class DatabaseSeeder extends Seeder
                 'title' => $faker->sentence(),
                 'image' =>'fullwidth01.jpg',
                 'content' => $faker->paragraph(5),
-                'seo-title' => $faker->paragraph(5),
-                'seo-description' => $faker->paragraph(5),
-                'seo-keyword' => $faker->paragraph(5),
-                'seo-image' => 'fullwidth01.jpg',
+                'seoTitle' => $faker->paragraph(5),
+                'seoDescription' => $faker->paragraph(5),
+                'seoKeyword' => $faker->paragraph(5),
                 'updated_at' => $faker->dateTimeBetween(),
                 'created_at' => $faker->dateTimeBetween(),
                

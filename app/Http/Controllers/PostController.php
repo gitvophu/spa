@@ -61,12 +61,18 @@ class PostController extends Controller
         $validator = Validator::make($request->all(),[
             'title'=>'required',
             'content'=>'required',
+            'seoTitle'=>'required',
+            'seoDescription'=>'required',
+            'seoKeyword'=>'required',
             // 'image'=>'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'post_id'=>'required'
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
+            'seoTitle.required'=>'Bạn chưa nhập tiêu đề SEO',
+            'seoDescription.required'=>'Bạn chưa nhập nội dung SEO',
+            'seoKeyword.required'=>'Bạn chưa nhập từ khóa SEO',
             'image.image' => 'File ảnh phải là hình ảnh',
             'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
             'image.max' => 'File ảnh tối đa là 2MB',
@@ -79,6 +85,9 @@ class PostController extends Controller
         $post = Post::find($request->post_id);
         $post->title = $request->title;
         $post->content = $request->content;
+        $post->seoTitle = $request->seoTitle;
+        $post->seoDescription = $request->seoDescription;
+        $post->seoKeyword = $request->seoKeyword;
         $post->created_at = date('Y-m-d');
         $post->updated_at = date('Y-m-d');
         if ($request->hasFile('image')) {
@@ -112,10 +121,16 @@ class PostController extends Controller
         $validator = Validator::make($request->all(),[
             'title'=>'required',
             'content'=>'required',
+            'seoTitle'=>'required',
+            'seoDescription'=>'required',
+            'seoKeyword'=>'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
+            'seoTitle.required'=>'Bạn chưa nhập tiêu đề SEO',
+            'seoDescription.required'=>'Bạn chưa nhập nội dung SEO',
+            'seoKeyword.required'=>'Bạn chưa nhập từ khóa SEO',
             'image.required'=>'Bạn chưa chọn ảnh',
             'image.image' => 'File ảnh phải là hình ảnh',
             'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
@@ -136,6 +151,9 @@ class PostController extends Controller
         $post->image = $img_name;
         $post->title = $request->title;
         $post->content = $request->content;
+        $post->seoTitle = $request->seoTitle;
+        $post->seoDescription = $request->seoDescription;
+        $post->seoKeyword = $request->seoKeyword;
         $post->created_at = date('Y-m-d');
         $post->updated_at = date('Y-m-d');
         $post->save();

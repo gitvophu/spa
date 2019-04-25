@@ -44,15 +44,6 @@
                                             
                                             {{-- <p class="help-block">Example block-level help text here.</p> --}}
                                         </div>
-                                       
-                                       <div class="clearfix"></div>
-                                        <div class="form-group ">
-                                            <label>File input</label>
-                                            <input type="file" name="image">
-                                            
-                                        <img  class="img-responsive" src="{{asset('/uploads/post/'.$post->image)}}" alt="" style="max-width: 300px;">
-                                        </div>
-                                        <div class="clearfix"></div>
                                         <div class="form-group">
                                             <label>Nội dung</label>
                                             <textarea name="content" id="ckeditor1" class="form-control" rows="5">
@@ -63,7 +54,26 @@
                                                 CKEDITOR.replace('ckeditor1')
                                             </script>
                                         </div>
-                                       
+                                    <div>
+                                        <h2>Thông tin SEO</h2>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">SEO Title</label>
+                                        <input type="text" class="form-control" name="seoTitle" value="{{$post->seoTitle}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">SEO Desciption</label>
+                                        <input type="text" class="form-control" name="seoDescription" value="{{$post->seoDescription}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">SEO Keyword</label>
+                                        <input type="text" class="form-control" name="seoKeyword" value="{{$post->seoKeyword}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">SEO Image</label>
+                                        <input type="file" name="image">
+                                        <img  class="img-responsive" src="{{asset('/uploads/post/'.$post->image)}}" alt="" style="max-width: 300px;">
+                                    </div>
                                         <button id="btnSave" type="submit" class="btn btn-primary">Lưu</button>
                                         <button type="reset" class="btn btn-default">Reset</button>
                                     </form>
