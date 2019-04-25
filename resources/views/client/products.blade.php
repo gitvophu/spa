@@ -35,11 +35,11 @@
                                     </div>
 
                                     <div class="post-content">
-                                        <h4 class="post-title"><a href="{{route('product-detail', ['id' => $product->id])}}">{{$product->name}}</a></h4>
+                                        <h4 class="post-title"><a href="{{route('product-detail', ['slug' => $product->slug])}}">{{$product->name}}</a></h4>
                                         <p class="content">
                                             {{ str_limit($product->description, 100, '[...]')}}
                                         </p>
-                                        <a href="{{route('product-detail', ['id' => $product->id])}}" class="read-more">Read More <i class="fas fa-angle-double-right"></i></a>
+                                        <a href="{{route('product-detail', ['slug' => $product->slug])}}" class="read-more">Read More <i class="fas fa-angle-double-right"></i></a>
                                     </div>
                                 </article>
                             </div>
@@ -70,7 +70,7 @@
                             <h5 class="widget-title"><img src="assets/img/section-icon.png" alt="">Sản phẩm mới</h5>
                             @foreach($products as $product)
                                 <div class="recent-post">
-                                    <a href="{{route('product-detail', ['id' => $product->id])}}"><h6>{{$product->name}}</h6></a>
+                                    <a href="{{route('product-detail', ['slug' => $product->slug])}}"><h6>{{$product->name}}</h6></a>
                                 </div>
                             @endforeach
                         </aside>

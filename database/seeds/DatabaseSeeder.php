@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
 
         //
         foreach (range(1,10) as $index) {
+            $i=1;
             DB::table('posts')->insert([
                 'title' => $faker->sentence(),
                 'image' =>'fullwidth01.jpg',
@@ -28,21 +29,23 @@ class DatabaseSeeder extends Seeder
                 'seoTitle' => $faker->paragraph(5),
                 'seoDescription' => $faker->paragraph(5),
                 'seoKeyword' => $faker->paragraph(5),
+                'slug'=>'slug-bai-viet-'. $i,
                 'updated_at' => $faker->dateTimeBetween(),
                 'created_at' => $faker->dateTimeBetween(),
                
             ]);
         }
         foreach (range(1,10) as $index) {
+            $i=1;
             DB::table('products')->insert([
                 'name' => $faker->sentence(),
                 'price' =>$faker->numberBetween( 10, 1000),
                 'image' =>'fullwidth01.jpg',
-                'seo-title' => $faker->paragraph(5),
-                'seo-description' => $faker->paragraph(5),
-                'seo-keyword' => $faker->paragraph(5),
-                'description' => $faker->paragraph(5),     
-                'seo-image' => 'fullwidth01.jpg',
+                'seotitle' => $faker->paragraph(5),
+                'seodescription' => $faker->paragraph(5),
+                'seokeyword' => $faker->paragraph(5),
+                'description' => $faker->paragraph(5),
+                'slug'=>'slug-san-pham-'. $i,
                 'updated_at' => $faker->dateTimeBetween(),
                 'created_at' => $faker->dateTimeBetween(),            
             ]);

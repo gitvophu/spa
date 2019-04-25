@@ -3,7 +3,7 @@
 <script src="{{asset('assets/js/pages/product_detail.js')}}"></script>
 @endsection
 @section('link')
-<link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
 @endsection
 @section('content')
     
@@ -43,7 +43,7 @@
                     <article class="blog-post">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 mb-5 mb-lg-0">
-                                        <img src="{{url('assets/img/product/' . $product_->image)}}" alt="">
+                                        <img src="{{url('uploads/product/' . $product_->image)}}" alt="">
                             </div>
                             <div class="col-lg-6 col-md-6 mb-5 mb-lg-0">
                                 <div>
@@ -78,6 +78,7 @@
                                 </li>
                                 @endforeach
                             </ul>
+                            {{$comments->links('vendor.pagination.bootstrap-4')}}
                         </div>
                         <!-- Post New Comment Area -->
                         <div class="post-new-comment">
@@ -128,7 +129,7 @@
                                             @endforeach -->
                                             @foreach($product_news as $key)
                                                 <div class="recent-post">
-                                                    <a href="{{route('product-detail', ['id' => $key['id']])}}"><h6>{{$key['name']}}</h6></a>
+                                                    <a href="{{route('product-detail', ['slug' => $key['slug']])}}"><h6>{{$key['name']}}</h6></a>
                                                     <?php
                                                         $date = new DateTime($key['created_at']);
                                                     ?>

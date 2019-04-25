@@ -57,6 +57,11 @@
                                                 CKEDITOR.replace('ckeditor1')
                                             </script>
                                         </div>
+                                    <div class="form-group">
+                                        <label for="">Slug bài viết</label>
+                                        <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
+                                        <small id="helpId" class="text-muted">Nếu bỏ trống thì hệ thống sẽ dùng tên bài viết làm slug</small>
+                                    </div>
                                     <div>
                                         <h2>Thông tin SEO</h2>
                                     </div>

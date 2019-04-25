@@ -156,6 +156,15 @@ class PostController extends Controller
         $post->seoKeyword = $request->seoKeyword;
         $post->created_at = date('Y-m-d');
         $post->updated_at = date('Y-m-d');
+        //slug
+        if ($request->slug==null) {
+            $slug = Str::slug($post->name,"-");
+        }
+        else{
+            $slug = $request->slug;
+        }
+        $post->slug = $slug;
+
         $post->save();
         // $post->title = $request->title;
         

@@ -57,7 +57,7 @@
                     <div class="product-img">
                         <img src="{{url('/') . "/uploads/product/" . $product->image }}" alt="" >
                     </div>
-                    <a href="{{route('product-detail', ['id' => $product->id])}}" class="boxed-btn">Chi tiết</a>
+                    <a href="{{route('product-detail', ['slug' => $product->slug])}}" class="boxed-btn">Chi tiết</a>
                    
                 </div>
             </div>
@@ -96,7 +96,7 @@
 
                         <div class="overlay">
                             <ul class="icons">
-                                <li><a href="{{route('post-detail', ['post_id' => $post->id])}}"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="{{route('post-detail', ['slug' => $post->slug])}}"><i class="fas fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>

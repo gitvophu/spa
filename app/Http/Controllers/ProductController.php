@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DateTime;
 use App\Models\Comment;
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
@@ -20,17 +21,19 @@ class ProductController extends Controller
 
     //Hiển thị danh sách sản phẩm client
     public function view_product(){
-        $products = Product::paginate(9);
+        $products = Product::orderBy('created_at','desc')->paginate(9);
         return view('client.products', compact('products'));
     }
 
     //Hiển thị trang chi tiết sản phẩm
-    public function product_detail($id){
+    public function product_detail($slug){
         $product = new Product();
-        $product_ = $product->getProductByID($id);     
-        $comments = Comment::where('product_id', $id)
+        $product_ = $product->getProductByID($slug);     
+        $comments = Comment::where('product_id', $product->id)
         ->where('status',1)
-        ->where('type', '2')->orderBy('updated_at', 'desc')->take(10)->get()->toArray();   
+        ->where('type', '2')        
+        ->orderBy('created_at', 'desc')
+        ->paginate(5);   
         $total_cmt = count($comments);
         $product_news = Product::orderBy('created_at', 'desc')->take(4)->get()->toArray();
         //var_dump($product_news);die();
@@ -74,8 +77,20 @@ class ProductController extends Controller
             $product->name = $request->nameproduct;
             $product->price = $request->priceproduct;
             $product->description = $request->desproduct;
+            $product->seotitle = $request->seotitlepro;
+            $product->seodescription = $request->seodespro;
+            $product->seokeyword = $request->seokeypro;
             $product->created_at = date('Y-m-d');
             $product->updated_at = date('Y-m-d');
+            
+            //slug
+            if ($request->slug==null) {
+                $slug = Str::slug($product->name,"-");
+            }
+            else{
+                $slug = $request->slug;
+            }
+            $product->slug = $slug;
             $product->save();
             return redirect()->route('create')->with(['message' => 'Thêm thành công']);
         }
@@ -124,6 +139,9 @@ class ProductController extends Controller
             $product->name = $request->nameproduct;
             $product->description = $request->desproduct;
             $product->price = $request->priceproduct;
+            $product->seotitle = $request->title;
+            $product->seokeyword = $request->key;
+            $product->seodescription = $request->des;
             $product->save();
             return back()->with(['message' => 'Cập nhật thành công']);
         }
