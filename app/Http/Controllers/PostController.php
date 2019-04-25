@@ -12,9 +12,10 @@ class PostController extends Controller
 {
     // type = 1 là post, 2 là product
     // trang chi tiết bài viết
-    function post_detail($post_id){
-        $post = Post::find($post_id);
-        
+    function post_detail($slug){
+        $post = Post::where('slug',$slug)->first();
+      
+        $post_id = $post->id;
         $comments = Comment::where('post_id',$post_id)
         ->where('type',1)
         ->where('status',1)

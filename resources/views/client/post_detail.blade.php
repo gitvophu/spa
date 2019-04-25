@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
 @endsection
 @section('title')
-    {{$post->title}}
+{{$post->seoTitle}}
 @endsection
 @section('seo_image')
-    {{$post->title}}
+{{asset("/uploads/post/".$post->image)}}
 @endsection
 @section('seo_description')
-    {{$post->seo_description}}
+{{$post->seoDescription}}
 @endsection 
 @section('seo_url')
-    {{}}
+{{route('post-detail',['slug'=>$post->slug])}}
 @endsection
 @section('content')
 <section id="breadcrumb-area">
