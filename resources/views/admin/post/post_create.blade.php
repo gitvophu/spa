@@ -45,13 +45,7 @@
                                             
                                             {{-- <p class="help-block">Example block-level help text here.</p> --}}
                                         </div>
-                                       
-                                       <div class="clearfix"></div>
-                                        <div class="form-group ">
-                                            <label>Hình ảnh</label>
-                                            <input type="file" name="image">
-                                        </div>
-                                        <div class="clearfix"></div>
+
                                         <div class="form-group">
                                             <label>Nội dung</label>
                                             <textarea name="content" id="ckeditor1" class="form-control" rows="5">
@@ -63,11 +57,31 @@
                                                 CKEDITOR.replace('ckeditor1')
                                             </script>
                                         </div>
+                                    <div class="form-group">
+                                        <label for="">Slug bài viết</label>
+                                        <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
+                                        <small id="helpId" class="text-muted">Nếu bỏ trống thì hệ thống sẽ dùng tên bài viết làm slug</small>
+                                    </div>
+                                    <div>
+                                        <h2>Thông tin SEO</h2>
+                                    </div>
                                         <div class="form-group">
-                                            <label for="">Slug bài viết</label>
-                                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
-                                            <small id="helpId" class="text-muted">Nếu bỏ trống thì hệ thống sẽ dùng tiêu đề bài viết làm slug</small>
+                                            <label for="">SEO Title</label>
+                                            <input type="text" class="form-control" id="seoTitle" name="seoTitle">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="">SEO Desciption</label>
+                                            <input type="text" class="form-control" id="seoDescription" name="seoDescription">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">SEO Keyword</label>
+                                            <input type="text" class="form-control" id="seoKeyword" name="seoKeyword">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">SEO Image</label>
+                                            <input type="file" name="image">
+                                        </div>
+                                       
                                         <button id="btnSave" type="submit" class="btn btn-primary">Lưu</button>
                                         <button type="reset" class="btn btn-default">Reset</button>
                                     </form>

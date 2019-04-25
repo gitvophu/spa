@@ -12,10 +12,9 @@ class PostController extends Controller
 {
     // type = 1 là post, 2 là product
     // trang chi tiết bài viết
-    function post_detail($slug){
-        $post = Post::where('slug',$slug)->first();
-       
-        $post_id = $post->id;
+    function post_detail($post_id){
+        $post = Post::find($post_id);
+        
         $comments = Comment::where('post_id',$post_id)
         ->where('type',1)
         ->where('status',1)
@@ -44,7 +43,7 @@ class PostController extends Controller
 
     //danh sách bài viết client
     public function view_post(){
-        $posts = Post::orderBy('created_at','desc')->paginate(9);
+        $posts = Post::paginate(9);
         return view('client.posts', compact('posts'));
     }
 
@@ -62,12 +61,18 @@ class PostController extends Controller
         $validator = Validator::make($request->all(),[
             'title'=>'required',
             'content'=>'required',
+            'seoTitle'=>'required',
+            'seoDescription'=>'required',
+            'seoKeyword'=>'required',
             // 'image'=>'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'post_id'=>'required'
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
+            'seoTitle.required'=>'Bạn chưa nhập tiêu đề SEO',
+            'seoDescription.required'=>'Bạn chưa nhập nội dung SEO',
+            'seoKeyword.required'=>'Bạn chưa nhập từ khóa SEO',
             'image.image' => 'File ảnh phải là hình ảnh',
             'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
             'image.max' => 'File ảnh tối đa là 2MB',
@@ -80,6 +85,9 @@ class PostController extends Controller
         $post = Post::find($request->post_id);
         $post->title = $request->title;
         $post->content = $request->content;
+        $post->seoTitle = $request->seoTitle;
+        $post->seoDescription = $request->seoDescription;
+        $post->seoKeyword = $request->seoKeyword;
         $post->created_at = date('Y-m-d');
         $post->updated_at = date('Y-m-d');
         if ($request->hasFile('image')) {
@@ -113,10 +121,16 @@ class PostController extends Controller
         $validator = Validator::make($request->all(),[
             'title'=>'required',
             'content'=>'required',
+            'seoTitle'=>'required',
+            'seoDescription'=>'required',
+            'seoKeyword'=>'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
+            'seoTitle.required'=>'Bạn chưa nhập tiêu đề SEO',
+            'seoDescription.required'=>'Bạn chưa nhập nội dung SEO',
+            'seoKeyword.required'=>'Bạn chưa nhập từ khóa SEO',
             'image.required'=>'Bạn chưa chọn ảnh',
             'image.image' => 'File ảnh phải là hình ảnh',
             'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
@@ -137,17 +151,20 @@ class PostController extends Controller
         $post->image = $img_name;
         $post->title = $request->title;
         $post->content = $request->content;
+        $post->seoTitle = $request->seoTitle;
+        $post->seoDescription = $request->seoDescription;
+        $post->seoKeyword = $request->seoKeyword;
+        $post->created_at = date('Y-m-d');
+        $post->updated_at = date('Y-m-d');
         //slug
         if ($request->slug==null) {
-            $slug = Str::slug($post->title,"-");
+            $slug = Str::slug($post->name,"-");
         }
         else{
             $slug = $request->slug;
         }
-        $post->slug = $request->slug;
+        $post->slug = $slug;
 
-        $post->created_at = date('Y-m-d');
-        $post->updated_at = date('Y-m-d');
         $post->save();
         // $post->title = $request->title;
         

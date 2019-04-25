@@ -34,6 +34,9 @@
                                         <th>Tiêu đề</th>
                                         <th>Hình ảnh</th>
                                         <th>Tóm tắt</th>
+                                        <th>Seo Title</th>
+                                        <th>Seo Descripption</th>
+                                        <th>Seo Keyword</th>
                                         <th>Xóa</th>
                                         <th>Sửa</th>
                                     </tr>
@@ -48,6 +51,9 @@
                                             <img src="{{asset('/uploads/post/'.$post->image)}}" alt="" class="img-responsive">
                                         </td>
                                         <td width='20%' class="center" >{{$post->getExcerpt()}}</td>
+                                        <td class="center">{{$post['seoTitle']}}</td>
+                                        <td class="center">{{$post['seoDescription']}}</td>
+                                        <td class="center">{{$post['seoKeyword']}}</td>
                                         <td style="text-align: center;"><a href="{{route('delete-post',['id'=>$post->id])}}" onclick="return confirm('Bạn có chắc muốn xoá bài viết ?')"><i class="fa fa-trash-o fa-fw"></i></a></td>
                                         <td style="text-align: center;"><a href="{{route('edit-post',['post_id'=>$post->id])}}"><i class="fa fa-pencil fa-fw"></i></a></td>
                                     </tr>
