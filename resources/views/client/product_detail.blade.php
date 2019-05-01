@@ -5,6 +5,10 @@
 @section('link')
     <link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
 @endsection
+@section('title'){{$product->seotitle}}@endsection
+@section('seo_image'){{asset("/uploads/post/".$product->image)}}@endsection
+@section('seo_description'){{$product->seodescription}}@endsection 
+@section('seo_url'){{route('product-detail',['slug'=>$product->slug])}}@endsection
 @section('content')
     
 

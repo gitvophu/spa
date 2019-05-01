@@ -6,18 +6,10 @@
 @section('link')
     <link rel="stylesheet" href="{{asset('')}}assets/css/font-awesome.min.css">
 @endsection
-@section('title')
-{{$post->seoTitle}}
-@endsection
-@section('seo_image')
-{{asset("/uploads/post/".$post->image)}}
-@endsection
-@section('seo_description')
-{{$post->seoDescription}}
-@endsection 
-@section('seo_url')
-{{route('post-detail',['slug'=>$post->slug])}}
-@endsection
+@section('title'){{$post->seoTitle}}@endsection
+@section('seo_image'){{asset("/uploads/post/".$post->image)}}@endsection
+@section('seo_description'){{$post->seoDescription}}@endsection 
+@section('seo_url'){{route('post-detail',['slug'=>$post->slug])}}@endsection
 @section('content')
 <section id="breadcrumb-area">
         <div class="container">
