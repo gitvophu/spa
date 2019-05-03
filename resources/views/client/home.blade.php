@@ -3,7 +3,7 @@
     <script src="{{asset('assets/js/pages/product_detail.js')}}"></script>
 @endsection
 @section('content')
-
+@section('title'){{ "Trang chủ | ".$site_name}} @endsection
 <!-- End SlideShow -->
 <section id="pricing" class="section-padding">
    <!-- Start: Header Slider

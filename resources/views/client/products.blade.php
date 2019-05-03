@@ -2,7 +2,7 @@
 @section('script')
     <script src="{{asset('assets/js/pages/product_detail.js')}}"></script>
 @endsection
-
+@section('title'){{ "Danh sách sản phẩm | ".$site_name}} @endsection
 @section('content')
 
     <!-- Start: Breadcrumb Area
