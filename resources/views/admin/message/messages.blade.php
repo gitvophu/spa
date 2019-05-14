@@ -32,7 +32,7 @@
                                             <tbody>
                                             @foreach($message as $mess)
                                                 <tr class="odd gradeX">
-                                                    <td>{{$mess->id}}</td>
+                                                    <td>{{ $loop->index + 1 }}</td>
                                                     <td>{{$mess->name}}</td>
                                                     <td>{{$mess->phone}}</td>
                                                     <td>{{$mess->email}}</td>
