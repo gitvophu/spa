@@ -49,7 +49,7 @@ class BannerController extends Controller
             }
             $banner->title = $request->title;
             $banner->description = $request->description;
-            $banner->created_at = date('Y-m-d');
+            $banner->created_at = date('Y-m-d H:m:i');
             $banner->save();
 
             return back()->with('success', 'Tạo thành công');
@@ -84,7 +84,7 @@ class BannerController extends Controller
             }
             $banner->title = $request->title;
             $banner->description = $request->description;
-            $banner->updated_at = date('Y-m-d');
+            $banner->updated_at = date('Y-m-d H:m:i');
             $banner->save();
         }
         return redirect()->route('list-banner');

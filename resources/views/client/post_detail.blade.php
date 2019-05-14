@@ -133,7 +133,7 @@
                         <!-- Post New Comment Area -->
                         <div class="post-new-comment">
                             <h4>Viết bình luận</h4>
-                            <p>Your email address will not be published. Required fields are marked *</p>
+                            <p>Các trường bắt buộc được đánh dấu *</p>
                             <form action="#">
                                 {{ csrf_field() }}
                             <input type="hidden" name="asset" id="asset" value="{{asset('')}}">
@@ -142,14 +142,14 @@
                                 <div class="row">
                                     <div class="col-sm-12 form-group pt-4">
                                         <div class="form-group">
-                                          <label for="">Nội dung</label>
+                                          <label for="">Nội dung *</label>
                                           <textarea class="form-control" name="message" id="message" rows="3"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6 form-group">
                                        <div class="form-group">
-                                         <label for="">Tên</label>
+                                         <label for="">Tên *</label>
                                          <input type="text"
                                            class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
                                         
