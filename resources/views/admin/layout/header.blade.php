@@ -147,6 +147,11 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
+                            <li>
+                                <a href="{{route('metadata.edit')}}"><i class="fa fa-wrench fa-fw"></i>Cấu hình</a>
+                                
+                                <!-- /.nav-second-level -->
+                            </li>
                             {{--<li>--}}
                                 {{--<a href="#"><i class="fa fa-user-o fa-fw"></i> Users<span class="fa arrow"></span></a>--}}
                                 {{--<ul class="nav nav-second-level">--}}

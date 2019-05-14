@@ -39,6 +39,10 @@ Route::group(['prefix' => '/admin', 'middleware' => array('can_see')], function 
     Route::get('/reset-pass/{token}/{email}','AdminController@reset_link')->name('reset-link');
     Route::post('/do-reset','AdminController@do_reset')->name('do-reset');
     Route::get('/logout', 'AdminController@logout')->name('logout');
+
+    //metadata
+    Route::get('/metadata', 'AdminController@edit_metadata')->name('metadata.edit');
+    Route::post('/metadata', 'AdminController@update_metadata')->name('metadata.update');
 });
 
 Route::group(['prefix' => '/admin', 'middleware' => array('admin','can_see')], function () {

@@ -9,6 +9,7 @@ use App\Models\Comment;
 use App\Models\Message;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -35,6 +36,11 @@ class AdminController extends Controller
     }
 
     public function ad_login(){
+        
+        if (Auth::check()) {
+            
+            return redirect()->route('admin-index');
+        }
         return view('admin.ad-login');
     }
 
@@ -172,5 +178,26 @@ class AdminController extends Controller
     public function logout(){
         Auth::logout();
         return Redirect::to('/admin/ad-login'); // redirect the user to the login screen
+    }
+
+    function edit_metadata(Request $request){
+        $site_name = DB::table("metadata")->where('meta_name','site_name')->get();
+        $app_id = DB::table("metadata")->where('meta_name','app_id')->get();
+
+        return view('admin.metadata.edit');
+    }
+    function update_metadata(Request $request){
+        // dd($request->all());
+        DB::table('metadata')
+        ->where('meta_name','site_name')
+        ->update([
+            'value'=>$request->site_name
+        ]);
+        DB::table('metadata')
+        ->where('meta_name','app_id')
+        ->update([
+            'value'=>$request->app_id
+        ]);
+        return redirect()->route('metadata.edit')->with('success','Cập nhật thành công');
     }
 }
