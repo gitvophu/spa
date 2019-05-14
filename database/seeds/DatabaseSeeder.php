@@ -27,11 +27,12 @@ class DatabaseSeeder extends Seeder
                 'seoTitle' => $faker->paragraph(5),
                 'seoDescription' => $faker->paragraph(5),
                 'seoKeyword' => $faker->paragraph(5),
-                'slug' => 'slug-bai-viet-' . $i,
+                'slug' => 'slug-bai-viet-' . $i++,
                 'updated_at' => $faker->dateTimeBetween(),
                 'created_at' => $faker->dateTimeBetween(),
-
+            
             ]);
+            
         }
         foreach (range(1, 10) as $index) {
             $i = 1;
@@ -43,7 +44,7 @@ class DatabaseSeeder extends Seeder
                 'seodescription' => $faker->paragraph(5),
                 'seokeyword' => $faker->paragraph(5),
                 'description' => $faker->paragraph(5),
-                'slug' => 'slug-san-pham-' . $i,
+                'slug' => 'slug-san-pham-' . $i++,
                 'updated_at' => $faker->dateTimeBetween(),
                 'created_at' => $faker->dateTimeBetween(),
             ]);
