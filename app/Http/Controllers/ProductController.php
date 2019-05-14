@@ -70,7 +70,7 @@ class ProductController extends Controller
         } else {
             if (Input::hasFile('imageproduct')) {
                 $file = Input::file('imageproduct');
-                $file->move(public_path() . '/uploads/product', $file->getClientOriginalName());
+                $file->move('uploads/product', $file->getClientOriginalName());
                 $product->image = $file->getClientOriginalName();
             }
 
@@ -99,6 +99,7 @@ class ProductController extends Controller
     //chức năng xóa sản phẩm
     public function delete_product($product_id)
     {
+        Comment::where('product_id', '=', $product_id)->delete(); // xóa comment trước
     	$product = Product::find($product_id)->delete();
     	return redirect()->route('list-product')->with(['message' => 'Xóa thành công']);
     }
@@ -133,7 +134,7 @@ class ProductController extends Controller
                 // $oldFile = $product->image;
                 // Storage::delete($oldFile);
                 $file = Input::file('imageproduct');
-                $file->move(public_path() . '/uploads/product', $file->getClientOriginalName());
+                $file->move('uploads/product', $file->getClientOriginalName());
                 $product->image = $file->getClientOriginalName();
             }
             $product->name = $request->nameproduct;

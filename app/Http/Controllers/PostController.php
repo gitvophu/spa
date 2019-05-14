@@ -113,6 +113,7 @@ class PostController extends Controller
 
     // trang xóa bài viết
     public function delete($id){
+        Comment::where('post_id', '=', $id)->delete(); // xóa comment trước
        Post::find($id)->delete();
        return redirect()->route('list-post')->with('success','Đã xoá 1 bài viết');
     }

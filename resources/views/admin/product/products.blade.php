@@ -38,7 +38,7 @@
                             <tbody>
                             @foreach($products as $product)
                                 <tr class="">
-                                    <td style="text-align: center;">{{$product->id}}</td>
+                                    <td style="text-align: center;">{{$loop->index+1}}</td>
                                     <td style="text-align: center;">{{$product->name}}</td>
                                     <td style="text-align: center;">{{$product->price}}</td>
                                     <td><img src="{{url('/') . "/uploads/product/" . $product->image }}" class="img-responsive"></td>

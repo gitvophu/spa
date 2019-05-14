@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
 class BannerController extends Controller
@@ -40,12 +41,11 @@ class BannerController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
             //thêm ảnh vào db và thư mục source. (thêm tên)
-            if($request->hasfile('image'))
+            if(Input::hasFile('image'))
             {
-                $image = $request->file('image');
-                $name = $image->getClientOriginalName();
-                $image->move(public_path().'/uploads/banner/', $name);
-                $banner->image = $name;
+                $image = Input::file('image');
+                $image->move('uploads/banner', $image->getClientOriginalName());
+                $banner->image = $image->getClientOriginalName();
             }
             $banner->title = $request->title;
             $banner->description = $request->description;
@@ -74,13 +74,12 @@ class BannerController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
             $banner = Banner::find($request->id);
-            if($request->hasfile('image'))
+            if(Input::hasFile('image'))
             {
-                $image = $request->file('image');
-                $name = $image->getClientOriginalName();
-                $image->move(public_path().'/uploads/banner/', $name);
+                $image = Input::file('image');
+                $image->move('uploads/banner', $image->getClientOriginalName());
                 $oldFile = $banner->image;
-                $banner->image = $name;
+                $banner->image = $image->getClientOriginalName();
                 Storage::delete($oldFile);
             }
             $banner->title = $request->title;

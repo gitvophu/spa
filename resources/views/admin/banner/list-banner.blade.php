@@ -34,7 +34,7 @@
                                 <tr class="">
                                     <td style="text-align: center;">{{ $loop->index + 1 }}</td>
                                     <td style="text-align: center;">{{ $itemBanner->title }}</td>
-                                    <td><img src="{{url('/') . "/uploads/banner/" . $itemBanner->image }}" class="img-responsive"></td>
+                                    <td><img src="{{asset('/uploads/banner/'.$itemBanner->image)}}" alt="" class="img-responsive"></td>
                                     <td>{{ $itemBanner->description }}</td>
                                     <td style="text-align: center;"><a href="{{route('delete-banner', ['id'=>$itemBanner->id])}}" onclick="return confirm('Bạn có chắc muốn xoá banner ?')"><i class="fa fa-trash-o fa-fw"></i></a></td>
                                     <td style="text-align: center;"><a href="{{route('edit-banner', ['id'=>$itemBanner->id])}}"><i class="fa fa-pencil fa-fw"></i></a></td>
