@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DateTime;
 use App\Models\Post;
 use App\Models\Comment;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -67,7 +68,8 @@ class PostController extends Controller
             'seoKeyword'=>'required',
             // 'image'=>'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'post_id'=>'required'
+            'post_id'=>'required',
+            'slug'=>'unique:posts',
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
@@ -77,6 +79,7 @@ class PostController extends Controller
             'image.image' => 'File ảnh phải là hình ảnh',
             'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
             'image.max' => 'File ảnh tối đa là 2MB',
+            'slug.unique'=> 'Slug đã tồn tại',
             // 'image.required'=>'Bạn chưa chọn ảnh'
         ]);
         
@@ -127,6 +130,7 @@ class PostController extends Controller
             'seoDescription'=>'required',
             'seoKeyword'=>'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'slug'=>'unique:posts',
         ],[
             'title.required'=>'Bạn chưa nhập tiêu đề',
             'content.required'=>'Bạn chưa nhập nội dung',
@@ -137,13 +141,13 @@ class PostController extends Controller
             'image.image' => 'File ảnh phải là hình ảnh',
             'image.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
             'image.max' => 'File ảnh tối đa là 2MB',
+            'slug.unique'=> 'Slug đã tồn tại',
         ]);
         
         if ($validator->fails()) {
             $data = [];
             $data['title'] = $request->title;
             $data['content'] = $request->content;
-            
             return redirect()->route('create-post')->withErrors($validator)->with($data);
         }
         $file = $request->file('image');
@@ -160,7 +164,7 @@ class PostController extends Controller
         $post->updated_at = date('Y-m-d');
         //slug
         if ($request->slug==null) {
-            $slug = Str::slug($post->name,"-");
+            $slug = Str::slug($post->title,"-");
         }
         else{
             $slug = $request->slug;

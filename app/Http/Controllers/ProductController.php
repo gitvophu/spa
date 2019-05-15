@@ -55,6 +55,7 @@ class ProductController extends Controller
             'imageproduct' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'priceproduct' => 'required|numeric',
             'desproduct' => 'required',
+            'slug' => 'unique:products',
         ],[
             'nameproduct.required' => 'Tên sản phẩm không được bỏ trống',
             'priceproduct.required' => 'Giá sản phẩm không được bỏ trống',
@@ -64,6 +65,7 @@ class ProductController extends Controller
             'imageproduct.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
             'imageproduct.max' => 'File ảnh tối đa là 2MB',
             'desproduct.required' => 'Nội dung không được bỏ trống',
+            'slug.unique' => 'Slug đã tồn tại',
         ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
@@ -120,11 +122,13 @@ class ProductController extends Controller
             'imageproduct' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'priceproduct' => 'numeric',
             'desproduct' => '',
+            'slug' => 'unique:products',
         ],[
             'priceproduct.numeric' => 'Giá sản phẩm phải là số',
             'imageproduct.image' => 'File ảnh phải là hình ảnh',
             'imageproduct.mimes' => 'File ảnh chỉ nhận các file có đuôi jpeg,png,jpg,gif,svg',
             'imageproduct.max' => 'File ảnh tối đa là 2MB',
+            'slug.unique' => 'Slug đã tồn tại',
         ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();

@@ -50,8 +50,8 @@
                                             <label>Nội dung</label>
                                             <textarea name="content" id="ckeditor1" class="form-control" rows="5">
                                                 @if (session()->has('content'))
-                                                {{session('content')}}
-                                            @endif
+                                                    {{session('content')}}
+                                                @endif
                                             </textarea>
                                             <script>
                                                 CKEDITOR.replace('ckeditor1')

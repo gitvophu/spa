@@ -37,7 +37,7 @@
                                     <div class="post-content">
                                         <h4 class="post-title"><a href="{{route('post-detail', ['slug' => $post->slug])}}">{{$post->title}}</a></h4>
                                         <p class="content">
-                                            {{str_limit($post->content, 100, '[...]')}}
+                                            {{strip_tags($post->getExcerpt())}}
                                         </p>
                                         <a href="{{route('post-detail', ['slug' => $post->slug])}}" class="read-more">Read More <i class="fas fa-angle-double-right"></i></a>
                                     </div>

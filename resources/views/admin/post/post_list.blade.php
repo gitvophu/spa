@@ -43,14 +43,14 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($list_post as $post)
-                                        
+                                   
                                     <tr class="gradeU">
                                         <td width='5%'>{{$loop->index+1}}</td>
                                         <td width='30%'>{{$post->title}}</td>
                                         <td width='30%'>
                                             <img src="{{asset('/uploads/post/'.$post->image)}}" alt="" class="img-responsive">
                                         </td>
-                                        <td width='20%' class="center" >{{$post->getExcerpt()}}</td>
+                                        <td width='20%' class="center" >{{strip_tags($post->getExcerpt())}}</td>
                                         <td class="center">{{$post['seoTitle']}}</td>
                                         <td class="center">{{$post['seoDescription']}}</td>
                                         <td class="center">{{$post['seoKeyword']}}</td>
