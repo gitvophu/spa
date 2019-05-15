@@ -29,9 +29,9 @@ class ProductController extends Controller
     public function product_detail($slug){
         $product = new Product();
         $product_ = $product->getProductByID($slug);     
-        $comments = Comment::where('product_id', $product->id)
+        $comments = Comment::where('product_id', $product_->id)
         ->where('status',1)
-        ->where('type', '2')        
+        ->where('type',2)        
         ->orderBy('created_at', 'desc')
         ->paginate(5);   
         $total_cmt = count($comments);

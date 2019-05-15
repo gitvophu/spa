@@ -1,10 +1,7 @@
 $(document).ready(function(){
-    $('.contact-btn').on('click',function(e){
+    $('#contact-btn').on('click',function(e){
         e.preventDefault();
         $('#contact-modal').modal('show')
-        $('.nav-mobile').css({
-            "display":"none"
-        })
     })
 
     $('#btnSubmit_Product').on('click',function(e){

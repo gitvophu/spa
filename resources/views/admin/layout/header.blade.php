@@ -41,6 +41,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        
+        <style>
+            .page-header{
+                margin: 75px 0 20px !important;
+            }
+        </style>
     </head>
     <body>
 
@@ -49,7 +55,7 @@
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Trang admin</a>
+                    <a class="navbar-brand" href="{{route('admin-index')}}">Trang admin</a>
                 </div>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

@@ -70,7 +70,9 @@
                         <div class="post-comments-area">
                             <h4 class="pb-2">({{$total_cmt}}) Bình Luận</h4>
                             <ul class="media-list">
+                                
                                 @foreach($comments as $comment)
+                              
                                 <li class="media">
                                     <div class="media-left">
                                         <img alt="" src="{{url('assets/img/user.png')}}">
