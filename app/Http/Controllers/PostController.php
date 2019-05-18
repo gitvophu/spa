@@ -89,6 +89,7 @@ class PostController extends Controller
         $post = Post::find($request->post_id);
         $post->title = $request->title;
         $post->content = $request->content;
+        $post->slug = $request->slugpost;
         $post->seoTitle = $request->seoTitle;
         $post->seoDescription = $request->seoDescription;
         $post->seoKeyword = $request->seoKeyword;

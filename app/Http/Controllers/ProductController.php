@@ -143,6 +143,7 @@ class ProductController extends Controller
             }
             $product->name = $request->nameproduct;
             $product->description = $request->desproduct;
+            $product->slug = $request->slugproduct;
             $product->price = $request->priceproduct;
             $product->seotitle = $request->title;
             $product->seokeyword = $request->key;

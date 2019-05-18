@@ -34,6 +34,7 @@
                                         <th>Tiêu đề</th>
                                         <th>Hình ảnh</th>
                                         <th>Tóm tắt</th>
+                                        <th>Slug</th>
                                         <th>Seo Title</th>
                                         <th>Seo Descripption</th>
                                         <th>Seo Keyword</th>
@@ -51,6 +52,7 @@
                                             <img src="{{asset('/uploads/post/'.$post->image)}}" alt="" class="img-responsive">
                                         </td>
                                         <td width='20%' class="center" >{{strip_tags($post->getExcerpt())}}</td>
+                                        <td class="center">{{$post['slug']}}</td>
                                         <td class="center">{{$post['seoTitle']}}</td>
                                         <td class="center">{{$post['seoDescription']}}</td>
                                         <td class="center">{{$post['seoKeyword']}}</td>

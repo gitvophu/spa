@@ -37,23 +37,27 @@
                                 <div class="col-lg-12">
                                 <form role="form" method="POST" action="{{route('update-post')}}" enctype="multipart/form-data">
                                     {{ csrf_field() }}
-                                        <div class="form-group ">
-                                            <label>Tiêu đề</label>
+                                    <div class="form-group ">
+                                        <label>Tiêu đề</label>
                                         <input type="hidden" name="post_id" value="{{$post_id}}">
                                         <input class="form-control" name="title" value="{{$post->title}}">
                                             
                                             {{-- <p class="help-block">Example block-level help text here.</p> --}}
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nội dung</label>
-                                            <textarea name="content" id="ckeditor1" class="form-control" rows="5">
-                                                {{$post->content}}
-                                            
-                                            </textarea>
-                                            <script>
-                                                CKEDITOR.replace('ckeditor1')
-                                            </script>
-                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nội dung</label>
+                                        <textarea name="content" id="ckeditor1" class="form-control" rows="5">
+                                            {{$post->content}}
+                                        
+                                        </textarea>
+                                        <script>
+                                            CKEDITOR.replace('ckeditor1')
+                                        </script>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Slug</label>
+                                        <input type="text" class="form-control" name="slugpost" value="{{$post->slug}}">
+                                    </div>
                                     <div>
                                         <h2>Thông tin SEO</h2>
                                     </div>

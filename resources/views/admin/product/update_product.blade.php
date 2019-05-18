@@ -56,6 +56,11 @@
                                                 <input type="text" value="{{$product->description}}" class="form-control" id="desproduct" name="desproduct" >
                                             </div>
 
+                                            <div class="form-group">
+                                                <label for="">Slug</label>
+                                                <input type="text" value="{{$product->slug}}" class="form-control" id="slugproduct" name="slugproduct" >
+                                            </div>
+
                                             <legend>Sửa Thông tin SEO</legend>
 
                                             <div class="form-group">

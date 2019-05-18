@@ -28,6 +28,7 @@
                                     <th>Giá</th>
                                     <th>Hình ảnh</th>
                                     <th>Mô tả</th>
+                                    <th>Slug</th>
                                     <th>Seo-Title</th>
                                     <th>Seo-Descripption</th>
                                     <th>Seo-Keyword</th>
@@ -43,6 +44,7 @@
                                     <td style="text-align: center;">{{$product->price}}</td>
                                     <td><img src="{{url('/') . "/uploads/product/" . $product->image }}" class="img-responsive"></td>
                                     <td class="center">{{$product['description']}}</td>
+                                    <td class="center">{{$product['slug']}}</td>
                                     <td class="center">{{$product['seotitle']}}</td>
                                     <td class="center">{{$product['seodescription']}}</td>
                                     <td class="center">{{$product['seokeyword']}}</td>
