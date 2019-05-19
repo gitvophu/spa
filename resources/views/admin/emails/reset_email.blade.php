@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <h1>Link reset pass: </h1>
+    <h1>Someone has requested a link to change your password. You can do this through the button below. </h1>
+    <h3>Click here: </h3>
     <a href="{{$link}}">{{$link}}</a>  
+    <p>If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one.</p>
 </body>
 </html>
