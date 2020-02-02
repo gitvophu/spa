@@ -36,7 +36,6 @@ class AdminController extends Controller
     }
 
     public function ad_login(){
-        
         if (Auth::check()) {
             
             return redirect()->route('admin-index');
